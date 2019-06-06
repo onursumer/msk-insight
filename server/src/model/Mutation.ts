@@ -1,21 +1,20 @@
+export interface ICountByTumorType
+{
+    tumorType: string;
+    tumorTypeCount: number;
+    variantCount: number;
+}
+
 export interface IMutation
 {
-    hugoSymbol: string;
-    isPathogenic: boolean|undefined;
-    penetrance: string;
-    category: MutationCategory;
-    countByCancerType: ICountByCancerType;
-}
-
-export interface ICountByCancerType {
-    [cancerType: string] : {variantCount: number, tumorTypeCount: number}
-}
-
-export enum MutationCategory {
-    DEFAULT = "NA",
-    SOMATIC = "somaticByGene",
-    GERMLINE = "germlineByGene",
-    BIALLELIC_GERMLINE = "biallelicGermlineByGene",
-    QC_GERMLINE = "qcGermlineByGene",
-    BIALLELIC_QC_OVERRIDDEN_GERMLINE = "biallelicQCOverriddenGermlineByGene"
+    chromosome: string;
+    countsByTumorType: [],
+    endPosition: number,
+    hugoGeneSymbol: string,
+    mutationStatus: string,
+    pathogenic: string,
+    penetrance: string,
+    referenceAllele: string,
+    startPosition: number,
+    variantAllele: string
 }
