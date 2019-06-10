@@ -1,11 +1,15 @@
-import {IMutation} from "../model/Mutation";
+import axios from "axios";
+
+// import {IMutation} from "../model/Mutation";
+
+// TODO make the url configurable?
+const GENOME_NEXUS_URL = "http://localhost:38080";
 
 class MutationService
 {
-    public getMutationsByGene(hugoSymbol?: string): IMutation[]
+    public getMutationsByGene(hugoSymbol?: string)
     {
-        // TODO fetch from genome nexus!
-        return [];
+        return axios.get(`${GENOME_NEXUS_URL}/insight/mutation?hugoGeneSymbol=${hugoSymbol}`);
     }
 }
 

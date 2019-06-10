@@ -2,8 +2,8 @@ import compression from "compression";
 import express from 'express';
 import path from 'path';
 
-// import MutationController from "./controller/MutationController";
 import GeneSummaryController from "./controller/GeneSummaryController";
+import MutationController from "./controller/MutationController";
 
 const app = express();
 
@@ -11,7 +11,7 @@ const port = process.env.PORT || 3081;
 const staticAppDir = "reactapp";
 const routerRoot = "index.html";
 
-// const mutationController = new MutationController(app);
+const mutationController = new MutationController(app);
 const frequencyController = new GeneSummaryController(app);
 
 if (process.env.NODE_ENV === "production")

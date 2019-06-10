@@ -9,7 +9,7 @@ import "react-table/react-table.css";
 import "./FrequencyTable.css";
 import TumorTypeFrequencyTable from "./TumorTypeFrequencyTable";
 
-interface ITumorTypeFrequencyTableProps
+interface ITumorTypeFrequencyDecompositionProps
 {
     dataPromise: Promise<ITumorTypeFrequencySummary[]>;
     penetrance: string[];
@@ -17,7 +17,7 @@ interface ITumorTypeFrequencyTableProps
 }
 
 @observer
-class TumorTypeFrequencyDecomposition extends React.Component<ITumorTypeFrequencyTableProps>
+class TumorTypeFrequencyDecomposition extends React.Component<ITumorTypeFrequencyDecompositionProps>
 {
     @observable
     private data: ITumorTypeFrequencySummary[] = [];

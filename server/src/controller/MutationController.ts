@@ -1,5 +1,5 @@
 import autobind from "autobind-decorator";
-import {Express} from "express";
+import {Express, NextFunction} from "express";
 import {Request, Response} from "express-serve-static-core";
 
 import MutationService from "../service/MutationService";
@@ -12,18 +12,24 @@ class MutationController
                 mutationService: MutationService = new MutationService())
     {
         // configure endpoints
-        app.get("/api/mutation/byGene", this.fetchMutationsByGeneGET);
+        app.get("/api/mutation", this.fetchMutationsGET);
 
         // init services
         this.mutationService = mutationService;
     }
 
     @autobind
-    private fetchMutationsByGeneGET(req: Request, res: Response) {
+    private fetchMutationsGET(req: Request, res: Response, next: NextFunction) {
         const hugoSymbol = req.query.hugoSymbol;
 
         if (hugoSymbol) {
-            res.send(this.mutationService.getMutationsByGene(hugoSymbol));
+            this.mutationService.getMutationsByGene(hugoSymbol)
+                .then(response => {
+                    res.send(response.data);
+                })
+                .catch(err => {
+                    next(err);
+                })
         }
         else {
             res.send([]);
