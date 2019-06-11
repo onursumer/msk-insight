@@ -2018,10 +2018,10 @@ caseless@~0.12.0:
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
   integrity sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw=
 
-cbioportal-frontend-commons@^0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/cbioportal-frontend-commons/-/cbioportal-frontend-commons-0.0.7.tgz#ecd7a2db121d8795941c5a58a513279c9d444eb9"
-  integrity sha512-aP2YRsTKJE/YqABq2PTTykf6n+XRCjAadelQ14OG6LjtOmDs4mp93iVRG/qJoB20HDWFTSKsmn3WcUpxoSrMJQ==
+cbioportal-frontend-commons@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/cbioportal-frontend-commons/-/cbioportal-frontend-commons-0.0.8.tgz#066ff8cbb3c7790315bcb75c26cbec965dadf110"
+  integrity sha512-sko83VHDlsJgVIKyguVgQHk1IYuUKU7Ju+yve6YYfMPYp4FHLrmQvILas3TNbm+XdEUcoD0tK6hJddt7s54F6w==
   dependencies:
     autobind-decorator "^2.1.0"
     babel-polyfill "^6.22.0"
