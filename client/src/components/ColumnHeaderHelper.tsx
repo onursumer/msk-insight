@@ -1,6 +1,5 @@
 import * as React from "react";
-
-import ColumnHeader from "./ColumnHeader";
+import {ColumnHeader} from "react-mutation-mapper";
 
 export enum ColumnId {
     HUGO_SYMBOL = "hugoSymbol",

@@ -1,14 +1,19 @@
 import * as React from 'react';
 
 import GeneLevelSummary from "../components/GeneLevelSummary";
+import GeneFrequencyStore from "../store/GeneFrequencyStore";
 
-class Home extends React.Component<{}>
+interface IHomeProps {
+    frequencyStore?: GeneFrequencyStore
+}
+
+class Home extends React.Component<IHomeProps>
 {
     public render()
     {
         return (
             <div>
-                <GeneLevelSummary />
+                <GeneLevelSummary frequencyStore={this.props.frequencyStore} />
             </div>
         );
     }
