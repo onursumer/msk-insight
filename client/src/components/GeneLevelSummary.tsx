@@ -3,7 +3,7 @@ import {action, computed} from "mobx";
 import {observer} from "mobx-react";
 import * as React from 'react';
 import {
-    Col, Container, Row
+    Col, Row
 } from 'react-bootstrap';
 
 import GeneFrequencyStore from "../store/GeneFrequencyStore";
@@ -36,7 +36,7 @@ class GeneLevelSummary extends React.Component<IGeneLevelSummaryProps>
 
     public render() {
         return (
-            <Container className="text-center">
+            <div className="text-center">
                 <Row>
                     <Col lg="8" className="m-auto">
                         <SearchBox onChange={this.onSearch} />
@@ -51,7 +51,7 @@ class GeneLevelSummary extends React.Component<IGeneLevelSummaryProps>
                         />
                     </Col>
                 </Row>
-            </Container>
+            </div>
         );
     }
 

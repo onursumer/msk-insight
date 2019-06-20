@@ -94,8 +94,6 @@ class Gene extends React.Component<IGeneProps>
                 style={{
                     fontSize: "0.95rem",
                     paddingBottom: "1.5rem",
-                    marginLeft: "2rem",
-                    marginRight: "2rem",
                 }}
             >
                 {

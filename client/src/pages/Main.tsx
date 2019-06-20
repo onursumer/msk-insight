@@ -34,7 +34,14 @@ class Main extends React.Component<{}>
             <BrowserRouter>
                 <div className="Main">
                     <Header />
-                    <div style={{paddingTop: 20, paddingBottom: 100, fontSize: "1.25rem", color: "#2c3e50"}}>
+                    <div style={{
+                        marginLeft: "2rem",
+                        marginRight: "2rem",
+                        paddingTop: 20,
+                        paddingBottom: 100,
+                        fontSize: "1.25rem",
+                        color: "#2c3e50"}}
+                    >
                         <Switch>
                             <Route exact={true} path="/" component={HomePage}/>
                             <Route exact={true} path="/gene/:hugoSymbol" component={GenePage} />
