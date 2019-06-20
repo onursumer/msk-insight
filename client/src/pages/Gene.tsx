@@ -32,6 +32,14 @@ export const MUTATION_RATE_HELPER = {
     }
 };
 
+function loaderWithText(text: string) {
+    return (
+        <div className="text-center">
+            <i className="fa fa-spinner fa-pulse fa-2x" />
+            <div>{text}</div>
+        </div>
+    );
+}
 
 @observer
 class Gene extends React.Component<IGeneProps>
@@ -71,20 +79,38 @@ class Gene extends React.Component<IGeneProps>
         return rates;
     }
 
+    private get insightLoader() {
+        return loaderWithText("Fetching Insight mutations...");
+    }
+
+    private get mutationMapperLoader() {
+        return loaderWithText("Annotating with Genome Nexus...");
+    }
+
     public render()
     {
-        return this.insightStatus === 'pending' ? (
-            <i className="fa fa-spinner fa-pulse fa-2x" />
-        ): (
-            <div style={{fontSize: "0.95rem", paddingBottom: "1.5rem"}}>
-                <MutationMapper
-                    hugoSymbol={this.hugoSymbol}
-                    data={this.insightMutations as any[]}
-                    showTranscriptDropDown={true}
-                    showOnlyAnnotatedTranscriptsInDropdown={true}
-                    filterMutationsBySelectedTranscript={true}
-                    mutationRates={this.mutationRates}
-                />
+        return (
+            <div
+                style={{
+                    fontSize: "0.95rem",
+                    paddingBottom: "1.5rem",
+                    marginLeft: "2rem",
+                    marginRight: "2rem",
+                }}
+            >
+                {
+                    this.insightStatus === 'pending' ? this.insightLoader : (
+                        <MutationMapper
+                            hugoSymbol={this.hugoSymbol}
+                            data={this.insightMutations}
+                            showTranscriptDropDown={true}
+                            showOnlyAnnotatedTranscriptsInDropdown={true}
+                            filterMutationsBySelectedTranscript={true}
+                            mutationRates={this.mutationRates}
+                            mainLoadingIndicator={this.mutationMapperLoader}
+                        />
+                    )
+                }
             </div>
         );
     }

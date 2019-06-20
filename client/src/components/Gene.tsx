@@ -16,7 +16,9 @@ class Gene extends React.Component<IGeneProps>
         return (
             <React.Fragment>
                 <span className={this.props.hugoSymbolClassName || "pull-left ml-3"}>
-                    {this.props.hugoSymbol}
+                    <a href={`/gene/${this.props.hugoSymbol.toUpperCase()}`}>
+                        {this.props.hugoSymbol}
+                    </a>
                 </span>
                 <span className={this.props.penetranceClassName || "pull-right mr-3"}>
                     {this.props.penetrance
