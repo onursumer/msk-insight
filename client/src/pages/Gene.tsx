@@ -71,7 +71,7 @@ class Gene extends React.Component<IGeneProps>
             if (frequencyData) {
                 rates = frequencyData.frequencies.map(f => ({
                     ...MUTATION_RATE_HELPER[f.category],
-                    rate: f.frequency
+                    rate: f.frequency * 100
                 }));
             }
         }
