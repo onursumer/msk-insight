@@ -268,13 +268,6 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-dom@*":
-  version "16.8.4"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.8.4.tgz#7fb7ba368857c7aa0f4e4511c4710ca2c5a12a88"
-  integrity sha512-eIRpEW73DCzPIMaNBDP5pPIpK1KXyZwNgfxiVagb5iGiz6da+9A5hslSX6GAQKdO7SayVCS/Fr2kjqprgAvkfA==
-  dependencies:
-    "@types/react" "*"
-
 "@types/react-dom@^16.8.2":
   version "16.8.2"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.8.2.tgz#9bd7d33f908b243ff0692846ef36c81d4941ad12"
@@ -307,26 +300,10 @@
     "@types/history" "*"
     "@types/react" "*"
 
-"@types/react-select@^2.0.19":
-  version "2.0.19"
-  resolved "https://registry.yarnpkg.com/@types/react-select/-/react-select-2.0.19.tgz#59a80ef81a4a5cb37f59970c53a4894d15065199"
-  integrity sha512-5GGBO3npQ0G/poQmEn+kI3Vn3DoJ9WjRXCeGcpwLxd5rYmjYPH235lbYPX5aclXE2RqEXyFxd96oh0wYwPXYpg==
-  dependencies:
-    "@types/react" "*"
-    "@types/react-dom" "*"
-    "@types/react-transition-group" "*"
-
 "@types/react-table@^6.8.1":
   version "6.8.1"
   resolved "https://registry.yarnpkg.com/@types/react-table/-/react-table-6.8.1.tgz#ff92b25677a220356064321234fd89ba590db1e3"
   integrity sha512-56wi1s7+H4eGbtXsppNz/OeBeUiPQZnJYLxia0ZpwcD47VfYFE1EkbVadEoJshJIjR4nbSQSF/AgJHvC/ZwHaQ==
-  dependencies:
-    "@types/react" "*"
-
-"@types/react-transition-group@*":
-  version "2.9.2"
-  resolved "https://registry.yarnpkg.com/@types/react-transition-group/-/react-transition-group-2.9.2.tgz#c48cf2a11977c8b4ff539a1c91d259eaa627028d"
-  integrity sha512-5Fv2DQNO+GpdPZcxp2x/OQG/H19A01WlmpjVD9cKvVFmoVLOZ9LvBgSWG6pSXIU4og5fgbvGPaCV5+VGkWAEHA==
   dependencies:
     "@types/react" "*"
 
@@ -7862,11 +7839,10 @@ react-motion@^0.5.2:
     prop-types "^15.5.8"
     raf "^3.1.0"
 
-"react-mutation-mapper@https://github.com/onursumer/react-mutation-mapper#a77138c84d7da15d2c2d291aba6840c2ed911c3e":
+"react-mutation-mapper@github:onursumer/react-mutation-mapper#140cd888ce5871a28068506bcfa92a3135b60248":
   version "0.1.5"
-  resolved "https://github.com/onursumer/react-mutation-mapper#a77138c84d7da15d2c2d291aba6840c2ed911c3e"
+  resolved "https://codeload.github.com/onursumer/react-mutation-mapper/tar.gz/140cd888ce5871a28068506bcfa92a3135b60248"
   dependencies:
-    "@types/react-select" "^2.0.19"
     autobind-decorator "^2.4.0"
     cbioportal-frontend-commons "^0.0.8"
     classnames "^2.2.6"

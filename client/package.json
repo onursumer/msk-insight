@@ -25,7 +25,7 @@
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.6",
     "react-dom": "^16.8.6",
-    "react-mutation-mapper": "https://github.com/onursumer/react-mutation-mapper#a77138c84d7da15d2c2d291aba6840c2ed911c3e",
+    "react-mutation-mapper": "github:onursumer/react-mutation-mapper#140cd888ce5871a28068506bcfa92a3135b60248",
     "react-router-bootstrap": "^0.24.4",
     "react-router-dom": "^4.3.1",
     "react-scripts-ts": "3.1.0",
