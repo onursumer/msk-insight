@@ -102,6 +102,7 @@ class Gene extends React.Component<IGeneProps>
                             hugoSymbol={this.hugoSymbol}
                             data={this.insightMutations}
                             showTranscriptDropDown={true}
+                            genomeNexusUrl="https://www.genomenexus.org/beta"
                             showOnlyAnnotatedTranscriptsInDropdown={true}
                             filterMutationsBySelectedTranscript={true}
                             mutationRates={this.mutationRates}
