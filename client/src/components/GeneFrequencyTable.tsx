@@ -11,11 +11,11 @@ import {biallelicAccessor, germlineAccessor, somaticAccessor} from "../util/Colu
 import {fetchTumorTypeFrequenciesByGene} from "../util/FrequencyDataUtils";
 import {ColumnId, HEADER_COMPONENT} from "./ColumnHeaderHelper";
 import FrequencyCell from "./FrequencyCell";
+import Gene from "./Gene";
 import TumorTypeFrequencyDecomposition from "./TumorTypeFrequencyDecomposition";
 
 import "react-table/react-table.css";
 import "./FrequencyTable.css";
-import Gene from "./Gene";
 
 interface IFrequencyTableProps
 {

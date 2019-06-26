@@ -2,9 +2,7 @@ import {action, computed, observable} from "mobx";
 import {observer} from "mobx-react";
 import * as React from 'react';
 
-import {
-    MutationMapper
-} from 'react-mutation-mapper';
+import {MutationMapper, TrackName} from 'react-mutation-mapper';
 
 import {IMutation} from "../../../server/src/model/Mutation";
 import {DataStatus} from "../store/DataStatus";
@@ -107,6 +105,7 @@ class Gene extends React.Component<IGeneProps>
                             filterMutationsBySelectedTranscript={true}
                             mutationRates={this.mutationRates}
                             mainLoadingIndicator={this.mutationMapperLoader}
+                            tracks={[TrackName.CancerHotspots, TrackName.OncoKB, TrackName.PTM]}
                         />
                     )
                 }
