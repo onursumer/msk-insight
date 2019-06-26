@@ -8,7 +8,7 @@ export interface ICountByTumorType
 export interface IMutation
 {
     chromosome: string;
-    countsByTumorType: [],
+    countsByTumorType: ICountByTumorType[],
     endPosition: number,
     hugoGeneSymbol: string,
     mutationStatus: string,

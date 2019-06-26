@@ -12,7 +12,7 @@ import {fetchTumorTypeFrequenciesByGene} from "../util/FrequencyDataUtils";
 import {ColumnId, HEADER_COMPONENT} from "./ColumnHeaderHelper";
 import FrequencyCell from "./FrequencyCell";
 import Gene from "./Gene";
-import TumorTypeFrequencyDecomposition from "./TumorTypeFrequencyDecomposition";
+import GeneTumorTypeFrequencyDecomposition from "./GeneTumorTypeFrequencyDecomposition";
 
 import "react-table/react-table.css";
 import "./FrequencyTable.css";
@@ -45,7 +45,7 @@ function renderHugoSymbol(cellProps: any)
 function renderSubComponent(row: any) {
     return (
         <div className="p-4">
-            <TumorTypeFrequencyDecomposition
+            <GeneTumorTypeFrequencyDecomposition
                 hugoSymbol={row.original.hugoSymbol}
                 penetrance={row.original.penetrance}
                 dataPromise={fetchTumorTypeFrequenciesByGene(row.original.hugoSymbol)}

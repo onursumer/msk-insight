@@ -39,7 +39,7 @@ function renderTumorType(cellProps: any)
 }
 
 @observer
-class TumorTypeFrequencyTable extends React.Component<ITumorTypeFrequencyTableProps>
+class GeneTumorTypeFrequencyTable extends React.Component<ITumorTypeFrequencyTableProps>
 {
     @computed
     private get defaultPageSize() {
@@ -129,4 +129,4 @@ class TumorTypeFrequencyTable extends React.Component<ITumorTypeFrequencyTablePr
     }
 }
 
-export default TumorTypeFrequencyTable;
+export default GeneTumorTypeFrequencyTable;
