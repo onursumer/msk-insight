@@ -90,15 +90,29 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                 mutationRates={this.mutationRates}
                 mainLoadingIndicator={this.loader}
                 tracks={[TrackName.CancerHotspots, TrackName.OncoKB, TrackName.PTM]}
+                getMutationCount={this.getMutationCount}
                 customMutationTableColumns={[
                     {
                         expander: true,
-                        Expander: this.renderExpander
+                        Expander: this.renderExpander,
+                        togglable: false
                     }
                 ]}
                 customMutationTableProps={{
                     SubComponent: renderSubComponent
                 }}
+                groupFilters={
+                    [
+                        {
+                            group: "Somatic",
+                            filter: {mutation: [{mutationStatus: "somatic"}]}
+                        },
+                        {
+                            group: "Germline",
+                            filter: {mutation: [{mutationStatus: "germline"}]}
+                        },
+                    ]
+                }
             />
         );
     }
@@ -108,6 +122,15 @@ class MutationMapper extends React.Component<IMutationMapperProps>
         return props.isExpanded ?
             <i className="fa fa-minus-circle" /> :
             <i className="fa fa-plus-circle" />;
+    }
+
+    @autobind
+    private getMutationCount(mutation: IMutation)
+    {
+        // TODO when a filter is applied on countsByTumorType field: partial count
+        return mutation.countsByTumorType
+            .map(c => c.variantCount)
+            .reduce((sum, count) => sum + count)
     }
 }
 
