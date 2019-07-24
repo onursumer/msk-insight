@@ -105,7 +105,7 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                         id: ColumnId.SOMATIC,
                         name: "% Somatic Mutant",
                         // TODO better precompute this value -> mutation.somaticPercentage
-                        accessor: (mutation: any) => mutation.mutationStatus.toLowerCase() === "somatic" ?
+                        accessor: (mutation: IMutation) => mutation.mutationStatus.toLowerCase() === "somatic" ?
                             getOverallPercentage(mutation.countsByTumorType) : "0.0",
                         Header: HEADER_COMPONENT[ColumnId.SOMATIC]
                     },
@@ -113,7 +113,7 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                         id: ColumnId.GERMLINE,
                         name: "% Somatic Mutant",
                         // TODO better precompute this value -> mutation.pathogenicGermlinePercentage
-                        accessor: (mutation: any) => mutation.mutationStatus.toLowerCase() === "germline" && mutation.pathogenic === "1" ?
+                        accessor: (mutation: IMutation) => mutation.mutationStatus.toLowerCase() === "germline" && mutation.pathogenic === "1" ?
                             getOverallPercentage(mutation.countsByTumorType) : "0.0",
                         Header: HEADER_COMPONENT[ColumnId.GERMLINE]
                     },
