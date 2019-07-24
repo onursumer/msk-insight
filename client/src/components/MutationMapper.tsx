@@ -12,6 +12,7 @@ import GeneFrequencyStore from "../store/GeneFrequencyStore";
 import {FrequencySummaryCategory} from "../util/ColumnHelper";
 import {loaderWithText} from "../util/StatusHelper";
 import {ColumnId, HEADER_COMPONENT} from "./ColumnHeaderHelper";
+import {renderPercentage} from "./ColumnRenderHelper";
 import MutationTumorTypeFrequencyDecomposition from "./MutationTumorTypeFrequencyDecomposition";
 
 
@@ -48,11 +49,11 @@ function renderSubComponent(row: any) {
 }
 
 // TODO move to utils?
-function getOverallPercentage(counts: ICountByTumorType[]) {
+function getOverallFrequency(counts: ICountByTumorType[]) {
     const totalVariant = counts.map(c => c.variantCount).reduce((acc, curr) => acc + curr) || 0;
     const totalSamples = counts.map(c => c.tumorTypeCount).reduce((acc, curr) => acc + curr) || 0;
 
-    return ((totalVariant / totalSamples) * 100).toFixed(1);
+    return totalVariant / totalSamples;
 }
 
 @observer
@@ -104,17 +105,19 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                     {
                         id: ColumnId.SOMATIC,
                         name: "% Somatic Mutant",
+                        Cell: renderPercentage,
                         // TODO better precompute this value -> mutation.somaticPercentage
                         accessor: (mutation: IMutation) => mutation.mutationStatus.toLowerCase() === "somatic" ?
-                            getOverallPercentage(mutation.countsByTumorType) : "0.0",
+                            getOverallFrequency(mutation.countsByTumorType) : 0,
                         Header: HEADER_COMPONENT[ColumnId.SOMATIC]
                     },
                     {
                         id: ColumnId.GERMLINE,
-                        name: "% Somatic Mutant",
+                        name: "% Pathogenic Germline",
+                        Cell: renderPercentage,
                         // TODO better precompute this value -> mutation.pathogenicGermlinePercentage
                         accessor: (mutation: IMutation) => mutation.mutationStatus.toLowerCase() === "germline" && mutation.pathogenic === "1" ?
-                            getOverallPercentage(mutation.countsByTumorType) : "0.0",
+                            getOverallFrequency(mutation.countsByTumorType) : 0,
                         Header: HEADER_COMPONENT[ColumnId.GERMLINE]
                     },
                     {

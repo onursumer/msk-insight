@@ -10,7 +10,7 @@ import {DataStatus} from "../store/DataStatus";
 import {biallelicAccessor, germlineAccessor, somaticAccessor} from "../util/ColumnHelper";
 import {fetchTumorTypeFrequenciesByGene} from "../util/FrequencyDataUtils";
 import {ColumnId, HEADER_COMPONENT} from "./ColumnHeaderHelper";
-import FrequencyCell from "./FrequencyCell";
+import {renderPercentage} from "./ColumnRenderHelper";
 import Gene from "./Gene";
 import GeneTumorTypeFrequencyDecomposition from "./GeneTumorTypeFrequencyDecomposition";
 
@@ -22,14 +22,6 @@ interface IFrequencyTableProps
     data: IGeneFrequencySummary[];
     status: DataStatus;
     filtered?: Filter[];
-}
-
-
-function renderPercentage(cellProps: any)
-{
-    return (
-        <FrequencyCell frequency={cellProps.value || 0} />
-    );
 }
 
 function renderHugoSymbol(cellProps: any)
