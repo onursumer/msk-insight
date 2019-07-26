@@ -118,7 +118,8 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                     {
                         expander: true,
                         Expander: this.renderExpander,
-                        togglable: false
+                        togglable: false,
+                        width: 25
                     }
                 ]}
                 customMutationTableProps={{
