@@ -35,20 +35,26 @@ export function extendMutations(mutations: IMutation[]): IExtendedMutation[]
     return mutations.filter(m => m.biallelic !== "1").map(mutation => {
         const isSomatic = mutation.mutationStatus.toLowerCase() === "somatic";
         const isGermline = mutation.mutationStatus.toLowerCase() === "germline";
+        const isPathogenic = mutation.pathogenic === "1";
         const genomicLocation = extractGenomicLocation(mutation);
+
         const biallelicMutation = isGermline && genomicLocation ?
             biallelicMutationIndex[genomicLocationString(genomicLocation)] : undefined;
+
+        const pathogenicGermlineFrequency = (isGermline && isPathogenic) ?
+                calculateOverallFrequency(mutation.countsByTumorType) : 0;
+        const biallelicPathogenicGermlineFrequency = (biallelicMutation && biallelicMutation.pathogenic === "1") ?
+            calculateOverallFrequency(biallelicMutation.countsByTumorType) : 0;
+
 
         return {
             ...mutation,
             somaticFrequency: isSomatic ? calculateOverallFrequency(mutation.countsByTumorType) : 0,
             germlineFrequency: isGermline ? calculateOverallFrequency(mutation.countsByTumorType) : 0,
-            pathogenicGermlineFrequency:
-                (mutation.mutationStatus.toLowerCase() === "germline" && mutation.pathogenic === "1") ?
-                    calculateOverallFrequency(mutation.countsByTumorType) : 0,
+            pathogenicGermlineFrequency,
             biallelicGermlineFrequency: biallelicMutation ? calculateOverallFrequency(biallelicMutation.countsByTumorType) : 0,
-            biallelicPathogenicGermlineFrequency: (biallelicMutation && biallelicMutation.pathogenic === "1") ?
-                    calculateOverallFrequency(biallelicMutation.countsByTumorType) : 0,
+            biallelicPathogenicGermlineFrequency,
+            ratioBiallelicPathogenic: Math.min(1, biallelicPathogenicGermlineFrequency / pathogenicGermlineFrequency || 0),
             biallelicCountsByTumorType: biallelicMutation ? biallelicMutation.countsByTumorType : undefined
         };
     })

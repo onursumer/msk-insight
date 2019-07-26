@@ -112,7 +112,7 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                         id: ColumnId.PERCENT_BIALLELIC,
                         name: "% Biallelic",
                         Cell: renderPercentage,
-                        accessor: "biallelicPathogenicGermlineFrequency",
+                        accessor: "ratioBiallelicPathogenic",
                         Header: HEADER_COMPONENT[ColumnId.PERCENT_BIALLELIC]
                     },
                     {

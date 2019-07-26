@@ -27,5 +27,6 @@ export interface IExtendedMutation extends IMutation
     pathogenicGermlineFrequency: number;
     biallelicGermlineFrequency: number;
     biallelicPathogenicGermlineFrequency: number;
+    ratioBiallelicPathogenic: number;
     biallelicCountsByTumorType?: ICountByTumorType[],
 }
