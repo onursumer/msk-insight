@@ -2,11 +2,11 @@ import {action, computed, observable} from "mobx";
 import {observer} from "mobx-react";
 import * as React from 'react';
 
-import {IMutation} from "../../../server/src/model/Mutation";
+import {IExtendedMutation, IMutation} from "../../../server/src/model/Mutation";
 import MutationMapper from "../components/MutationMapper";
 import {DataStatus} from "../store/DataStatus";
 import GeneFrequencyStore from "../store/GeneFrequencyStore";
-import {fetchMutationsByGene} from "../util/MutationDataUtils";
+import {fetchExtendedMutationsByGene} from "../util/MutationDataUtils";
 import {loaderWithText} from "../util/StatusHelper";
 
 interface IGeneProps
@@ -55,15 +55,16 @@ class Gene extends React.Component<IGeneProps>
         );
     }
 
+    // TODO move data fetching and processing into MutationStore
     public componentDidMount()
     {
-        fetchMutationsByGene(this.hugoSymbol)
+        fetchExtendedMutationsByGene(this.hugoSymbol)
             .then(this.handleInsightDataLoad)
             .catch(this.handleInsightDataError);
     }
 
     @action.bound
-    private handleInsightDataLoad(mutations: IMutation[])
+    private handleInsightDataLoad(mutations: IExtendedMutation[])
     {
         this.insightStatus = 'complete';
         this.insightMutations = mutations;

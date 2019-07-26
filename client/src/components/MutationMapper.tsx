@@ -48,14 +48,6 @@ function renderSubComponent(row: any) {
     );
 }
 
-// TODO move to utils?
-function getOverallFrequency(counts: ICountByTumorType[]) {
-    const totalVariant = counts.map(c => c.variantCount).reduce((acc, curr) => acc + curr) || 0;
-    const totalSamples = counts.map(c => c.tumorTypeCount).reduce((acc, curr) => acc + curr) || 0;
-
-    return totalVariant / totalSamples;
-}
-
 @observer
 class MutationMapper extends React.Component<IMutationMapperProps>
 {
@@ -106,19 +98,22 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                         id: ColumnId.SOMATIC,
                         name: "% Somatic Mutant",
                         Cell: renderPercentage,
-                        // TODO better precompute this value -> mutation.somaticPercentage
-                        accessor: (mutation: IMutation) => mutation.mutationStatus.toLowerCase() === "somatic" ?
-                            getOverallFrequency(mutation.countsByTumorType) : 0,
+                        accessor: "somaticFrequency",
                         Header: HEADER_COMPONENT[ColumnId.SOMATIC]
                     },
                     {
                         id: ColumnId.GERMLINE,
                         name: "% Pathogenic Germline",
                         Cell: renderPercentage,
-                        // TODO better precompute this value -> mutation.pathogenicGermlinePercentage
-                        accessor: (mutation: IMutation) => mutation.mutationStatus.toLowerCase() === "germline" && mutation.pathogenic === "1" ?
-                            getOverallFrequency(mutation.countsByTumorType) : 0,
+                        accessor: "pathogenicGermlineFrequency",
                         Header: HEADER_COMPONENT[ColumnId.GERMLINE]
+                    },
+                    {
+                        id: ColumnId.PERCENT_BIALLELIC,
+                        name: "% Biallelic",
+                        Cell: renderPercentage,
+                        accessor: "biallelicPathogenicGermlineFrequency",
+                        Header: HEADER_COMPONENT[ColumnId.PERCENT_BIALLELIC]
                     },
                     {
                         expander: true,

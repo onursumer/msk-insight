@@ -95,6 +95,7 @@ class MutationTumorTypeFrequencyTable extends React.Component<ITumorTypeFrequenc
                     defaultSortDesc={true}
                     defaultPageSize={this.defaultPageSize}
                     showPagination={this.defaultPageSize !== this.props.data.length}
+                    minRows={0}
                     className="-striped -highlight"
                     previousText="<"
                     nextText=">"

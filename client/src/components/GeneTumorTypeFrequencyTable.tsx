@@ -121,6 +121,7 @@ class GeneTumorTypeFrequencyTable extends React.Component<ITumorTypeFrequencyTab
                     defaultSortDesc={true}
                     defaultPageSize={this.defaultPageSize}
                     className="-striped -highlight"
+                    minRows={0}
                     previousText="<"
                     nextText=">"
                 />

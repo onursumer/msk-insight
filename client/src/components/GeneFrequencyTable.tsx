@@ -114,6 +114,7 @@ class GeneFrequencyTable extends React.Component<IFrequencyTableProps>
                         desc: true
                     }]}
                     defaultSortDesc={true}
+                    minRows={0}
                     className="-striped -highlight"
                     previousText="<"
                     nextText=">"
