@@ -43,7 +43,7 @@ export function extendMutations(mutations: IMutation[]): IExtendedMutation[]
             pathogenicGermlineFrequency,
             biallelicGermlineFrequency,
             biallelicPathogenicGermlineFrequency: isPathogenic ? biallelicGermlineFrequency : 0,
-            ratioBiallelicPathogenic: mutation.biallelicCountsByTumorType && mutation.qcPassCountsByTumorType ?
+            ratioBiallelicPathogenic: isPathogenic && mutation.biallelicCountsByTumorType && mutation.qcPassCountsByTumorType ?
                 calculateTotalVariantRatio(mutation.biallelicCountsByTumorType, mutation.qcPassCountsByTumorType) : 0
         };
     })
