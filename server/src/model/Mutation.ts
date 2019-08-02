@@ -5,6 +5,12 @@ export interface ICountByTumorType
     variantCount: number;
 }
 
+export interface ITumorTypeDecomposition extends ICountByTumorType
+{
+    frequency: number;
+    biallelicRatio: number;
+}
+
 export interface IMutation
 {
     chromosome: string;
@@ -23,6 +29,7 @@ export interface IMutation
 
 export interface IExtendedMutation extends IMutation
 {
+    tumorTypeDecomposition: ITumorTypeDecomposition[];
     somaticFrequency: number;
     germlineFrequency: number;
     pathogenicGermlineFrequency: number;

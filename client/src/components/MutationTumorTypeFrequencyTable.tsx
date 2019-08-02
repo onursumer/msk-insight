@@ -3,7 +3,7 @@ import {observer} from "mobx-react";
 import * as React from "react";
 import ReactTable from "react-table";
 
-import {ICountByTumorType} from "../../../server/src/model/Mutation";
+import {ITumorTypeDecomposition} from "../../../server/src/model/Mutation";
 import FrequencyCell from "./FrequencyCell";
 
 import "react-table/react-table.css";
@@ -11,7 +11,7 @@ import "./FrequencyTable.css";
 
 interface ITumorTypeFrequencyTableProps
 {
-    data: ICountByTumorType[];
+    data: ITumorTypeDecomposition[];
     hugoSymbol: string;
 }
 
@@ -83,7 +83,14 @@ class MutationTumorTypeFrequencyTable extends React.Component<ITumorTypeFrequenc
                                 id: "frequency",
                                 Cell: renderPercentage,
                                 Header: "%",
-                                accessor: (count: ICountByTumorType) => (count.variantCount / count.tumorTypeCount),
+                                accessor: "frequency",
+                                maxWidth: 100
+                            },
+                            {
+                                id: "biallelicRatio",
+                                Cell: renderPercentage,
+                                Header: "% Biallelic",
+                                accessor: "biallelicRatio",
                                 maxWidth: 100
                             }
                         ]

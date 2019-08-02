@@ -2,7 +2,7 @@ import {action, observable} from "mobx";
 import {observer} from "mobx-react";
 import * as React from "react";
 
-import {ICountByTumorType} from "../../../server/src/model/Mutation";
+import {ITumorTypeDecomposition} from "../../../server/src/model/Mutation";
 import {DataStatus} from "../store/DataStatus";
 import MutationTumorTypeFrequencyTable from "./MutationTumorTypeFrequencyTable";
 
@@ -11,7 +11,7 @@ import "./FrequencyTable.css";
 
 interface ITumorTypeFrequencyDecompositionProps
 {
-    dataPromise: Promise<ICountByTumorType[]>;
+    dataPromise: Promise<ITumorTypeDecomposition[]>;
     hugoSymbol: string;
 }
 
@@ -19,7 +19,7 @@ interface ITumorTypeFrequencyDecompositionProps
 class MutationTumorTypeFrequencyDecomposition extends React.Component<ITumorTypeFrequencyDecompositionProps>
 {
     @observable
-    private data: ICountByTumorType[] = [];
+    private data: ITumorTypeDecomposition[] = [];
 
     @observable
     private status: DataStatus = 'pending';
@@ -44,7 +44,7 @@ class MutationTumorTypeFrequencyDecomposition extends React.Component<ITumorType
     }
 
     @action.bound
-    private handleDataLoad(frequencies: ICountByTumorType[]) {
+    private handleDataLoad(frequencies: ITumorTypeDecomposition[]) {
         this.data = frequencies;
         this.status = 'complete';
     }

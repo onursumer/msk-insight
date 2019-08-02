@@ -42,7 +42,7 @@ function renderSubComponent(row: any) {
         <div className="p-4">
             <MutationTumorTypeFrequencyDecomposition
                 hugoSymbol={row.original.hugoSymbol}
-                dataPromise={Promise.resolve(row.original.countsByTumorType.filter((c: ICountByTumorType) => c.variantCount > 0))}
+                dataPromise={Promise.resolve(row.original.tumorTypeDecomposition.filter((c: ICountByTumorType) => c.variantCount > 0))}
             />
         </div>
     );

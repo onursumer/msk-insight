@@ -1,4 +1,11 @@
-import {ICountByTumorType, IExtendedMutation, IMutation} from "../../../server/src/model/Mutation";
+import _ from "lodash";
+
+import {
+    ICountByTumorType,
+    IExtendedMutation,
+    IMutation,
+    ITumorTypeDecomposition
+} from "../../../server/src/model/Mutation";
 
 export function fetchMutationsByGene(hugoSymbol: string): Promise<IMutation[]>
 {
@@ -35,9 +42,13 @@ export function extendMutations(mutations: IMutation[]): IExtendedMutation[]
         const biallelicGermlineFrequency = (isGermline && mutation.biallelicCountsByTumorType) ?
             calculateOverallFrequency(mutation.biallelicCountsByTumorType) : 0;
 
+        const tumorTypeDecomposition: ITumorTypeDecomposition[] = generateTumorTypeDecomposition(mutation.countsByTumorType,
+            mutation.biallelicCountsByTumorType,
+            mutation.qcPassCountsByTumorType);
 
         return {
             ...mutation,
+            tumorTypeDecomposition,
             somaticFrequency: isSomatic ? calculateOverallFrequency(mutation.countsByTumorType) : 0,
             germlineFrequency: isGermline ? calculateOverallFrequency(mutation.countsByTumorType) : 0,
             pathogenicGermlineFrequency,
@@ -47,6 +58,35 @@ export function extendMutations(mutations: IMutation[]): IExtendedMutation[]
                 calculateTotalVariantRatio(mutation.biallelicCountsByTumorType, mutation.qcPassCountsByTumorType) : 0
         };
     })
+}
+
+function generateTumorTypeDecomposition(countsByTumorType: ICountByTumorType[],
+                                        biallelicCountsByTumorType?: ICountByTumorType[],
+                                        qcPassCountsByTumorType?: ICountByTumorType[])
+{
+    let biallelicTumorMap: {[tumorType: string] : ICountByTumorType};
+    let qcPassTumorMap: {[tumorType: string] : ICountByTumorType};
+
+    if (biallelicCountsByTumorType && qcPassCountsByTumorType) {
+        biallelicTumorMap = _.keyBy(biallelicCountsByTumorType, "tumorType");
+        qcPassTumorMap = _.keyBy(qcPassCountsByTumorType, "tumorType");
+    }
+
+    return countsByTumorType.map(counts => ({
+        ...counts,
+        frequency: counts.variantCount / counts.tumorTypeCount,
+        biallelicRatio: biallelicTumorMap && qcPassTumorMap ?
+            calcBiallelicRatio(biallelicTumorMap[counts.tumorType], qcPassTumorMap[counts.tumorType]): 0
+    }));
+}
+
+function calcBiallelicRatio(biallelicCountByTumorType?: ICountByTumorType,
+                            qcPassCountByTumorType?: ICountByTumorType)
+{
+    const ratio = (biallelicCountByTumorType ? biallelicCountByTumorType.variantCount : 0) /
+        (qcPassCountByTumorType ? qcPassCountByTumorType.variantCount : 0);
+
+    return ratio || 0;
 }
 
 function totalVariants(counts: ICountByTumorType[]) {
