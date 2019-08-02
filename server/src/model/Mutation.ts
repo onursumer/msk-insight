@@ -8,16 +8,17 @@ export interface ICountByTumorType
 export interface IMutation
 {
     chromosome: string;
-    countsByTumorType: ICountByTumorType[],
-    endPosition: number,
-    hugoGeneSymbol: string,
-    mutationStatus: string,
-    pathogenic: string,
-    biallelic: string,
-    penetrance: string,
-    referenceAllele: string,
-    startPosition: number,
-    variantAllele: string
+    countsByTumorType: ICountByTumorType[];
+    biallelicCountsByTumorType: ICountByTumorType[];
+    qcPassCountsByTumorType: ICountByTumorType[];
+    endPosition: number;
+    hugoGeneSymbol: string;
+    mutationStatus: string;
+    pathogenic: string;
+    penetrance: string;
+    referenceAllele: string;
+    startPosition: number;
+    variantAllele: string;
 }
 
 export interface IExtendedMutation extends IMutation
@@ -28,5 +29,4 @@ export interface IExtendedMutation extends IMutation
     biallelicGermlineFrequency: number;
     biallelicPathogenicGermlineFrequency: number;
     ratioBiallelicPathogenic: number;
-    biallelicCountsByTumorType?: ICountByTumorType[],
 }

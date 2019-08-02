@@ -129,11 +129,11 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                     [
                         {
                             group: "Somatic",
-                            filter: {mutation: [{mutationStatus: "somatic"}]}
+                            filter: {type: "mutation", values: [{mutationStatus: "somatic"}]}
                         },
                         {
                             group: "Germline",
-                            filter: {mutation: [{mutationStatus: "germline"}]}
+                            filter: {type: "mutation", values: [{mutationStatus: "germline"}]}
                         },
                     ]
                 }
