@@ -7,6 +7,11 @@ import {
     ITumorTypeDecomposition
 } from "../../../server/src/model/Mutation";
 
+export function findAllUniqueCancerTypes(mutations: Array<Partial<IMutation>>)
+{
+    return _.uniq(_.flatten(mutations.map(m => (m.countsByTumorType || []).map(c => c.tumorType))));
+}
+
 export function fetchMutationsByGene(hugoSymbol: string): Promise<IMutation[]>
 {
     return new Promise<IMutation[]>((resolve, reject) => {

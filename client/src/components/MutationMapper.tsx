@@ -3,16 +3,17 @@ import {computed} from "mobx";
 import {observer} from "mobx-react";
 import * as React from "react";
 import {
-    MutationMapper as ReactMutationMapper,
     TrackName
 } from "react-mutation-mapper";
 
 import {ICountByTumorType, IMutation} from "../../../server/src/model/Mutation";
 import GeneFrequencyStore from "../store/GeneFrequencyStore";
+import InsightMutationMapperStore from "../store/InsightMutationMapperStore";
 import {FrequencySummaryCategory} from "../util/ColumnHelper";
 import {loaderWithText} from "../util/StatusHelper";
 import {ColumnId, HEADER_COMPONENT} from "./ColumnHeaderHelper";
 import {renderPercentage} from "./ColumnRenderHelper";
+import InsightMutationMapper from "./InsightMutationMapper";
 import MutationTumorTypeFrequencyDecomposition from "./MutationTumorTypeFrequencyDecomposition";
 
 
@@ -51,6 +52,14 @@ function renderSubComponent(row: any) {
 @observer
 class MutationMapper extends React.Component<IMutationMapperProps>
 {
+    private readonly store: InsightMutationMapperStore;
+
+    constructor(props: IMutationMapperProps)
+    {
+        super(props);
+        this.store = new InsightMutationMapperStore(props.data);
+    }
+
     @computed
     private get frequencyStore() {
         return this.props.frequencyStore || new GeneFrequencyStore();
@@ -82,7 +91,8 @@ class MutationMapper extends React.Component<IMutationMapperProps>
     public render()
     {
         return (
-            <ReactMutationMapper
+            <InsightMutationMapper
+                insightMutationMapperStore={this.store}
                 hugoSymbol={this.props.hugoSymbol}
                 data={this.props.data}
                 showTranscriptDropDown={true}
@@ -92,7 +102,7 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                 mutationRates={this.mutationRates}
                 mainLoadingIndicator={this.loader}
                 tracks={[TrackName.CancerHotspots, TrackName.OncoKB, TrackName.PTM]}
-                getMutationCount={this.getMutationCount}
+                getMutationCount={this.store.getMutationCount}
                 customMutationTableColumns={[
                     {
                         id: ColumnId.SOMATIC,
@@ -137,6 +147,7 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                         },
                     ]
                 }
+                filterAppliersOverride={this.store.customFilterAppliers}
             />
         );
     }
@@ -146,15 +157,6 @@ class MutationMapper extends React.Component<IMutationMapperProps>
         return props.isExpanded ?
             <i className="fa fa-minus-circle" /> :
             <i className="fa fa-plus-circle" />;
-    }
-
-    @autobind
-    private getMutationCount(mutation: IMutation)
-    {
-        // TODO when a filter is applied on countsByTumorType field: partial count
-        return mutation.countsByTumorType
-            .map(c => c.variantCount)
-            .reduce((sum, count) => sum + count)
     }
 }
 
