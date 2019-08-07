@@ -3,7 +3,7 @@ import {computed, observable} from "mobx";
 import {CancerTypeFilter, DataFilterType} from "react-mutation-mapper";
 
 import {IMutation} from "../../../server/src/model/Mutation";
-import {applyCancerTypeFilter} from "../util/FilterUtils";
+import {applyCancerTypeFilter, containsCancerType} from "../util/FilterUtils";
 import {findAllUniqueCancerTypes} from "../util/MutationDataUtils";
 
 
@@ -40,9 +40,9 @@ export class InsightMutationMapperStore
     @autobind
     public getMutationCount(mutation: IMutation)
     {
-        // TODO we need to apply existing CancerTypeFilter filters on the countsByTumorType field
+        // take the current cancer type filter into account
         return mutation.countsByTumorType
-            .map(c => c.variantCount)
+            .map(c => containsCancerType(this.cancerTypeFilter, c.tumorType) ? c.variantCount : 0)
             .reduce((sum, count) => sum + count)
     }
 }

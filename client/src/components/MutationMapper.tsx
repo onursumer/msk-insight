@@ -10,6 +10,7 @@ import {ICountByTumorType, IMutation} from "../../../server/src/model/Mutation";
 import GeneFrequencyStore from "../store/GeneFrequencyStore";
 import InsightMutationMapperStore from "../store/InsightMutationMapperStore";
 import {FrequencySummaryCategory} from "../util/ColumnHelper";
+import {containsCancerType} from "../util/FilterUtils";
 import {loaderWithText} from "../util/StatusHelper";
 import {ColumnId, HEADER_COMPONENT} from "./ColumnHeaderHelper";
 import {renderPercentage} from "./ColumnRenderHelper";
@@ -36,17 +37,6 @@ interface IMutationMapperProps
     data: IMutation[];
     frequencyStore?: GeneFrequencyStore;
     hugoSymbol: string;
-}
-
-function renderSubComponent(row: any) {
-    return (
-        <div className="p-4">
-            <MutationTumorTypeFrequencyDecomposition
-                hugoSymbol={row.original.hugoSymbol}
-                dataPromise={Promise.resolve(row.original.tumorTypeDecomposition.filter((c: ICountByTumorType) => c.variantCount > 0))}
-            />
-        </div>
-    );
 }
 
 @observer
@@ -133,7 +123,7 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                     }
                 ]}
                 customMutationTableProps={{
-                    SubComponent: renderSubComponent
+                    SubComponent: this.renderSubComponent
                 }}
                 groupFilters={
                     [
@@ -149,6 +139,25 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                 }
                 filterAppliersOverride={this.store.customFilterAppliers}
             />
+        );
+    }
+
+    @autobind
+    private renderSubComponent(row: any) {
+        return (
+            <div className="p-4">
+                <MutationTumorTypeFrequencyDecomposition
+                    hugoSymbol={row.original.hugoSymbol}
+                    dataPromise={
+                        Promise.resolve(
+                            row.original.tumorTypeDecomposition.filter(
+                                (c: ICountByTumorType) =>
+                                    c.variantCount > 0 && containsCancerType(this.store.cancerTypeFilter, c.tumorType)
+                            )
+                        )
+                    }
+                />
+            </div>
         );
     }
 

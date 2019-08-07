@@ -12,3 +12,8 @@ export function applyCancerTypeFilter(filter: CancerTypeFilter, mutation: IMutat
             c.variantCount > 0 &&
             c.tumorType.toLowerCase().includes(v.toLowerCase())) !== undefined) !== undefined
 }
+
+export function containsCancerType(filter: CancerTypeFilter, cancerType: string)
+{
+    return filter.values.find(v => cancerType.toLowerCase().includes(v.toLowerCase())) !== undefined;
+}
