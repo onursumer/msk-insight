@@ -2,35 +2,41 @@ import {action, computed} from "mobx";
 import {observer} from "mobx-react";
 import * as React from 'react';
 import {
-    CancerTypeFilter,
     CancerTypeSelector,
     DataFilterType,
     MutationMapper as ReactMutationMapper,
-    MutationMapperProps
+    MutationMapperProps,
+    MutationMapperStore
 } from "react-mutation-mapper";
 
-import InsightMutationMapperStore from "../store/InsightMutationMapperStore";
+import {CANCER_TYPE_FILTER_ID, findCancerTypeFilter} from "../util/FilterUtils";
+import {findAllUniqueCancerTypes} from "../util/MutationDataUtils";
 
 export interface IInsightMutationMapperProps extends MutationMapperProps
 {
-    insightMutationMapperStore: InsightMutationMapperStore;
+    onInitStore?: (mutationMapperStore: MutationMapperStore) => void;
 }
 
 @observer
 export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationMapperProps>
 {
     @computed
-    protected get cancerTypes() {
-        return this.props.insightMutationMapperStore.cancerTypes;
+    public get cancerTypes() {
+        return findAllUniqueCancerTypes(this.props.data || []).sort();
     }
 
     @computed
-    protected get cancerTypeFilter() {
-        return this.props.insightMutationMapperStore.cancerTypeFilter;
+    public get cancerTypeFilter() {
+        return findCancerTypeFilter(this.store.dataStore.dataFilters);
     }
 
-    protected set cancerTypeFilter(cancerTypeFilter: CancerTypeFilter) {
-        this.props.insightMutationMapperStore.cancerTypeFilter = cancerTypeFilter;
+    constructor(props: IInsightMutationMapperProps)
+    {
+        super(props);
+
+        if (props.onInitStore) {
+            props.onInitStore(this.store);
+        }
     }
 
     protected get mutationFilterPanel(): JSX.Element | null
@@ -55,7 +61,8 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
     @action.bound
     protected onCancerTypeSelect(selectedCancerTypeIds: string[])
     {
-        this.cancerTypeFilter = {
+        const cancerTypeFilter = {
+            id: CANCER_TYPE_FILTER_ID,
             type: DataFilterType.CANCER_TYPE,
             values: selectedCancerTypeIds
         };
@@ -65,7 +72,7 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
             // include all filters except the previous cancer type filter
             ...this.store.dataStore.dataFilters.filter(f => f.type !== DataFilterType.CANCER_TYPE),
             // include the new cancer type filter
-            this.cancerTypeFilter
+            cancerTypeFilter
         ]);
     }
 }

@@ -1,16 +1,16 @@
 import autobind from "autobind-decorator";
-import {computed} from "mobx";
+import {action, computed, observable} from "mobx";
 import {observer} from "mobx-react";
 import * as React from "react";
 import {
+    MutationMapperStore,
     TrackName
 } from "react-mutation-mapper";
 
 import {ICountByTumorType, IMutation} from "../../../server/src/model/Mutation";
 import GeneFrequencyStore from "../store/GeneFrequencyStore";
-import InsightMutationMapperStore from "../store/InsightMutationMapperStore";
 import {FrequencySummaryCategory} from "../util/ColumnHelper";
-import {containsCancerType} from "../util/FilterUtils";
+import {applyCancerTypeFilter, containsCancerType, findCancerTypeFilter} from "../util/FilterUtils";
 import {loaderWithText} from "../util/StatusHelper";
 import {ColumnId, HEADER_COMPONENT} from "./ColumnHeaderHelper";
 import {renderPercentage} from "./ColumnRenderHelper";
@@ -42,47 +42,14 @@ interface IMutationMapperProps
 @observer
 class MutationMapper extends React.Component<IMutationMapperProps>
 {
-    private readonly store: InsightMutationMapperStore;
-
-    constructor(props: IMutationMapperProps)
-    {
-        super(props);
-        this.store = new InsightMutationMapperStore(props.data);
-    }
-
-    @computed
-    private get frequencyStore() {
-        return this.props.frequencyStore || new GeneFrequencyStore();
-    }
-
-    @computed
-    private get mutationRates() {
-        let rates;
-
-        if (this.frequencyStore.geneFrequencyDataStatus === 'complete') {
-            const frequencyData = this.frequencyStore.mutationFrequencyData.find(
-                f => f.hugoSymbol === this.props.hugoSymbol);
-
-            if (frequencyData) {
-                rates = frequencyData.frequencies.map(f => ({
-                    ...MUTATION_RATE_HELPER[f.category],
-                    rate: f.frequency * 100
-                }));
-            }
-        }
-
-        return rates;
-    }
-
-    private get loader() {
-        return loaderWithText("Annotating with Genome Nexus...");
-    }
+    @observable
+    private store: MutationMapperStore | undefined;
 
     public render()
     {
         return (
             <InsightMutationMapper
-                insightMutationMapperStore={this.store}
+                onInitStore={this.onInitStore}
                 hugoSymbol={this.props.hugoSymbol}
                 data={this.props.data}
                 showTranscriptDropDown={true}
@@ -92,7 +59,7 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                 mutationRates={this.mutationRates}
                 mainLoadingIndicator={this.loader}
                 tracks={[TrackName.CancerHotspots, TrackName.OncoKB, TrackName.PTM]}
-                getMutationCount={this.store.getMutationCount}
+                getMutationCount={this.getMutationCount}
                 customMutationTableColumns={[
                     {
                         id: ColumnId.SOMATIC,
@@ -137,9 +104,59 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                         },
                     ]
                 }
-                filterAppliersOverride={this.store.customFilterAppliers}
+                filterAppliersOverride={this.customFilterAppliers}
             />
         );
+    }
+
+    @computed
+    private get cancerTypeFilter()
+    {
+        return this.store ? findCancerTypeFilter(this.store.dataStore.dataFilters): undefined;
+    }
+
+    @computed
+    private get frequencyStore() {
+        return this.props.frequencyStore || new GeneFrequencyStore();
+    }
+
+    @computed
+    private get mutationRates() {
+        let rates;
+
+        if (this.frequencyStore.geneFrequencyDataStatus === 'complete') {
+            const frequencyData = this.frequencyStore.mutationFrequencyData.find(
+                f => f.hugoSymbol === this.props.hugoSymbol);
+
+            if (frequencyData) {
+                rates = frequencyData.frequencies.map(f => ({
+                    ...MUTATION_RATE_HELPER[f.category],
+                    rate: f.frequency * 100
+                }));
+            }
+        }
+
+        return rates;
+    }
+
+    private get customFilterAppliers()
+    {
+        return {
+            cancerType: applyCancerTypeFilter
+        };
+    };
+
+    @autobind
+    private getMutationCount(mutation: IMutation)
+    {
+        // take the current cancer type filter into account
+        return mutation.countsByTumorType
+            .map(c => containsCancerType(this.cancerTypeFilter, c.tumorType) ? c.variantCount : 0)
+            .reduce((sum, count) => sum + count)
+    }
+
+    private get loader() {
+        return loaderWithText("Annotating with Genome Nexus...");
     }
 
     @autobind
@@ -152,7 +169,7 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                         Promise.resolve(
                             row.original.tumorTypeDecomposition.filter(
                                 (c: ICountByTumorType) =>
-                                    c.variantCount > 0 && containsCancerType(this.store.cancerTypeFilter, c.tumorType)
+                                    c.variantCount > 0 && containsCancerType(this.cancerTypeFilter, c.tumorType)
                             )
                         )
                     }
@@ -166,6 +183,12 @@ class MutationMapper extends React.Component<IMutationMapperProps>
         return props.isExpanded ?
             <i className="fa fa-minus-circle" /> :
             <i className="fa fa-plus-circle" />;
+    }
+
+    @action.bound
+    private onInitStore(mutationMapperStore: MutationMapperStore)
+    {
+        this.store = mutationMapperStore;
     }
 }
 
