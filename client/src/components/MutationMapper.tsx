@@ -3,6 +3,7 @@ import {computed} from "mobx";
 import {observer} from "mobx-react";
 import * as React from "react";
 import {
+    CancerTypeFilter,
     DataFilterType,
     TrackName
 } from "react-mutation-mapper";
@@ -21,7 +22,8 @@ import {
     matchesMutationStatus,
     MUTATION_COUNT_FILTER_TYPE,
     MUTATION_STATUS_FILTER_TYPE,
-    MutationCountFilter
+    MutationCountFilter,
+    MutationStatusFilter
 } from "../util/FilterUtils";
 import {loaderWithText} from "../util/StatusHelper";
 import {ColumnId, HEADER_COMPONENT} from "./ColumnHeaderHelper";
@@ -115,10 +117,6 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                         },
                     ]
                 }
-                dataFilters={[{
-                    type: MUTATION_COUNT_FILTER_TYPE,
-                    values: [0]
-                }]}
                 filterAppliersOverride={this.customFilterAppliers}
             />
         );
@@ -151,8 +149,8 @@ class MutationMapper extends React.Component<IMutationMapperProps>
     private get customFilterAppliers()
     {
         return {
-            [DataFilterType.CANCER_TYPE]: applyCancerTypeFilter,
-            [MUTATION_STATUS_FILTER_TYPE]: applyMutationStatusFilter,
+            [DataFilterType.CANCER_TYPE]: this.applyCancerTypeFilter,
+            [MUTATION_STATUS_FILTER_TYPE]: this.applyMutationStatusFilter,
             [MUTATION_COUNT_FILTER_TYPE]: this.applyMutationCountFilter
         };
     };
@@ -170,6 +168,23 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                     matchesMutationStatus(mutationStatusFilter, mutation, t)
                 ) ? t.variantCount : 0)
             .reduce((sum, count) => sum + count)
+    }
+
+    private get mutationCountFilter() {
+        return {
+            type: MUTATION_COUNT_FILTER_TYPE,
+            values: [0]
+        };
+    }
+
+    @autobind
+    private applyCancerTypeFilter(filter: CancerTypeFilter, mutation: IExtendedMutation) {
+        return applyCancerTypeFilter(filter, mutation) && this.applyMutationCountFilter(this.mutationCountFilter, mutation);
+    }
+
+    @autobind
+    private applyMutationStatusFilter(filter: MutationStatusFilter, mutation: IExtendedMutation) {
+        return applyMutationStatusFilter(filter, mutation) && this.applyMutationCountFilter(this.mutationCountFilter, mutation);
     }
 
     @autobind
