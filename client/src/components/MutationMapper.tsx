@@ -3,6 +3,7 @@ import {computed} from "mobx";
 import {observer} from "mobx-react";
 import * as React from "react";
 import {
+    DataFilterType,
     TrackName
 } from "react-mutation-mapper";
 
@@ -17,7 +18,10 @@ import {
     applyCancerTypeFilter,
     applyMutationStatusFilter,
     containsCancerType,
-    matchesMutationStatus
+    matchesMutationStatus,
+    MUTATION_COUNT_FILTER_TYPE,
+    MUTATION_STATUS_FILTER_TYPE,
+    MutationCountFilter
 } from "../util/FilterUtils";
 import {loaderWithText} from "../util/StatusHelper";
 import {ColumnId, HEADER_COMPONENT} from "./ColumnHeaderHelper";
@@ -111,6 +115,10 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                         },
                     ]
                 }
+                dataFilters={[{
+                    type: MUTATION_COUNT_FILTER_TYPE,
+                    values: [0]
+                }]}
                 filterAppliersOverride={this.customFilterAppliers}
             />
         );
@@ -143,8 +151,9 @@ class MutationMapper extends React.Component<IMutationMapperProps>
     private get customFilterAppliers()
     {
         return {
-            cancerType: applyCancerTypeFilter,
-            mutationStatus: applyMutationStatusFilter
+            [DataFilterType.CANCER_TYPE]: applyCancerTypeFilter,
+            [MUTATION_STATUS_FILTER_TYPE]: applyMutationStatusFilter,
+            [MUTATION_COUNT_FILTER_TYPE]: this.applyMutationCountFilter
         };
     };
 
@@ -161,6 +170,11 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                     matchesMutationStatus(mutationStatusFilter, mutation, t)
                 ) ? t.variantCount : 0)
             .reduce((sum, count) => sum + count)
+    }
+
+    @autobind
+    private applyMutationCountFilter(filter: MutationCountFilter, mutation: IExtendedMutation) {
+        return filter.values.map(v => this.getMutationCount(mutation) > v).includes(true);
     }
 
     private get loader() {

@@ -7,6 +7,7 @@ import {IExtendedMutation, IMutation, ITumorTypeDecomposition} from "../../../se
 export const CANCER_TYPE_FILTER_ID = "_insightCancerTypeFilter_";
 export const MUTATION_STATUS_FILTER_ID = "_insightMutationStatusFilter_";
 export const MUTATION_STATUS_FILTER_TYPE = "mutationStatus";
+export const MUTATION_COUNT_FILTER_TYPE = "mutationCount";
 
 export enum MutationStatusFilterValue {
     SOMATIC = "Somatic",
@@ -15,7 +16,8 @@ export enum MutationStatusFilterValue {
     BIALLELIC_PATHOGENIC_GERMLINE = "Biallelic Pathogenic Germline"
 }
 
-export type MutationStatusFilter = DataFilter<MutationStatusFilterValue>
+export type MutationStatusFilter = DataFilter<MutationStatusFilterValue>;
+export type MutationCountFilter = DataFilter<number>; // TODO this should be an interval not a single number
 
 export function applyCancerTypeFilter(filter: CancerTypeFilter, mutation: IMutation)
 {
