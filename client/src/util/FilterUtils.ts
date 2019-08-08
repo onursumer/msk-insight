@@ -2,9 +2,20 @@ import {
     CancerTypeFilter, DataFilter
 } from "react-mutation-mapper";
 
-import {IMutation} from "../../../server/src/model/Mutation";
+import {IExtendedMutation, IMutation, ITumorTypeDecomposition} from "../../../server/src/model/Mutation";
 
 export const CANCER_TYPE_FILTER_ID = "_insightCancerTypeFilter_";
+export const MUTATION_STATUS_FILTER_ID = "_insightMutationStatusFilter_";
+export const MUTATION_STATUS_FILTER_TYPE = "mutationStatus";
+
+export enum MutationStatusFilterValue {
+    SOMATIC = "Somatic",
+    GERMLINE = "Germline",
+    PATHOGENIC_GERMLINE = "Pathogenic Germline",
+    BIALLELIC_PATHOGENIC_GERMLINE = "Biallelic Pathogenic Germline"
+}
+
+export type MutationStatusFilter = DataFilter<MutationStatusFilterValue>
 
 export function applyCancerTypeFilter(filter: CancerTypeFilter, mutation: IMutation)
 {
@@ -15,12 +26,61 @@ export function applyCancerTypeFilter(filter: CancerTypeFilter, mutation: IMutat
             c.tumorType.toLowerCase().includes(v.toLowerCase())) !== undefined) !== undefined
 }
 
+export function applyMutationStatusFilter(filter: MutationStatusFilter,
+                                          mutation: IExtendedMutation,
+                                          biallelicFrequency: number = mutation.biallelicPathogenicGermlineFrequency)
+{
+    return filter.values.map(v => {
+        let match = false;
+
+        const isGermline = mutation.mutationStatus.toLowerCase().includes(
+            MutationStatusFilterValue.GERMLINE.toLowerCase());
+        const isPathogenicGermline = isGermline && mutation.pathogenic === "1";
+        const isSomatic = mutation.mutationStatus.toLowerCase().includes(
+            MutationStatusFilterValue.SOMATIC.toLowerCase());
+
+        if (v.length > 0)
+        {
+            if (v === MutationStatusFilterValue.SOMATIC) {
+                match = isSomatic;
+            }
+            else if (v === MutationStatusFilterValue.GERMLINE) {
+                match = isGermline;
+            }
+            else if (v === MutationStatusFilterValue.PATHOGENIC_GERMLINE) {
+                match = isPathogenicGermline;
+            }
+            else if (v === MutationStatusFilterValue.BIALLELIC_PATHOGENIC_GERMLINE) {
+                match = isPathogenicGermline && biallelicFrequency > 0;
+            }
+        }
+
+        return match;
+    }).includes(true);
+}
+
 export function containsCancerType(filter: CancerTypeFilter | undefined, cancerType: string)
 {
     return !filter || filter.values.find(v => cancerType.toLowerCase().includes(v.toLowerCase())) !== undefined;
 }
 
+export function matchesMutationStatus(filter: MutationStatusFilter | undefined,
+                                      mutation: IExtendedMutation,
+                                      tumorTypeDecomposition: ITumorTypeDecomposition)
+{
+    return !filter || applyMutationStatusFilter(filter, mutation, tumorTypeDecomposition.biallelicRatio);
+}
+
 export function findCancerTypeFilter(dataFilters: DataFilter[])
 {
     return dataFilters.find(f => f.id === CANCER_TYPE_FILTER_ID);
+}
+
+export function findMutationStatusFilter(dataFilters: DataFilter[])
+{
+    return dataFilters.find(f => f.id === MUTATION_STATUS_FILTER_ID);
+}
+
+export function findAvailableMutationStatusFilterValues() {
+    return Object.keys(MutationStatusFilterValue).map(key => MutationStatusFilterValue[key]);
 }

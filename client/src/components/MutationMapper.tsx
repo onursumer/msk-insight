@@ -1,16 +1,24 @@
 import autobind from "autobind-decorator";
-import {action, computed, observable} from "mobx";
+import {computed} from "mobx";
 import {observer} from "mobx-react";
 import * as React from "react";
 import {
-    MutationMapperStore,
     TrackName
 } from "react-mutation-mapper";
 
-import {ICountByTumorType, IMutation} from "../../../server/src/model/Mutation";
+import {
+    IExtendedMutation,
+    IMutation,
+    ITumorTypeDecomposition
+} from "../../../server/src/model/Mutation";
 import GeneFrequencyStore from "../store/GeneFrequencyStore";
 import {FrequencySummaryCategory} from "../util/ColumnHelper";
-import {applyCancerTypeFilter, containsCancerType, findCancerTypeFilter} from "../util/FilterUtils";
+import {
+    applyCancerTypeFilter,
+    applyMutationStatusFilter,
+    containsCancerType,
+    matchesMutationStatus
+} from "../util/FilterUtils";
 import {loaderWithText} from "../util/StatusHelper";
 import {ColumnId, HEADER_COMPONENT} from "./ColumnHeaderHelper";
 import {renderPercentage} from "./ColumnRenderHelper";
@@ -42,14 +50,13 @@ interface IMutationMapperProps
 @observer
 class MutationMapper extends React.Component<IMutationMapperProps>
 {
-    @observable
-    private store: MutationMapperStore | undefined;
+    private insightMutationMapper: InsightMutationMapper | undefined;
 
     public render()
     {
         return (
             <InsightMutationMapper
-                onInitStore={this.onInitStore}
+                ref={this.mutationMapperRefHandler}
                 hugoSymbol={this.props.hugoSymbol}
                 data={this.props.data}
                 showTranscriptDropDown={true}
@@ -110,12 +117,6 @@ class MutationMapper extends React.Component<IMutationMapperProps>
     }
 
     @computed
-    private get cancerTypeFilter()
-    {
-        return this.store ? findCancerTypeFilter(this.store.dataStore.dataFilters): undefined;
-    }
-
-    @computed
     private get frequencyStore() {
         return this.props.frequencyStore || new GeneFrequencyStore();
     }
@@ -142,16 +143,23 @@ class MutationMapper extends React.Component<IMutationMapperProps>
     private get customFilterAppliers()
     {
         return {
-            cancerType: applyCancerTypeFilter
+            cancerType: applyCancerTypeFilter,
+            mutationStatus: applyMutationStatusFilter
         };
     };
 
     @autobind
-    private getMutationCount(mutation: IMutation)
+    private getMutationCount(mutation: IExtendedMutation)
     {
-        // take the current cancer type filter into account
-        return mutation.countsByTumorType
-            .map(c => containsCancerType(this.cancerTypeFilter, c.tumorType) ? c.variantCount : 0)
+        const cancerTypeFilter = this.insightMutationMapper ? this.insightMutationMapper.cancerTypeFilter : undefined;
+        const mutationStatusFilter = this.insightMutationMapper ? this.insightMutationMapper.mutationStatusFilter : undefined;
+
+        // take the current cancer type and mutation status filter into account
+        return mutation.tumorTypeDecomposition
+            .map(t => (
+                    containsCancerType(cancerTypeFilter, t.tumorType) &&
+                    matchesMutationStatus(mutationStatusFilter, mutation, t)
+                ) ? t.variantCount : 0)
             .reduce((sum, count) => sum + count)
     }
 
@@ -168,8 +176,11 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                     dataPromise={
                         Promise.resolve(
                             row.original.tumorTypeDecomposition.filter(
-                                (c: ICountByTumorType) =>
-                                    c.variantCount > 0 && containsCancerType(this.cancerTypeFilter, c.tumorType)
+                                (c: ITumorTypeDecomposition) =>
+                                    c.variantCount > 0 && containsCancerType(
+                                        this.insightMutationMapper ?
+                                            this.insightMutationMapper.cancerTypeFilter : undefined,
+                                        c.tumorType)
                             )
                         )
                     }
@@ -185,10 +196,10 @@ class MutationMapper extends React.Component<IMutationMapperProps>
             <i className="fa fa-plus-circle" />;
     }
 
-    @action.bound
-    private onInitStore(mutationMapperStore: MutationMapperStore)
+    @autobind
+    private mutationMapperRefHandler(mutationMapper: InsightMutationMapper)
     {
-        this.store = mutationMapperStore;
+        this.insightMutationMapper = mutationMapper;
     }
 }
 

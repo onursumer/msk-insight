@@ -2,19 +2,24 @@ import {action, computed} from "mobx";
 import {observer} from "mobx-react";
 import * as React from 'react';
 import {
-    CancerTypeSelector,
     DataFilterType,
     MutationMapper as ReactMutationMapper,
-    MutationMapperProps,
-    MutationMapperStore
+    MutationMapperProps
 } from "react-mutation-mapper";
 
-import {CANCER_TYPE_FILTER_ID, findCancerTypeFilter} from "../util/FilterUtils";
+import {
+    CANCER_TYPE_FILTER_ID,
+    findAvailableMutationStatusFilterValues,
+    findCancerTypeFilter,
+    findMutationStatusFilter, MUTATION_STATUS_FILTER_ID, MUTATION_STATUS_FILTER_TYPE
+} from "../util/FilterUtils";
 import {findAllUniqueCancerTypes} from "../util/MutationDataUtils";
+import CancerTypeSelector from "./CancerTypeSelector";
+import MutationStatusSelector from "./MutationStatusSelector";
 
 export interface IInsightMutationMapperProps extends MutationMapperProps
 {
-    onInitStore?: (mutationMapperStore: MutationMapperStore) => void;
+    ref?: (mutationMapper: InsightMutationMapper) => void;
 }
 
 @observer
@@ -30,12 +35,17 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
         return findCancerTypeFilter(this.store.dataStore.dataFilters);
     }
 
+    @computed
+    public get mutationStatusFilter() {
+        return findMutationStatusFilter(this.store.dataStore.dataFilters);
+    }
+
     constructor(props: IInsightMutationMapperProps)
     {
         super(props);
 
-        if (props.onInitStore) {
-            props.onInitStore(this.store);
+        if (props.ref) {
+            props.ref(this);
         }
     }
 
@@ -43,16 +53,26 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
     {
         return (
             <div>
-                <div>Filters</div>
-                <div
-                    className="small"
-                    style={{width: 180}}
+                <h5
+                    style={{textAlign: "center"}}
                 >
-                    <CancerTypeSelector
-                        filter={this.cancerTypeFilter}
-                        cancerTypes={this.cancerTypes}
-                        onSelect={this.onCancerTypeSelect}
-                    />
+                    Filters
+                </h5>
+                <div className="small" style={{display: "flex"}}>
+                    <div style={{width: 180}}>
+                        <CancerTypeSelector
+                            filter={this.cancerTypeFilter}
+                            availableValues={this.cancerTypes}
+                            onSelect={this.onCancerTypeSelect}
+                        />
+                    </div>
+                    <div style={{width: 180}}>
+                        <MutationStatusSelector
+                            filter={this.mutationStatusFilter}
+                            availableValues={findAvailableMutationStatusFilterValues()}
+                            onSelect={this.onMutationStatusSelect}
+                        />
+                    </div>
                 </div>
             </div>
         );
@@ -70,9 +90,27 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
         // replace the existing cancer type filter with the current one
         this.store.dataStore.setDataFilters([
             // include all filters except the previous cancer type filter
-            ...this.store.dataStore.dataFilters.filter(f => f.type !== DataFilterType.CANCER_TYPE),
+            ...this.store.dataStore.dataFilters.filter(f => f.id !== CANCER_TYPE_FILTER_ID),
             // include the new cancer type filter
             cancerTypeFilter
+        ]);
+    }
+
+    @action.bound
+    protected onMutationStatusSelect(selectedMutationStatusIds: string[])
+    {
+        const mutationStatusFilter = {
+            id: MUTATION_STATUS_FILTER_ID,
+            type: MUTATION_STATUS_FILTER_TYPE,
+            values: selectedMutationStatusIds
+        };
+
+        // replace the existing cancer type filter with the current one
+        this.store.dataStore.setDataFilters([
+            // include all filters except the previous cancer type filter
+            ...this.store.dataStore.dataFilters.filter(f => f.id !== MUTATION_STATUS_FILTER_ID),
+            // include the new cancer type filter
+            mutationStatusFilter
         ]);
     }
 }
