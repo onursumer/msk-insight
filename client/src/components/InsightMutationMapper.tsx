@@ -27,6 +27,11 @@ export interface IInsightMutationMapperProps extends MutationMapperProps
     onInit?: (mutationMapper: InsightMutationMapper) => void;
 }
 
+const DROPDOWN_STYLE = {
+    width: 200,
+    paddingBottom: "0.3rem"
+};
+
 @observer
 export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationMapperProps>
 {
@@ -73,24 +78,22 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
                 >
                     Filters
                 </h5>
-                <div className="small" style={{display: "flex"}}>
-                    <div style={{width: 180}}>
+                <div className="small">
+                    <div style={DROPDOWN_STYLE}>
                         <CancerTypeSelector
                             filter={this.cancerTypeFilter}
                             options={this.cancerTypesOptions}
                             onSelect={this.onCancerTypeSelect}
                         />
                     </div>
-                    <div style={{width: 180}}>
+                    <div style={DROPDOWN_STYLE}>
                         <MutationStatusSelector
                             filter={this.mutationStatusFilter}
                             options={getMutationStatusFilterOptions()}
                             onSelect={this.onMutationStatusSelect}
                         />
                     </div>
-                </div>
-                <div className="small" style={{display: "flex"}}>
-                    <div style={{width: 180}}>
+                    <div style={DROPDOWN_STYLE}>
                         <ProteinImpactTypeSelector
                             filter={this.mutationTypeFilter}
                             onSelect={this.onProteinImpactTypeSelect}
