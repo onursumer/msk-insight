@@ -74,7 +74,7 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
         return (
             <div>
                 <h5
-                    style={{textAlign: "center"}}
+                    style={{marginTop: "1rem"}}
                 >
                     Filters
                 </h5>
