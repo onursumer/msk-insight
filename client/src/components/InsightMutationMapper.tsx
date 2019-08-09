@@ -4,14 +4,19 @@ import * as React from 'react';
 import {
     DataFilterType,
     MutationMapper as ReactMutationMapper,
-    MutationMapperProps
+    MutationMapperProps,
+    ProteinImpactTypeSelector
 } from "react-mutation-mapper";
 
 import {
     CANCER_TYPE_FILTER_ID,
-    findAvailableMutationStatusFilterValues,
     findCancerTypeFilter,
-    findMutationStatusFilter, MUTATION_STATUS_FILTER_ID, MUTATION_STATUS_FILTER_TYPE
+    findMutationStatusFilter,
+    findMutationTypeFilter,
+    getMutationStatusFilterOptions,
+    MUTATION_STATUS_FILTER_ID,
+    MUTATION_STATUS_FILTER_TYPE,
+    PROTEIN_IMPACT_TYPE_FILTER_ID
 } from "../util/FilterUtils";
 import {findAllUniqueCancerTypes} from "../util/MutationDataUtils";
 import CancerTypeSelector from "./CancerTypeSelector";
@@ -19,7 +24,7 @@ import MutationStatusSelector from "./MutationStatusSelector";
 
 export interface IInsightMutationMapperProps extends MutationMapperProps
 {
-    ref?: (mutationMapper: InsightMutationMapper) => void;
+    onInit?: (mutationMapper: InsightMutationMapper) => void;
 }
 
 @observer
@@ -28,6 +33,11 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
     @computed
     public get cancerTypes() {
         return findAllUniqueCancerTypes(this.props.data || []).sort();
+    }
+
+    @computed
+    public get cancerTypesOptions() {
+        return this.cancerTypes.map(t => ({value: t}));
     }
 
     @computed
@@ -40,12 +50,17 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
         return findMutationStatusFilter(this.store.dataStore.dataFilters);
     }
 
+    @computed
+    public get mutationTypeFilter() {
+        return findMutationTypeFilter(this.store.dataStore.dataFilters);
+    }
+
     constructor(props: IInsightMutationMapperProps)
     {
         super(props);
 
-        if (props.ref) {
-            props.ref(this);
+        if (props.onInit) {
+            props.onInit(this);
         }
     }
 
@@ -62,15 +77,23 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
                     <div style={{width: 180}}>
                         <CancerTypeSelector
                             filter={this.cancerTypeFilter}
-                            availableValues={this.cancerTypes}
+                            options={this.cancerTypesOptions}
                             onSelect={this.onCancerTypeSelect}
                         />
                     </div>
                     <div style={{width: 180}}>
                         <MutationStatusSelector
                             filter={this.mutationStatusFilter}
-                            availableValues={findAvailableMutationStatusFilterValues()}
+                            options={getMutationStatusFilterOptions()}
                             onSelect={this.onMutationStatusSelect}
+                        />
+                    </div>
+                </div>
+                <div className="small" style={{display: "flex"}}>
+                    <div style={{width: 180}}>
+                        <ProteinImpactTypeSelector
+                            filter={this.mutationTypeFilter}
+                            onSelect={this.onProteinImpactTypeSelect}
                         />
                     </div>
                 </div>
@@ -111,6 +134,24 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
             ...this.store.dataStore.dataFilters.filter(f => f.id !== MUTATION_STATUS_FILTER_ID),
             // include the new cancer type filter
             mutationStatusFilter
+        ]);
+    }
+
+    @action.bound
+    protected onProteinImpactTypeSelect(selectedMutationTypeIds: string[])
+    {
+        const proteinImpactTypeFilter = {
+            id: PROTEIN_IMPACT_TYPE_FILTER_ID,
+            type: DataFilterType.PROTEIN_IMPACT_TYPE,
+            values: selectedMutationTypeIds.map(v => v.toLowerCase())
+        };
+
+        // replace the existing cancer type filter with the current one
+        this.store.dataStore.setDataFilters([
+            // include all filters except the previous cancer type filter
+            ...this.store.dataStore.dataFilters.filter(f => f.id !== PROTEIN_IMPACT_TYPE_FILTER_ID),
+            // include the new cancer type filter
+            proteinImpactTypeFilter
         ]);
     }
 }

@@ -6,6 +6,7 @@ import {IExtendedMutation, IMutation, ITumorTypeDecomposition} from "../../../se
 
 export const CANCER_TYPE_FILTER_ID = "_insightCancerTypeFilter_";
 export const MUTATION_STATUS_FILTER_ID = "_insightMutationStatusFilter_";
+export const PROTEIN_IMPACT_TYPE_FILTER_ID = "_insightProteinImpactTypeFilter_";
 export const MUTATION_STATUS_FILTER_TYPE = "mutationStatus";
 export const MUTATION_COUNT_FILTER_TYPE = "mutationCount";
 
@@ -83,6 +84,11 @@ export function findMutationStatusFilter(dataFilters: DataFilter[])
     return dataFilters.find(f => f.id === MUTATION_STATUS_FILTER_ID);
 }
 
-export function findAvailableMutationStatusFilterValues() {
-    return Object.keys(MutationStatusFilterValue).map(key => MutationStatusFilterValue[key]);
+export function findMutationTypeFilter(dataFilters: DataFilter[])
+{
+    return dataFilters.find(f => f.id === PROTEIN_IMPACT_TYPE_FILTER_ID);
+}
+
+export function getMutationStatusFilterOptions() {
+    return Object.keys(MutationStatusFilterValue).map(key => ({value: MutationStatusFilterValue[key]}));
 }

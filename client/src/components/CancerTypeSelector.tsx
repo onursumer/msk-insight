@@ -7,7 +7,7 @@ export class CancerTypeSelector extends DropdownSelector
 {
     public static defaultProps: Partial<DropdownSelectorProps> = {
         name: "cancerTypeFilter",
-        placeholder: "Cancer Types",
+        placeholder: "Cancer Type",
         showControls: true
     };
 }

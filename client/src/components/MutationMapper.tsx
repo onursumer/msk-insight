@@ -62,7 +62,7 @@ class MutationMapper extends React.Component<IMutationMapperProps>
     {
         return (
             <InsightMutationMapper
-                ref={this.mutationMapperRefHandler}
+                onInit={this.onMutationMapperInit}
                 hugoSymbol={this.props.hugoSymbol}
                 data={this.props.data}
                 showTranscriptDropDown={true}
@@ -226,7 +226,7 @@ class MutationMapper extends React.Component<IMutationMapperProps>
     }
 
     @autobind
-    private mutationMapperRefHandler(mutationMapper: InsightMutationMapper)
+    private onMutationMapperInit(mutationMapper: InsightMutationMapper)
     {
         this.insightMutationMapper = mutationMapper;
     }
