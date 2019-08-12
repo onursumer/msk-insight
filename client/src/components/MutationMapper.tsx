@@ -66,7 +66,6 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                 hugoSymbol={this.props.hugoSymbol}
                 data={this.props.data}
                 showTranscriptDropDown={true}
-                genomeNexusUrl="https://www.genomenexus.org/beta"
                 showOnlyAnnotatedTranscriptsInDropdown={true}
                 filterMutationsBySelectedTranscript={true}
                 mutationRates={this.mutationRates}
