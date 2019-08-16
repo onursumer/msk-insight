@@ -13,6 +13,7 @@ export const MUTATION_COUNT_FILTER_TYPE = "mutationCount";
 export enum MutationStatusFilterValue {
     SOMATIC = "Somatic",
     GERMLINE = "Germline",
+    BENIGN_GERMLINE = "Benign Germline",
     PATHOGENIC_GERMLINE = "Pathogenic Germline",
     BIALLELIC_PATHOGENIC_GERMLINE = "Biallelic Pathogenic Germline"
 }
@@ -39,6 +40,7 @@ export function applyMutationStatusFilter(filter: MutationStatusFilter,
         const isGermline = mutation.mutationStatus.toLowerCase().includes(
             MutationStatusFilterValue.GERMLINE.toLowerCase());
         const isPathogenicGermline = isGermline && mutation.pathogenic === "1";
+        const isBenignGermline = isGermline && !isPathogenicGermline;
         const isSomatic = mutation.mutationStatus.toLowerCase().includes(
             MutationStatusFilterValue.SOMATIC.toLowerCase());
 
@@ -49,6 +51,9 @@ export function applyMutationStatusFilter(filter: MutationStatusFilter,
             }
             else if (v === MutationStatusFilterValue.GERMLINE) {
                 match = isGermline;
+            }
+            else if (v === MutationStatusFilterValue.BENIGN_GERMLINE) {
+                match = isBenignGermline;
             }
             else if (v === MutationStatusFilterValue.PATHOGENIC_GERMLINE) {
                 match = isPathogenicGermline;
@@ -90,5 +95,10 @@ export function findMutationTypeFilter(dataFilters: DataFilter[])
 }
 
 export function getMutationStatusFilterOptions() {
-    return Object.keys(MutationStatusFilterValue).map(key => ({value: MutationStatusFilterValue[key]}));
+    return [
+        {value: MutationStatusFilterValue.SOMATIC},
+        {value: MutationStatusFilterValue.BENIGN_GERMLINE},
+        {value: MutationStatusFilterValue.PATHOGENIC_GERMLINE},
+        {value: MutationStatusFilterValue.BIALLELIC_PATHOGENIC_GERMLINE},
+    ]
 }
