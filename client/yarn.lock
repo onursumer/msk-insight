@@ -2042,10 +2042,10 @@ caseless@~0.12.0:
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
   integrity sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw=
 
-cbioportal-frontend-commons@^0.0.17:
-  version "0.0.17"
-  resolved "https://registry.yarnpkg.com/cbioportal-frontend-commons/-/cbioportal-frontend-commons-0.0.17.tgz#de2b1418fef0392291debed1a615104be52528a8"
-  integrity sha512-i7v1XLMHAHXnkJxg32cQhIkNtE84S2u5UDtiPAWMZtCnOb8JH/z3zoidgZ4w4y19Vw8TpJydTtuyzpszV/JPFQ==
+cbioportal-frontend-commons@^0.0.18:
+  version "0.0.18"
+  resolved "https://registry.yarnpkg.com/cbioportal-frontend-commons/-/cbioportal-frontend-commons-0.0.18.tgz#9163f0ac3f670f396dd4edf8498a42b6eb54f93a"
+  integrity sha512-8zalWWA/3wJWFOuJV19xhejLXOyBhi570UOYGmRQm4JnZQlpBAviOmYLWuLK6TQsubx9HPB0EuQWiIef5IP+/A==
   dependencies:
     autobind-decorator "^2.1.0"
     babel-polyfill "^6.22.0"
@@ -2059,7 +2059,7 @@ cbioportal-frontend-commons@^0.0.17:
     rc-tooltip "3.7.3"
     react "^16.8.4"
     react-file-download "^0.3.2"
-    react-select2 "npm:react-select"
+    react-select "^3.0.4"
     save-svg-as-png "^1.4.6"
     seamless-immutable "^7.0.1"
     superagent "^3.8.3"
@@ -7746,13 +7746,13 @@ react-motion@^0.5.2:
     prop-types "^15.5.8"
     raf "^3.1.0"
 
-react-mutation-mapper@0.3.0-alpha.2:
-  version "0.3.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/react-mutation-mapper/-/react-mutation-mapper-0.3.0-alpha.2.tgz#68d380b031a9fc2a3b41e2186351dda8aea7d40a"
-  integrity sha512-mYNDx1RXdK+HPNbKj6AM5tBl+HSzid9fRTMXcFoZDCej4b07pQK3Uhdq7IV1sg1sNsKMZwVoShPvCSKJZ1sSUw==
+react-mutation-mapper@0.3.0-alpha.3:
+  version "0.3.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/react-mutation-mapper/-/react-mutation-mapper-0.3.0-alpha.3.tgz#069f7f59503ae7f21e76b845d0dc82c728a0b61c"
+  integrity sha512-J9320m6cnEwNru9LN771Mh8ews0asJWsFaL6GfFFjbGcyYrU2vGo8kmB2oCFqECaHeOPD6HR+MwH89TNLuDlEA==
   dependencies:
     autobind-decorator "^2.4.0"
-    cbioportal-frontend-commons "^0.0.17"
+    cbioportal-frontend-commons "^0.0.18"
     classnames "^2.2.6"
     jquery "^3.3.1"
     lodash "^4.17.11"
@@ -7868,8 +7868,7 @@ react-scripts-ts@3.1.0:
   optionalDependencies:
     fsevents "^1.1.3"
 
-"react-select2@npm:react-select", react-select@^3.0.4:
-  name react-select2
+react-select@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-select/-/react-select-3.0.4.tgz#16bde37c24fd4f6444914d4681e78f15ffbc86d3"
   integrity sha512-fbVISKa/lSUlLsltuatfUiKcWCNvdLXxFFyrzVQCBUsjxJZH/m7UMPdw/ywmRixAmwXAP++MdbNNZypOsiDEfA==
