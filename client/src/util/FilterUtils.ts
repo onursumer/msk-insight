@@ -1,5 +1,5 @@
 import {
-    CancerTypeFilter, DataFilter
+    CancerTypeFilter, DataFilter, DataStore
 } from "react-mutation-mapper";
 
 import {IExtendedMutation, IMutation, ITumorTypeDecomposition} from "../../../server/src/model/Mutation";
@@ -101,4 +101,30 @@ export function getMutationStatusFilterOptions() {
         {value: MutationStatusFilterValue.PATHOGENIC_GERMLINE},
         {value: MutationStatusFilterValue.BIALLELIC_PATHOGENIC_GERMLINE},
     ]
+}
+
+export function onDropdownOptionSelect(selectedValues: string[],
+                                       allValuesSelected: boolean,
+                                       dataStore: DataStore,
+                                       dataFilterType: string,
+                                       dataFilterId: string)
+{
+    // all other filters except the current filter with the given data filter id
+    const otherFilters = dataStore.dataFilters.filter((f: DataFilter) => f.id !== dataFilterId);
+
+    if (allValuesSelected) {
+        // if all values are selected just remove the existing filter with the given data filter id
+        // (assuming that no filtering required if everything is selected)
+        dataStore.setDataFilters(otherFilters);
+    }
+    else {
+        const dataFilter = {
+            id: dataFilterId,
+            type: dataFilterType,
+            values: selectedValues
+        };
+
+        // replace the existing data filter wrt the current selection (other filters + new data filter)
+        dataStore.setDataFilters([...otherFilters, dataFilter]);
+    }
 }

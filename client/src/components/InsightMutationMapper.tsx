@@ -16,6 +16,7 @@ import {
     getMutationStatusFilterOptions,
     MUTATION_STATUS_FILTER_ID,
     MUTATION_STATUS_FILTER_TYPE,
+    onDropdownOptionSelect,
     PROTEIN_IMPACT_TYPE_FILTER_ID
 } from "../util/FilterUtils";
 import {findAllUniqueCancerTypes} from "../util/MutationDataUtils";
@@ -105,57 +106,33 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
     }
 
     @action.bound
-    protected onCancerTypeSelect(selectedCancerTypeIds: string[])
+    protected onCancerTypeSelect(selectedCancerTypeIds: string[], allValuesSelected: boolean)
     {
-        const cancerTypeFilter = {
-            id: CANCER_TYPE_FILTER_ID,
-            type: DataFilterType.CANCER_TYPE,
-            values: selectedCancerTypeIds
-        };
-
-        // replace the existing cancer type filter with the current one
-        this.store.dataStore.setDataFilters([
-            // include all filters except the previous cancer type filter
-            ...this.store.dataStore.dataFilters.filter(f => f.id !== CANCER_TYPE_FILTER_ID),
-            // include the new cancer type filter
-            cancerTypeFilter
-        ]);
+        onDropdownOptionSelect(selectedCancerTypeIds,
+            allValuesSelected,
+            this.store.dataStore,
+            DataFilterType.CANCER_TYPE,
+            CANCER_TYPE_FILTER_ID);
     }
 
     @action.bound
-    protected onMutationStatusSelect(selectedMutationStatusIds: string[])
+    protected onMutationStatusSelect(selectedMutationStatusIds: string[], allValuesSelected: boolean)
     {
-        const mutationStatusFilter = {
-            id: MUTATION_STATUS_FILTER_ID,
-            type: MUTATION_STATUS_FILTER_TYPE,
-            values: selectedMutationStatusIds
-        };
-
-        // replace the existing cancer type filter with the current one
-        this.store.dataStore.setDataFilters([
-            // include all filters except the previous cancer type filter
-            ...this.store.dataStore.dataFilters.filter(f => f.id !== MUTATION_STATUS_FILTER_ID),
-            // include the new cancer type filter
-            mutationStatusFilter
-        ]);
+        onDropdownOptionSelect(selectedMutationStatusIds,
+            allValuesSelected,
+            this.store.dataStore,
+            MUTATION_STATUS_FILTER_TYPE,
+            MUTATION_STATUS_FILTER_ID);
     }
 
     @action.bound
-    protected onProteinImpactTypeSelect(selectedMutationTypeIds: string[])
+    protected onProteinImpactTypeSelect(selectedMutationTypeIds: string[], allValuesSelected: boolean)
     {
-        const proteinImpactTypeFilter = {
-            id: PROTEIN_IMPACT_TYPE_FILTER_ID,
-            type: DataFilterType.PROTEIN_IMPACT_TYPE,
-            values: selectedMutationTypeIds.map(v => v.toLowerCase())
-        };
-
-        // replace the existing cancer type filter with the current one
-        this.store.dataStore.setDataFilters([
-            // include all filters except the previous cancer type filter
-            ...this.store.dataStore.dataFilters.filter(f => f.id !== PROTEIN_IMPACT_TYPE_FILTER_ID),
-            // include the new cancer type filter
-            proteinImpactTypeFilter
-        ]);
+        onDropdownOptionSelect(selectedMutationTypeIds.map(v => v.toLowerCase()),
+            allValuesSelected,
+            this.store.dataStore,
+            DataFilterType.PROTEIN_IMPACT_TYPE,
+            PROTEIN_IMPACT_TYPE_FILTER_ID);
     }
 }
 
