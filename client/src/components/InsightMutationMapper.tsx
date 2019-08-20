@@ -29,7 +29,7 @@ export interface IInsightMutationMapperProps extends MutationMapperProps
 }
 
 const DROPDOWN_STYLE = {
-    width: 200,
+    width: 220,
     paddingBottom: "0.3rem"
 };
 

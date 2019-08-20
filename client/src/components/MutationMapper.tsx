@@ -2,17 +2,9 @@ import autobind from "autobind-decorator";
 import {computed} from "mobx";
 import {observer} from "mobx-react";
 import * as React from "react";
-import {
-    CancerTypeFilter,
-    DataFilterType,
-    TrackName
-} from "react-mutation-mapper";
+import {CancerTypeFilter, DataFilterType, TrackName} from "react-mutation-mapper";
 
-import {
-    IExtendedMutation,
-    IMutation,
-    ITumorTypeDecomposition
-} from "../../../server/src/model/Mutation";
+import {IExtendedMutation, IMutation, ITumorTypeDecomposition} from "../../../server/src/model/Mutation";
 import GeneFrequencyStore from "../store/GeneFrequencyStore";
 import {FrequencySummaryCategory} from "../util/ColumnHelper";
 import {
@@ -21,9 +13,11 @@ import {
     containsCancerType,
     matchesMutationStatus,
     MUTATION_COUNT_FILTER_TYPE,
+    MUTATION_STATUS_FILTER_ID,
     MUTATION_STATUS_FILTER_TYPE,
     MutationCountFilter,
-    MutationStatusFilter
+    MutationStatusFilter,
+    MutationStatusFilterValue
 } from "../util/FilterUtils";
 import {loaderWithText} from "../util/StatusHelper";
 import {ColumnId, HEADER_COMPONENT} from "./ColumnHeaderHelper";
@@ -119,6 +113,17 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                         },
                     ]
                 }
+                dataFilters={[
+                    {
+                        id: MUTATION_STATUS_FILTER_ID,
+                        type: MUTATION_STATUS_FILTER_TYPE,
+                        values: [
+                            MutationStatusFilterValue.SOMATIC,
+                            MutationStatusFilterValue.PATHOGENIC_GERMLINE,
+                            MutationStatusFilterValue.BIALLELIC_PATHOGENIC_GERMLINE
+                        ]
+                    }
+                ]}
                 filterAppliersOverride={this.customFilterAppliers}
             />
         );
