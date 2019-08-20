@@ -46,6 +46,8 @@ export const MUTATION_RATE_HELPER = {
     }
 };
 
+const API_CACHE_LIMIT = 450; // TODO parametrize this on the server side?
+
 interface IMutationMapperProps
 {
     data: IMutation[];
@@ -62,6 +64,7 @@ class MutationMapper extends React.Component<IMutationMapperProps>
     {
         return (
             <InsightMutationMapper
+                apiCacheLimit={API_CACHE_LIMIT}
                 onInit={this.onMutationMapperInit}
                 hugoSymbol={this.props.hugoSymbol}
                 data={this.props.data}
