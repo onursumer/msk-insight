@@ -1,4 +1,6 @@
 import * as React from "react";
+import {Link} from "react-router-dom";
+
 import Penetrance, {comparePenetrance} from "./Penetrance";
 
 interface IGeneProps
@@ -16,9 +18,9 @@ class Gene extends React.Component<IGeneProps>
         return (
             <React.Fragment>
                 <span className={this.props.hugoSymbolClassName || "pull-left ml-3"}>
-                    <a href={`/gene/${this.props.hugoSymbol.toUpperCase()}`}>
+                    <Link to={`/gene/${this.props.hugoSymbol.toUpperCase()}`}>
                         {this.props.hugoSymbol}
-                    </a>
+                    </Link>
                 </span>
                 <span className={this.props.penetranceClassName || "pull-right mr-3"}>
                     {this.props.penetrance
