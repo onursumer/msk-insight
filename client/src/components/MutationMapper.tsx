@@ -62,6 +62,8 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                 onInit={this.onMutationMapperInit}
                 hugoSymbol={this.props.hugoSymbol}
                 data={this.props.data}
+                showPlotLegendToggle={false}
+                showPlotDownloadControls={false}
                 showTranscriptDropDown={true}
                 showOnlyAnnotatedTranscriptsInDropdown={true}
                 filterMutationsBySelectedTranscript={true}
