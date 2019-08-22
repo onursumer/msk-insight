@@ -20,7 +20,6 @@ class Main extends React.Component<{}>
         const GenePage = (props: any) => (
             <Gene
                 hugoSymbol={props.match.params.hugoSymbol}
-                frequencyStore={this.frequencyStore}
             />
         );
 

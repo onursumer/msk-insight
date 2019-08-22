@@ -8,6 +8,7 @@ import {
     ProteinImpactTypeSelector
 } from "react-mutation-mapper";
 
+import {FrequencySummaryCategory} from "../util/ColumnHelper";
 import {
     CANCER_TYPE_FILTER_ID,
     findCancerTypeFilter,
@@ -16,10 +17,15 @@ import {
     getMutationStatusFilterOptions,
     MUTATION_STATUS_FILTER_ID,
     MUTATION_STATUS_FILTER_TYPE,
+    MutationStatusFilterValue,
     onDropdownOptionSelect,
     PROTEIN_IMPACT_TYPE_FILTER_ID
 } from "../util/FilterUtils";
-import {findAllUniqueCancerTypes} from "../util/MutationDataUtils";
+import {
+    calculateTotalBiallelicRatio,
+    calculateTotalFrequency,
+    findAllUniqueCancerTypes
+} from "../util/MutationDataUtils";
 import CancerTypeSelector from "./CancerTypeSelector";
 import MutationStatusSelector from "./MutationStatusSelector";
 
@@ -31,6 +37,20 @@ export interface IInsightMutationMapperProps extends MutationMapperProps
 const DROPDOWN_STYLE = {
     width: 220,
     paddingBottom: "0.3rem"
+};
+
+export const MUTATION_RATE_HELPER = {
+    [FrequencySummaryCategory.SOMATIC_DRIVER]: {
+        title: "% Somatic Mutant",
+        description: "Includes only likely driver mutations",
+    },
+    [FrequencySummaryCategory.PATHOGENIC_GERMLINE]: {
+        title: "% Pathogenic Germline"
+    },
+    [FrequencySummaryCategory.PERCENT_BIALLELIC]: {
+        title: "% Biallelic",
+        description: "Percent of pathogenic germline carriers biallelic in the corresponding tumor"
+    }
 };
 
 @observer
@@ -70,6 +90,9 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
         }
     }
 
+    /**
+     * Overriding the parent method to have a customized filter panel.
+     */
     protected get mutationFilterPanel(): JSX.Element | null
     {
         return (
@@ -103,6 +126,50 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
                 </div>
             </div>
         );
+    }
+
+    @computed
+    protected get mutationRates()
+    {
+        // TODO pick only likely driver ones, not all somatic mutations
+        const somaticFilter = {
+            type: MUTATION_STATUS_FILTER_TYPE,
+            values: [MutationStatusFilterValue.SOMATIC]
+        };
+
+        const pathogenicGermlineFilter = {
+            type: MUTATION_STATUS_FILTER_TYPE,
+            values: [MutationStatusFilterValue.PATHOGENIC_GERMLINE]
+        };
+
+        const biallelicPathogenicGermlineFilter = {
+            type: MUTATION_STATUS_FILTER_TYPE,
+            values: [MutationStatusFilterValue.BIALLELIC_PATHOGENIC_GERMLINE]
+        };
+
+        const sortedFilteredData = this.store.dataStore.sortedFilteredData;
+
+        const somaticFrequency = calculateTotalFrequency(
+            sortedFilteredData, somaticFilter, this.cancerTypeFilter);
+        const pathogenicGermlineFrequency = calculateTotalFrequency(
+            sortedFilteredData, pathogenicGermlineFilter, this.cancerTypeFilter);
+        const biallelicRatio = calculateTotalBiallelicRatio(
+            sortedFilteredData, pathogenicGermlineFilter, biallelicPathogenicGermlineFilter, this.cancerTypeFilter);
+
+        return [
+            {
+                ...MUTATION_RATE_HELPER[FrequencySummaryCategory.SOMATIC_DRIVER],
+                rate: somaticFrequency * 100
+            },
+            {
+                ...MUTATION_RATE_HELPER[FrequencySummaryCategory.PATHOGENIC_GERMLINE],
+                rate: pathogenicGermlineFrequency * 100
+            },
+            {
+                ...MUTATION_RATE_HELPER[FrequencySummaryCategory.PERCENT_BIALLELIC],
+                rate: biallelicRatio * 100
+            }
+        ];
     }
 
     @action.bound

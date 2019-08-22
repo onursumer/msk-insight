@@ -7,8 +7,8 @@ import {IExtendedMutation, IMutation, ITumorTypeDecomposition} from "../../../se
 export const CANCER_TYPE_FILTER_ID = "_insightCancerTypeFilter_";
 export const MUTATION_STATUS_FILTER_ID = "_insightMutationStatusFilter_";
 export const PROTEIN_IMPACT_TYPE_FILTER_ID = "_insightProteinImpactTypeFilter_";
-export const MUTATION_STATUS_FILTER_TYPE = "mutationStatus";
-export const MUTATION_COUNT_FILTER_TYPE = "mutationCount";
+export const MUTATION_STATUS_FILTER_TYPE = "insightMutationStatus";
+export const MUTATION_COUNT_FILTER_TYPE = "insightMutationCount";
 
 export enum MutationStatusFilterValue {
     SOMATIC = "Somatic",

@@ -1,12 +1,9 @@
 import autobind from "autobind-decorator";
-import {computed} from "mobx";
 import {observer} from "mobx-react";
 import * as React from "react";
 import {CancerTypeFilter, DataFilterType, TrackName} from "react-mutation-mapper";
 
-import {IExtendedMutation, IMutation, ITumorTypeDecomposition} from "../../../server/src/model/Mutation";
-import GeneFrequencyStore from "../store/GeneFrequencyStore";
-import {FrequencySummaryCategory} from "../util/ColumnHelper";
+import {IExtendedMutation, ITumorTypeDecomposition} from "../../../server/src/model/Mutation";
 import {
     applyCancerTypeFilter,
     applyMutationStatusFilter,
@@ -25,27 +22,11 @@ import {renderPercentage} from "./ColumnRenderHelper";
 import InsightMutationMapper from "./InsightMutationMapper";
 import MutationTumorTypeFrequencyDecomposition from "./MutationTumorTypeFrequencyDecomposition";
 
-
-export const MUTATION_RATE_HELPER = {
-    [FrequencySummaryCategory.SOMATIC_DRIVER]: {
-        title: "% Somatic Mutant",
-        description: "Includes only likely driver mutations",
-    },
-    [FrequencySummaryCategory.PATHOGENIC_GERMLINE]: {
-        title: "% Pathogenic Germline"
-    },
-    [FrequencySummaryCategory.PERCENT_BIALLELIC]: {
-        title: "% Biallelic",
-        description: "Percent of pathogenic germline carriers biallelic in the corresponding tumor"
-    }
-};
-
 const API_CACHE_LIMIT = 450; // TODO parametrize this on the server side?
 
 interface IMutationMapperProps
 {
-    data: IMutation[];
-    frequencyStore?: GeneFrequencyStore;
+    data: IExtendedMutation[];
     hugoSymbol: string;
 }
 
@@ -67,7 +48,6 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                 showTranscriptDropDown={true}
                 showOnlyAnnotatedTranscriptsInDropdown={true}
                 filterMutationsBySelectedTranscript={true}
-                mutationRates={this.mutationRates}
                 mainLoadingIndicator={this.loader}
                 tracks={[TrackName.CancerHotspots, TrackName.OncoKB, TrackName.PTM]}
                 getMutationCount={this.getMutationCount}
@@ -107,11 +87,11 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                     [
                         {
                             group: "Somatic",
-                            filter: {type: "mutation", values: [{mutationStatus: "somatic"}]}
+                            filter: {type: DataFilterType.MUTATION, values: [{mutationStatus: "somatic"}]}
                         },
                         {
                             group: "Germline",
-                            filter: {type: "mutation", values: [{mutationStatus: "germline"}]}
+                            filter: {type: DataFilterType.MUTATION, values: [{mutationStatus: "germline"}]}
                         },
                     ]
                 }
@@ -129,30 +109,6 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                 filterAppliersOverride={this.customFilterAppliers}
             />
         );
-    }
-
-    @computed
-    private get frequencyStore() {
-        return this.props.frequencyStore || new GeneFrequencyStore();
-    }
-
-    @computed
-    private get mutationRates() {
-        let rates;
-
-        if (this.frequencyStore.geneFrequencyDataStatus === 'complete') {
-            const frequencyData = this.frequencyStore.mutationFrequencyData.find(
-                f => f.hugoSymbol === this.props.hugoSymbol);
-
-            if (frequencyData) {
-                rates = frequencyData.frequencies.map(f => ({
-                    ...MUTATION_RATE_HELPER[f.category],
-                    rate: f.frequency * 100
-                }));
-            }
-        }
-
-        return rates;
     }
 
     private get customFilterAppliers()

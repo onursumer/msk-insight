@@ -2,24 +2,22 @@ import {action, computed, observable} from "mobx";
 import {observer} from "mobx-react";
 import * as React from 'react';
 
-import {IExtendedMutation, IMutation} from "../../../server/src/model/Mutation";
+import {IExtendedMutation} from "../../../server/src/model/Mutation";
 import MutationMapper from "../components/MutationMapper";
 import {DataStatus} from "../store/DataStatus";
-import GeneFrequencyStore from "../store/GeneFrequencyStore";
 import {fetchExtendedMutationsByGene} from "../util/MutationDataUtils";
 import {loaderWithText} from "../util/StatusHelper";
 
 interface IGeneProps
 {
     hugoSymbol: string;
-    frequencyStore?: GeneFrequencyStore;
 }
 
 @observer
 class Gene extends React.Component<IGeneProps>
 {
     @observable
-    private insightMutations: IMutation[] = [];
+    private insightMutations: IExtendedMutation[] = [];
 
     @observable
     private insightStatus: DataStatus = 'pending';
@@ -47,7 +45,6 @@ class Gene extends React.Component<IGeneProps>
                         <MutationMapper
                             hugoSymbol={this.hugoSymbol}
                             data={this.insightMutations}
-                            frequencyStore={this.props.frequencyStore}
                         />
                     )
                 }
