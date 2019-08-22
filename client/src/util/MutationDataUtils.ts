@@ -104,9 +104,10 @@ export function calculateTotalFrequency(mutations: IExtendedMutation[],
     const filtered = mutations.filter(mutation => applyMutationStatusFilter(mutationStatusFilter, mutation));
 
     if (filtered.length > 0) {
-        const tumorTypeDecompositions = combinedTumorTypeDecompositions(filtered, cancerTypeFilter);
-        const sampleCount = totalSamples(filtered[0].tumorTypeDecomposition);
-        const variantCount = totalVariants(tumorTypeDecompositions);
+        const variantCount = totalVariants(
+            combinedTumorTypeDecompositions(filtered, cancerTypeFilter));
+        const sampleCount = totalSamples(
+            filterCountsByTumorType(filtered[0].tumorTypeDecomposition, cancerTypeFilter));
 
         frequency = variantCount / sampleCount;
     }
