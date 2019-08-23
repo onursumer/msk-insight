@@ -5,6 +5,7 @@ import * as React from 'react';
 import {IExtendedMutation} from "../../../server/src/model/Mutation";
 import MutationMapper from "../components/MutationMapper";
 import {DataStatus} from "../store/DataStatus";
+import EnsemblGeneStore from "../store/EnsemblGeneStore";
 import {fetchExtendedMutationsByGene} from "../util/MutationDataUtils";
 import {loaderWithText} from "../util/StatusHelper";
 
@@ -27,6 +28,11 @@ class Gene extends React.Component<IGeneProps>
         return this.props.hugoSymbol;
     }
 
+    @computed
+    private get geneStore() {
+        return new EnsemblGeneStore(this.hugoSymbol);
+    }
+
     private get loader() {
         return loaderWithText("Fetching Insight mutations...");
     }
@@ -41,12 +47,13 @@ class Gene extends React.Component<IGeneProps>
                 }}
             >
                 {
-                    this.insightStatus === 'pending' ? this.loader : (
+                    this.insightStatus === 'pending' || this.geneStore.ensemblGeneDataStatus === "pending" ?
+                        this.loader :
                         <MutationMapper
                             hugoSymbol={this.hugoSymbol}
                             data={this.insightMutations}
+                            ensemblGene={this.geneStore.ensemblGeneData}
                         />
-                    )
                 }
             </div>
         );

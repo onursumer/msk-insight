@@ -1888,6 +1888,14 @@ buffer@^4.3.0:
     ieee754 "^1.1.4"
     isarray "^1.0.0"
 
+buffer@^5.4.0:
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/buffer/-/buffer-5.4.0.tgz#33294f5c1f26e08461e528b69fa06de3c45cbd8c"
+  integrity sha512-Xpgy0IwHK2N01ncykXTy6FpCWuM+CJSHoPVBLyNqyrWxsedpLvwsYUhf0ME3WRFNUhos0dMamz9cOS/xRDtU5g==
+  dependencies:
+    base64-js "^1.0.2"
+    ieee754 "^1.1.4"
+
 builtin-modules@^1.0.0, builtin-modules@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/builtin-modules/-/builtin-modules-1.1.1.tgz#270f076c5a72c02f5b65a47df94c5fe3a278892f"
@@ -2042,10 +2050,10 @@ caseless@~0.12.0:
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
   integrity sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw=
 
-cbioportal-frontend-commons@^0.0.18:
-  version "0.0.18"
-  resolved "https://registry.yarnpkg.com/cbioportal-frontend-commons/-/cbioportal-frontend-commons-0.0.18.tgz#9163f0ac3f670f396dd4edf8498a42b6eb54f93a"
-  integrity sha512-8zalWWA/3wJWFOuJV19xhejLXOyBhi570UOYGmRQm4JnZQlpBAviOmYLWuLK6TQsubx9HPB0EuQWiIef5IP+/A==
+cbioportal-frontend-commons@^0.0.19:
+  version "0.0.19"
+  resolved "https://registry.yarnpkg.com/cbioportal-frontend-commons/-/cbioportal-frontend-commons-0.0.19.tgz#be9066f939d6713883c2876913cabc49922dc613"
+  integrity sha512-0PUOGoH8qj87OdTVGlO6aQWrnEi7OGdb0YPl0DrARHxCz24LOcho8Ikp7I94rGl2FMY+0I5ATipO6DJ9sU5Syg==
   dependencies:
     autobind-decorator "^2.1.0"
     babel-polyfill "^6.22.0"
@@ -2056,6 +2064,7 @@ cbioportal-frontend-commons@^0.0.18:
     mobx "^3.1.7"
     mobx-react "^4.1.3"
     mobxpromise "github:cbioportal/mobxpromise#v1.0.2"
+    object-sizeof "^1.2.0"
     rc-tooltip "3.7.3"
     react "^16.8.4"
     react-file-download "^0.3.2"
@@ -6575,6 +6584,13 @@ object-keys@^1.0.12:
   resolved "https://registry.yarnpkg.com/object-keys/-/object-keys-1.1.1.tgz#1c47f272df277f3b1daf061677d9c82e2322c60e"
   integrity sha512-NuAESUOUMrlIXOfHKzD6bpPu3tYt3xvjNdRIQ+FeT0lNb4K8WR70CaDxhuNguS2XG+GjkyMwOzsN5ZktImfhLA==
 
+object-sizeof@^1.2.0:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/object-sizeof/-/object-sizeof-1.5.1.tgz#da2ed6ce9c7c0b0f7cf42e8b370f493ec41e0936"
+  integrity sha512-htKkjOdWqxZQg5V6/M0tA/yLiYaRize4MzAyzibuR9Q0Jy/WYFRmTH4FYiGTdTXi2hbzxzdnaLv4K8N4VX7YTQ==
+  dependencies:
+    buffer "^5.4.0"
+
 object-visit@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/object-visit/-/object-visit-1.0.1.tgz#f79c4493af0c5377b59fe39d395e41042dd045bb"
@@ -7746,13 +7762,13 @@ react-motion@^0.5.2:
     prop-types "^15.5.8"
     raf "^3.1.0"
 
-react-mutation-mapper@0.3.0-alpha.3:
-  version "0.3.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/react-mutation-mapper/-/react-mutation-mapper-0.3.0-alpha.3.tgz#069f7f59503ae7f21e76b845d0dc82c728a0b61c"
-  integrity sha512-J9320m6cnEwNru9LN771Mh8ews0asJWsFaL6GfFFjbGcyYrU2vGo8kmB2oCFqECaHeOPD6HR+MwH89TNLuDlEA==
+react-mutation-mapper@0.3.0-beta.1:
+  version "0.3.0-beta.1"
+  resolved "https://registry.yarnpkg.com/react-mutation-mapper/-/react-mutation-mapper-0.3.0-beta.1.tgz#96d25f07cabff9cf8b48d541d112763ed9f44096"
+  integrity sha512-P2GkV+9faKv/kyqTlV8C2owhZuwPqjkdYLIacBhdKcamEUKZ60oQaCurbID7ndciopoG3GW3JBRiUari3Bt/GA==
   dependencies:
     autobind-decorator "^2.4.0"
-    cbioportal-frontend-commons "^0.0.18"
+    cbioportal-frontend-commons "^0.0.19"
     classnames "^2.2.6"
     jquery "^3.3.1"
     lodash "^4.17.11"

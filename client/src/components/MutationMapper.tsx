@@ -1,8 +1,10 @@
 import autobind from "autobind-decorator";
+import {computed} from "mobx";
 import {observer} from "mobx-react";
 import * as React from "react";
 import {CancerTypeFilter, DataFilterType, TrackName} from "react-mutation-mapper";
 
+import {IEnsemblGene} from "../../../server/src/model/EnsemblGene";
 import {IExtendedMutation, ITumorTypeDecomposition} from "../../../server/src/model/Mutation";
 import {
     applyCancerTypeFilter,
@@ -28,12 +30,20 @@ interface IMutationMapperProps
 {
     data: IExtendedMutation[];
     hugoSymbol: string;
+    ensemblGene?: IEnsemblGene;
 }
 
 @observer
 class MutationMapper extends React.Component<IMutationMapperProps>
 {
     private insightMutationMapper: InsightMutationMapper | undefined;
+
+    @computed
+    get entrezGeneId()
+    {
+        return this.props.ensemblGene ?
+            parseInt(this.props.ensemblGene.entrezGeneId, 10): undefined;
+    }
 
     public render()
     {
@@ -42,6 +52,7 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                 apiCacheLimit={API_CACHE_LIMIT}
                 onInit={this.onMutationMapperInit}
                 hugoSymbol={this.props.hugoSymbol}
+                // TODO entrezGeneId={this.entrezGeneId}
                 data={this.props.data}
                 showPlotLegendToggle={false}
                 showPlotDownloadControls={false}

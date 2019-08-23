@@ -4,7 +4,7 @@ import {Request, Response} from "express-serve-static-core";
 
 import GenomeNexusService from "../service/GenomeNexusService";
 
-class MutationController
+class EnsemblController
 {
     private genomeNexusService: GenomeNexusService;
 
@@ -12,18 +12,18 @@ class MutationController
                 genomeNexusService: GenomeNexusService = new GenomeNexusService())
     {
         // configure endpoints
-        app.get("/api/mutation", this.fetchMutationsGET);
+        app.get("/api/ensembl/gene/:hugoSymbol", this.fetchEnsemblGeneGET);
 
         // init services
         this.genomeNexusService = genomeNexusService;
     }
 
     @autobind
-    private fetchMutationsGET(req: Request, res: Response, next: NextFunction) {
-        const hugoSymbol = req.query.hugoSymbol;
+    private fetchEnsemblGeneGET(req: Request, res: Response, next: NextFunction) {
+        const hugoSymbol = req.params.hugoSymbol;
 
         if (hugoSymbol) {
-            this.genomeNexusService.getInsightMutationsByHugoSymbol(hugoSymbol)
+            this.genomeNexusService.getEnsemblGeneByHugoSymbol(hugoSymbol)
                 .then(response => {
                     res.send(response.data);
                 })
@@ -32,9 +32,9 @@ class MutationController
                 })
         }
         else {
-            res.send([]);
+            res.send(null);
         }
     }
 }
 
-export default MutationController;
+export default EnsemblController;
