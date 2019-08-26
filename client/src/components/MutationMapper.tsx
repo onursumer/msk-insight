@@ -25,6 +25,7 @@ import InsightMutationMapper from "./InsightMutationMapper";
 import MutationTumorTypeFrequencyDecomposition from "./MutationTumorTypeFrequencyDecomposition";
 
 const API_CACHE_LIMIT = 450; // TODO parametrize this on the server side?
+const ISOFORM_OVERRIDE_SOURCE = "mskcc";
 
 interface IMutationMapperProps
 {
@@ -53,6 +54,7 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                 onInit={this.onMutationMapperInit}
                 hugoSymbol={this.props.hugoSymbol}
                 entrezGeneId={this.entrezGeneId}
+                isoformOverrideSource={ISOFORM_OVERRIDE_SOURCE}
                 data={this.props.data}
                 showPlotLegendToggle={false}
                 showPlotDownloadControls={false}

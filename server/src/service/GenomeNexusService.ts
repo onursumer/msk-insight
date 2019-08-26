@@ -11,11 +11,6 @@ class GenomeNexusService
     {
         return axios.get(`${GENOME_NEXUS_URL}/insight/mutation?hugoGeneSymbol=${hugoSymbol}`);
     }
-
-    public getEnsemblGeneByHugoSymbol(hugoSymbol?: string)
-    {
-        return axios.get(`${GENOME_NEXUS_URL}/ensembl/canonical-gene/hgnc/${hugoSymbol}`);
-    }
 }
 
 export default GenomeNexusService;

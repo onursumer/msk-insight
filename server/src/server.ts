@@ -2,7 +2,6 @@ import compression from "compression";
 import express from 'express';
 import path from 'path';
 
-import EnsemblController from "./controller/EnsemblController";
 import GeneSummaryController from "./controller/GeneSummaryController";
 import MutationController from "./controller/MutationController";
 
@@ -14,7 +13,6 @@ const routerRoot = "index.html";
 
 const mutationController = new MutationController(app);
 const frequencyController = new GeneSummaryController(app);
-const ensemblController = new EnsemblController(app);
 
 if (process.env.NODE_ENV === "production")
 {
