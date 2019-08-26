@@ -52,7 +52,7 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                 apiCacheLimit={API_CACHE_LIMIT}
                 onInit={this.onMutationMapperInit}
                 hugoSymbol={this.props.hugoSymbol}
-                // TODO entrezGeneId={this.entrezGeneId}
+                entrezGeneId={this.entrezGeneId}
                 data={this.props.data}
                 showPlotLegendToggle={false}
                 showPlotDownloadControls={false}
