@@ -3,9 +3,10 @@ import {observer} from "mobx-react";
 import * as React from 'react';
 import {
     DataFilterType,
+    groupDataByProteinImpactType,
     MutationMapper as ReactMutationMapper,
     MutationMapperProps,
-    ProteinImpactTypeSelector
+    ProteinImpactTypeBadgeSelector
 } from "react-mutation-mapper";
 
 import {FrequencySummaryCategory} from "../util/ColumnHelper";
@@ -81,6 +82,24 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
         return findMutationTypeFilter(this.store.dataStore.dataFilters);
     }
 
+    @computed
+    public get mutationsGroupedByProteinImpactType() {
+        return groupDataByProteinImpactType(this.store.dataStore);
+    }
+
+    @computed
+    public get mutationCountsByProteinImpactType() {
+        const map: {[proteinImpactType: string] : number} = {};
+
+        Object.keys(this.mutationsGroupedByProteinImpactType)
+            .forEach(proteinImpactType => {
+                const g = this.mutationsGroupedByProteinImpactType[proteinImpactType];
+                map[g.group] = g.data.length;
+            });
+
+        return map;
+    }
+
     constructor(props: IInsightMutationMapperProps)
     {
         super(props);
@@ -118,8 +137,9 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
                         />
                     </div>
                     <div style={DROPDOWN_STYLE}>
-                        <ProteinImpactTypeSelector
+                        <ProteinImpactTypeBadgeSelector
                             filter={this.mutationTypeFilter}
+                            counts={this.mutationCountsByProteinImpactType}
                             onSelect={this.onProteinImpactTypeSelect}
                         />
                     </div>
