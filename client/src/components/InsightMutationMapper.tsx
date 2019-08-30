@@ -9,13 +9,11 @@ import {
     ProteinImpactTypeBadgeSelector
 } from "react-mutation-mapper";
 
-import {FrequencySummaryCategory} from "../util/ColumnHelper";
 import {
     CANCER_TYPE_FILTER_ID,
     findCancerTypeFilter,
     findMutationStatusFilter,
     findMutationTypeFilter,
-    getMutationStatusFilterOptions,
     MUTATION_STATUS_FILTER_ID,
     MUTATION_STATUS_FILTER_TYPE,
     MutationStatusFilterValue,
@@ -35,23 +33,10 @@ export interface IInsightMutationMapperProps extends MutationMapperProps
     onInit?: (mutationMapper: InsightMutationMapper) => void;
 }
 
-const DROPDOWN_STYLE = {
-    width: 220,
-    paddingBottom: "0.3rem"
-};
-
-export const MUTATION_RATE_HELPER = {
-    [FrequencySummaryCategory.SOMATIC_DRIVER]: {
-        title: "% Somatic Mutant",
-        description: "Includes only likely driver mutations",
-    },
-    [FrequencySummaryCategory.PATHOGENIC_GERMLINE]: {
-        title: "% Pathogenic Germline"
-    },
-    [FrequencySummaryCategory.PERCENT_BIALLELIC]: {
-        title: "% Biallelic",
-        description: "Percent of pathogenic germline carriers biallelic in the corresponding tumor"
-    }
+const FILTER_UI_STYLE = {
+    width: 250,
+    paddingBottom: "1rem",
+    fontSize: "85%"
 };
 
 @observer
@@ -116,45 +101,42 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
     {
         return (
             <div>
-                <h5
-                    style={{marginTop: "1rem"}}
-                >
-                    Filters
-                </h5>
-                <div className="small">
-                    <div style={DROPDOWN_STYLE}>
-                        <CancerTypeSelector
-                            filter={this.cancerTypeFilter}
-                            options={this.cancerTypesOptions}
-                            onSelect={this.onCancerTypeSelect}
-                        />
-                    </div>
-                    <div style={DROPDOWN_STYLE}>
-                        <MutationStatusSelector
-                            filter={this.mutationStatusFilter}
-                            options={getMutationStatusFilterOptions()}
-                            onSelect={this.onMutationStatusSelect}
-                        />
-                    </div>
-                    <div style={DROPDOWN_STYLE}>
-                        <ProteinImpactTypeBadgeSelector
-                            filter={this.mutationTypeFilter}
-                            counts={this.mutationCountsByProteinImpactType}
-                            onSelect={this.onProteinImpactTypeSelect}
-                        />
-                    </div>
+                <div style={FILTER_UI_STYLE}>
+                    <MutationStatusSelector
+                        filter={this.mutationStatusFilter}
+                        onSelect={this.onMutationStatusSelect}
+                        rates={this.mutationRatesByMutationStatus}
+                    />
+                </div>
+                <div style={FILTER_UI_STYLE}>
+                    <ProteinImpactTypeBadgeSelector
+                        filter={this.mutationTypeFilter}
+                        counts={this.mutationCountsByProteinImpactType}
+                        onSelect={this.onProteinImpactTypeSelect}
+                    />
+                </div>
+                <div style={FILTER_UI_STYLE}>
+                    <CancerTypeSelector
+                        filter={this.cancerTypeFilter}
+                        options={this.cancerTypesOptions}
+                        onSelect={this.onCancerTypeSelect}
+                    />
                 </div>
             </div>
         );
     }
 
     @computed
-    protected get mutationRates()
-    {
+    public get mutationRatesByMutationStatus() {
         // TODO pick only likely driver ones, not all somatic mutations
         const somaticFilter = {
             type: MUTATION_STATUS_FILTER_TYPE,
             values: [MutationStatusFilterValue.SOMATIC]
+        };
+
+        const benignGermlineFilter = {
+            type: MUTATION_STATUS_FILTER_TYPE,
+            values: [MutationStatusFilterValue.BENIGN_GERMLINE]
         };
 
         const pathogenicGermlineFilter = {
@@ -171,25 +153,19 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
 
         const somaticFrequency = calculateTotalFrequency(
             sortedFilteredData, somaticFilter, this.cancerTypeFilter);
+        const benignGermlineFrequency = calculateTotalFrequency(
+            sortedFilteredData, benignGermlineFilter, this.cancerTypeFilter);
         const pathogenicGermlineFrequency = calculateTotalFrequency(
             sortedFilteredData, pathogenicGermlineFilter, this.cancerTypeFilter);
         const biallelicRatio = calculateTotalBiallelicRatio(
             sortedFilteredData, pathogenicGermlineFilter, biallelicPathogenicGermlineFilter, this.cancerTypeFilter);
 
-        return [
-            {
-                ...MUTATION_RATE_HELPER[FrequencySummaryCategory.SOMATIC_DRIVER],
-                rate: somaticFrequency * 100
-            },
-            {
-                ...MUTATION_RATE_HELPER[FrequencySummaryCategory.PATHOGENIC_GERMLINE],
-                rate: pathogenicGermlineFrequency * 100
-            },
-            {
-                ...MUTATION_RATE_HELPER[FrequencySummaryCategory.PERCENT_BIALLELIC],
-                rate: biallelicRatio * 100
-            }
-        ];
+        return {
+            [MutationStatusFilterValue.SOMATIC]: somaticFrequency * 100,
+            [MutationStatusFilterValue.BENIGN_GERMLINE]: benignGermlineFrequency * 100,
+            [MutationStatusFilterValue.PATHOGENIC_GERMLINE]: pathogenicGermlineFrequency * 100,
+            [MutationStatusFilterValue.BIALLELIC_PATHOGENIC_GERMLINE]: biallelicRatio * 100,
+        };
     }
 
     @action.bound
