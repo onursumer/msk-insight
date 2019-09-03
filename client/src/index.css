@@ -20,4 +20,5 @@ body {
 
 .badge {
   font-size: 85%;
+  border-radius: 8px;
 }
