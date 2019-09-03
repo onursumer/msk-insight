@@ -27,17 +27,17 @@ export function getMutationStatusFilterOptions()
         {
             value: MutationStatusFilterValue.SOMATIC,
             label: MUTATION_RATE_HELPER[MutationStatusFilterValue.SOMATIC].title,
-            badgeStyleOverride: {color: "#000", backgroundColor: "#CCFFFF"}
+            badgeStyleOverride: {color: "#000", backgroundColor: "#FFF"}
         },
         {
             value: MutationStatusFilterValue.BENIGN_GERMLINE,
             label: MUTATION_RATE_HELPER[MutationStatusFilterValue.BENIGN_GERMLINE].title,
-            badgeStyleOverride: {color: "#000", backgroundColor: "#FFFFCC"}
+            badgeStyleOverride: {color: "#000", backgroundColor: "#FFF"}
         },
         {
             value: MutationStatusFilterValue.PATHOGENIC_GERMLINE,
             label: MUTATION_RATE_HELPER[MutationStatusFilterValue.PATHOGENIC_GERMLINE].title,
-            badgeStyleOverride: {color: "#000", backgroundColor: "#FFFFCC"}
+            badgeStyleOverride: {color: "#000", backgroundColor: "#FFF"}
         },
         {
             value: MutationStatusFilterValue.BIALLELIC_PATHOGENIC_GERMLINE,
@@ -53,7 +53,7 @@ export function getMutationStatusFilterOptions()
                         <i className="fa fa-info-circle" style={{marginLeft: "0.2rem"}} />
                     </DefaultTooltip>
                 </span>,
-            badgeStyleOverride: {color: "#000", backgroundColor: "#FFFFCC"}
+            badgeStyleOverride: {color: "#000", backgroundColor: "#FFF"}
         },
     ];
 }
