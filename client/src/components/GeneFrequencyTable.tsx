@@ -1,17 +1,16 @@
 import autobind from "autobind-decorator";
-import _ from "lodash";
-import {action, observable} from "mobx";
+import {computed, observable} from "mobx";
 import {observer} from "mobx-react";
 import * as React from "react";
-import ReactTable, {Filter} from "react-table";
+import {Filter} from "react-table";
 
 import {IGeneFrequencySummary} from "../../../server/src/model/GeneFrequencySummary";
-import {DataStatus} from "../store/DataStatus";
 import {biallelicAccessor, germlineAccessor, somaticAccessor} from "../util/ColumnHelper";
 import {fetchTumorTypeFrequenciesByGene} from "../util/FrequencyDataUtils";
 import {ColumnId, HEADER_COMPONENT} from "./ColumnHeaderHelper";
 import {renderPercentage} from "./ColumnRenderHelper";
 import Gene from "./Gene";
+import GeneFrequencyTableComponent from "./GeneFrequencyTableComponent";
 import GeneTumorTypeFrequencyDecomposition from "./GeneTumorTypeFrequencyDecomposition";
 
 import "react-table/react-table.css";
@@ -20,8 +19,6 @@ import "./FrequencyTable.css";
 interface IFrequencyTableProps
 {
     data: IGeneFrequencySummary[];
-    status: DataStatus;
-    filtered?: Filter[];
 }
 
 function renderHugoSymbol(cellProps: any)
@@ -55,16 +52,40 @@ function filterGene(filter: Filter, row: any, column: any)
 class GeneFrequencyTable extends React.Component<IFrequencyTableProps>
 {
     @observable
-    private expanded: {[index: number] : boolean} = {};
+    private searchText: string | undefined;
+
+    @computed
+    private get filteredData() {
+        return this.searchText ? this.props.data.filter(
+            s => s.hugoSymbol.toLowerCase().includes(this.searchText!.trim().toLowerCase())):
+            this.props.data;
+    }
+
+    @computed
+    private get info() {
+        return (
+            <span>
+                <strong>{this.filteredData.length}</strong> {
+                    this.filteredData.length === 1 ? "Gene": "Genes"
+                } {
+                    this.filteredData.length !== this.props.data.length &&
+                    <span>(out of <strong>{this.props.data.length}</strong>)</span>
+                }
+            </span>
+        );
+    }
 
     public render()
     {
         return (
             <div className="insight-frequency-table">
-                <ReactTable
-                    data={this.props.data}
-                    loading={this.props.status === 'pending'}
-                    loadingText={<i className="fa fa-spinner fa-pulse fa-2x" />}
+                <GeneFrequencyTableComponent
+                    data={this.filteredData}
+                    onSearch={this.handleSearch}
+                    info={this.info}
+                    reactTableProps={{
+                        SubComponent: renderSubComponent
+                    }}
                     columns={[
                         {
                             id: ColumnId.HUGO_SYMBOL,
@@ -75,21 +96,16 @@ class GeneFrequencyTable extends React.Component<IFrequencyTableProps>
                             defaultSortDesc: false
                         },
                         {
-                            Header: HEADER_COMPONENT[ColumnId.MUTATION_FREQUENCIES],
-                            columns: [
-                                {
-                                    id: ColumnId.SOMATIC,
-                                    Cell: renderPercentage,
-                                    Header: HEADER_COMPONENT[ColumnId.SOMATIC],
-                                    accessor: somaticAccessor
-                                },
-                                {
-                                    id: ColumnId.GERMLINE,
-                                    Cell: renderPercentage,
-                                    Header: HEADER_COMPONENT[ColumnId.GERMLINE],
-                                    accessor: germlineAccessor
-                                }
-                            ]
+                            id: ColumnId.SOMATIC,
+                            Cell: renderPercentage,
+                            Header: HEADER_COMPONENT[ColumnId.SOMATIC],
+                            accessor: somaticAccessor
+                        },
+                        {
+                            id: ColumnId.GERMLINE,
+                            Cell: renderPercentage,
+                            Header: HEADER_COMPONENT[ColumnId.GERMLINE],
+                            accessor: germlineAccessor
                         },
                         {
                             id: ColumnId.PERCENT_BIALLELIC,
@@ -102,33 +118,14 @@ class GeneFrequencyTable extends React.Component<IFrequencyTableProps>
                             Expander: this.renderExpander
                         }
                     ]}
-                    onExpandedChange={this.onExpandedChange}
-                    onPageChange={this.resetExpander}
-                    onSortedChange={this.resetExpander}
-                    filtered={this.props.filtered}
-                    expanded={this.expanded}
-                    SubComponent={renderSubComponent}
-                    defaultPageSize={10}
-                    defaultSorted={[{
-                        id: "germline",
-                        desc: true
-                    }]}
-                    defaultSortDesc={true}
-                    minRows={0}
-                    className="-striped -highlight"
-                    previousText="<"
-                    nextText=">"
+                    initialItemsPerPage={10}
+                    initialSortColumn="germline"
+                    initialSortDirection="desc"
+                    showColumnVisibility={false}
+                    searchPlaceholder="Search Genes"
                 />
             </div>
         );
-    }
-
-    public componentWillReceiveProps(nextProps: Readonly<IFrequencyTableProps>)
-    {
-        // reset expander if the filters change
-        if (!_.isEqual(nextProps.filtered, this.props.filtered)) {
-            this.resetExpander();
-        }
     }
 
     @autobind
@@ -138,14 +135,9 @@ class GeneFrequencyTable extends React.Component<IFrequencyTableProps>
             <i className="fa fa-plus-circle" />;
     }
 
-    @action.bound
-    private onExpandedChange(expanded: {[index: number] : boolean}) {
-        this.expanded = expanded;
-    }
-
-    @action.bound
-    private resetExpander() {
-        this.expanded = {};
+    @autobind
+    private handleSearch(searchText: string) {
+        this.searchText = searchText;
     }
 }
 
