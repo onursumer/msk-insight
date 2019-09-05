@@ -2,7 +2,7 @@ import autobind from "autobind-decorator";
 import {computed} from "mobx";
 import {observer} from "mobx-react";
 import * as React from "react";
-import {CancerTypeFilter, DataFilterType, TrackName} from "react-mutation-mapper";
+import {CancerTypeFilter, DataFilterType, formatPercentValue, TrackName} from "react-mutation-mapper";
 
 import {IEnsemblGene} from "../../../server/src/model/EnsemblGene";
 import {IExtendedMutation, ITumorTypeDecomposition} from "../../../server/src/model/Mutation";
@@ -18,6 +18,7 @@ import {
     MutationStatusFilter,
     MutationStatusFilterValue
 } from "../util/FilterUtils";
+import {calculateOverallFrequency} from "../util/MutationDataUtils";
 import {loaderWithText} from "../util/StatusHelper";
 import {ColumnId, HEADER_COMPONENT} from "./ColumnHeaderHelper";
 import {renderPercentage} from "./ColumnRenderHelper";
@@ -63,7 +64,7 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                 filterMutationsBySelectedTranscript={true}
                 mainLoadingIndicator={this.loader}
                 tracks={[TrackName.CancerHotspots, TrackName.OncoKB, TrackName.PTM]}
-                getMutationCount={this.getMutationCount}
+                getMutationCount={this.getLollipopCountValue}
                 customMutationTableColumns={[
                     {
                         id: ColumnId.SOMATIC,
@@ -108,6 +109,10 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                         },
                     ]
                 }
+                plotTopYAxisSymbol="#"
+                plotBottomYAxisSymbol="%"
+                plotBottomYAxisDefaultMax={1}
+                plotLollipopTooltipCountInfo={this.lollipopTooltipCountInfo}
                 dataFilters={[
                     {
                         id: MUTATION_STATUS_FILTER_ID,
@@ -134,6 +139,20 @@ class MutationMapper extends React.Component<IMutationMapperProps>
     };
 
     @autobind
+    private lollipopTooltipCountInfo(count: number, mutations?: IExtendedMutation[]): JSX.Element
+    {
+        if (mutations && mutations.length > 0) {
+            const mutationStatus = mutations[0].mutationStatus;
+
+            if (mutationStatus.toLowerCase().includes(MutationStatusFilterValue.GERMLINE.toLowerCase())) {
+                return <strong>{formatPercentValue(count)}% mutation rate</strong>;
+            }
+        }
+
+        return <strong>{count} mutation{`${count !== 1 ? "s" : ""}`}</strong>;
+    }
+
+    @autobind
     private getMutationCount(mutation: IExtendedMutation)
     {
         const cancerTypeFilter = this.insightMutationMapper ? this.insightMutationMapper.cancerTypeFilter : undefined;
@@ -145,7 +164,30 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                     containsCancerType(cancerTypeFilter, t.tumorType) &&
                     matchesMutationStatus(mutationStatusFilter, mutation, t)
                 ) ? t.variantCount : 0)
-            .reduce((sum, count) => sum + count)
+            .reduce((sum, count) => sum + count);
+    }
+
+    @autobind
+    private getMutationRate(mutation: IExtendedMutation)
+    {
+        const cancerTypeFilter = this.insightMutationMapper ? this.insightMutationMapper.cancerTypeFilter : undefined;
+        const mutationStatusFilter = this.insightMutationMapper ? this.insightMutationMapper.mutationStatusFilter : undefined;
+
+        return 100 * calculateOverallFrequency(mutation.tumorTypeDecomposition
+            .filter(t => containsCancerType(cancerTypeFilter, t.tumorType) &&
+                matchesMutationStatus(mutationStatusFilter, mutation, t))
+        );
+    }
+
+    @autobind
+    private getLollipopCountValue(mutation: IExtendedMutation)
+    {
+        if (mutation.mutationStatus.toLowerCase().includes(MutationStatusFilterValue.GERMLINE.toLowerCase())) {
+            return this.getMutationRate(mutation);
+        }
+        else {
+            return this.getMutationCount(mutation);
+        }
     }
 
     private get mutationCountFilter() {

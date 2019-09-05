@@ -181,11 +181,11 @@ function totalSamples(counts: ICountByTumorType[]) {
     return counts.map(c => c.tumorTypeCount).reduce((acc, curr) => acc + curr, 0) || 0;
 }
 
-function calculateOverallFrequency(counts: ICountByTumorType[]) {
+export function calculateOverallFrequency(counts: ICountByTumorType[]) {
     return totalVariants(counts) / totalSamples(counts);
 }
 
-function calculateTotalVariantRatio(counts1: ICountByTumorType[], counts2: ICountByTumorType[])
+export function calculateTotalVariantRatio(counts1: ICountByTumorType[], counts2: ICountByTumorType[])
 {
     return totalVariants(counts1) / totalVariants(counts2);
 }
