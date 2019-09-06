@@ -7,7 +7,27 @@ import {
     IMutation,
     ITumorTypeDecomposition
 } from "../../../server/src/model/Mutation";
-import {applyMutationStatusFilter, containsCancerType, MutationStatusFilter} from "./FilterUtils";
+import {
+    applyMutationStatusFilter,
+    containsCancerType,
+    matchesMutationStatus,
+    MutationStatusFilter,
+    MutationStatusFilterValue
+} from "./FilterUtils";
+
+
+function isGermlineMutation(mutation: IMutation) {
+    return mutation.mutationStatus.toLowerCase() === "germline";
+}
+
+function isSomaticMutation(mutation: IMutation) {
+    return mutation.mutationStatus.toLowerCase() === "somatic";
+}
+
+function isPathogenicMutation(mutation: IMutation) {
+    return mutation.pathogenic === "1";
+}
+
 
 export function findAllUniqueCancerTypes(mutations: Array<Partial<IMutation>>)
 {
@@ -40,9 +60,9 @@ export function extendMutations(mutations: IMutation[]): IExtendedMutation[]
     // filter out biallelic mutations, since their count is already included in germline mutations
     // we only use biallelic mutations to add frequency values and additional count fields
     return mutations.map(mutation => {
-        const isSomatic = mutation.mutationStatus.toLowerCase() === "somatic";
-        const isGermline = mutation.mutationStatus.toLowerCase() === "germline";
-        const isPathogenic = mutation.pathogenic === "1";
+        const isSomatic = isSomaticMutation(mutation);
+        const isGermline = isGermlineMutation(mutation);
+        const isPathogenic = isPathogenicMutation(mutation);
 
         const pathogenicGermlineFrequency = (isGermline && isPathogenic) ?
             calculateOverallFrequency(mutation.countsByTumorType) : 0;
@@ -83,7 +103,9 @@ function generateTumorTypeDecomposition(countsByTumorType: ICountByTumorType[],
         ...counts,
         frequency: counts.variantCount / counts.tumorTypeCount,
         biallelicRatio: biallelicTumorMap && qcPassTumorMap ?
-            calcBiallelicRatio(biallelicTumorMap[counts.tumorType], qcPassTumorMap[counts.tumorType]): 0
+            calcBiallelicRatio(biallelicTumorMap[counts.tumorType], qcPassTumorMap[counts.tumorType]): 0,
+        biallelicVariantCount: biallelicTumorMap && biallelicTumorMap[counts.tumorType] ?
+            biallelicTumorMap[counts.tumorType].variantCount: 0
     }));
 }
 
@@ -188,4 +210,69 @@ export function calculateOverallFrequency(counts: ICountByTumorType[]) {
 export function calculateTotalVariantRatio(counts1: ICountByTumorType[], counts2: ICountByTumorType[])
 {
     return totalVariants(counts1) / totalVariants(counts2);
+}
+
+export function calculateMutationRate(mutation: IExtendedMutation,
+                                      cancerTypeFilter?: CancerTypeFilter,
+                                      mutationStatusFilter?: MutationStatusFilter)
+{
+    let frequency = 0;
+
+    // if the only active germline filter is biallelic pathogenic germline,
+    // then we need to use biallelic counts instead of overall tumor type count
+    if (isGermlineMutation(mutation) &&
+        containsOnlyBiallelicGermlineFilterValue(mutationStatusFilter))
+    {
+        const filteredBiallelicTumorTypeCount = mutation.biallelicCountsByTumorType.filter(
+            t => containsCancerType(cancerTypeFilter, t.tumorType)
+        );
+
+        frequency = calculateOverallFrequency(filteredBiallelicTumorTypeCount);
+    }
+    else
+    {
+        const filteredTumorTypeDecomposition = mutation.tumorTypeDecomposition.filter(
+            t => containsCancerType(cancerTypeFilter, t.tumorType) &&
+                matchesMutationStatus(mutationStatusFilter, mutation, t)
+        );
+
+        frequency = calculateOverallFrequency(filteredTumorTypeDecomposition);
+    }
+
+    return 100 * frequency;
+}
+
+export function getVariantCount(mutation: IExtendedMutation,
+                                tumorTypeDecomposition: ITumorTypeDecomposition,
+                                cancerTypeFilter?: CancerTypeFilter,
+                                mutationStatusFilter?: MutationStatusFilter)
+{
+    let count = 0;
+
+    if (containsCancerType(cancerTypeFilter, tumorTypeDecomposition.tumorType) &&
+        matchesMutationStatus(mutationStatusFilter, mutation, tumorTypeDecomposition))
+    {
+        // if the only active germline filter is biallelic pathogenic germline,
+        // then we need to use biallelic variant count instead of variant count
+        if (isGermlineMutation(mutation) &&
+            containsOnlyBiallelicGermlineFilterValue(mutationStatusFilter))
+        {
+            count = tumorTypeDecomposition.biallelicVariantCount;
+        }
+        else {
+            count = tumorTypeDecomposition.variantCount;
+        }
+    }
+
+    return count;
+}
+
+function containsOnlyBiallelicGermlineFilterValue(mutationStatusFilter?: MutationStatusFilter)
+{
+    return (
+        mutationStatusFilter &&
+        _.every(mutationStatusFilter.values,
+                v => v === MutationStatusFilterValue.BIALLELIC_PATHOGENIC_GERMLINE ||
+                    v === MutationStatusFilterValue.SOMATIC)
+    );
 }

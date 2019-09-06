@@ -9,6 +9,7 @@ export interface ITumorTypeDecomposition extends ICountByTumorType
 {
     frequency: number;
     biallelicRatio: number;
+    biallelicVariantCount: number;
 }
 
 export interface IMutation

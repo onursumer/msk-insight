@@ -10,7 +10,6 @@ import {
     applyCancerTypeFilter,
     applyMutationStatusFilter,
     containsCancerType,
-    matchesMutationStatus,
     MUTATION_COUNT_FILTER_TYPE,
     MUTATION_STATUS_FILTER_ID,
     MUTATION_STATUS_FILTER_TYPE,
@@ -18,7 +17,7 @@ import {
     MutationStatusFilter,
     MutationStatusFilterValue
 } from "../util/FilterUtils";
-import {calculateOverallFrequency} from "../util/MutationDataUtils";
+import {calculateMutationRate, getVariantCount} from "../util/MutationDataUtils";
 import {loaderWithText} from "../util/StatusHelper";
 import {ColumnId, HEADER_COMPONENT} from "./ColumnHeaderHelper";
 import {renderPercentage} from "./ColumnRenderHelper";
@@ -160,10 +159,7 @@ class MutationMapper extends React.Component<IMutationMapperProps>
 
         // take the current cancer type and mutation status filter into account
         return mutation.tumorTypeDecomposition
-            .map(t => (
-                    containsCancerType(cancerTypeFilter, t.tumorType) &&
-                    matchesMutationStatus(mutationStatusFilter, mutation, t)
-                ) ? t.variantCount : 0)
+            .map(t => getVariantCount(mutation, t, cancerTypeFilter, mutationStatusFilter))
             .reduce((sum, count) => sum + count);
     }
 
@@ -173,10 +169,7 @@ class MutationMapper extends React.Component<IMutationMapperProps>
         const cancerTypeFilter = this.insightMutationMapper ? this.insightMutationMapper.cancerTypeFilter : undefined;
         const mutationStatusFilter = this.insightMutationMapper ? this.insightMutationMapper.mutationStatusFilter : undefined;
 
-        return 100 * calculateOverallFrequency(mutation.tumorTypeDecomposition
-            .filter(t => containsCancerType(cancerTypeFilter, t.tumorType) &&
-                matchesMutationStatus(mutationStatusFilter, mutation, t))
-        );
+        return calculateMutationRate(mutation, cancerTypeFilter, mutationStatusFilter);
     }
 
     @autobind
