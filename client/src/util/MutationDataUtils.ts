@@ -28,7 +28,6 @@ function isPathogenicMutation(mutation: IMutation) {
     return mutation.pathogenic === "1";
 }
 
-
 export function findAllUniqueCancerTypes(mutations: Array<Partial<IMutation>>)
 {
     return _.uniq(_.flatten(mutations.map(m => (m.countsByTumorType || []).map(c => c.tumorType))));
@@ -126,10 +125,8 @@ export function calculateTotalFrequency(mutations: IExtendedMutation[],
     const filtered = mutations.filter(mutation => applyMutationStatusFilter(mutationStatusFilter, mutation));
 
     if (filtered.length > 0) {
-        const variantCount = totalVariants(
-            combinedTumorTypeDecompositions(filtered, cancerTypeFilter));
-        const sampleCount = totalSamples(
-            filterCountsByTumorType(filtered[0].tumorTypeDecomposition, cancerTypeFilter));
+        const variantCount = totalFilteredVariants(filtered, cancerTypeFilter);
+        const sampleCount = totalFilteredSamples(filtered, cancerTypeFilter);
 
         frequency = variantCount / sampleCount;
     }
@@ -201,6 +198,18 @@ function totalVariants(counts: ICountByTumorType[]) {
 
 function totalSamples(counts: ICountByTumorType[]) {
     return counts.map(c => c.tumorTypeCount).reduce((acc, curr) => acc + curr, 0) || 0;
+}
+
+export function totalFilteredVariants(mutations: IExtendedMutation[], cancerTypeFilter?: CancerTypeFilter) {
+    return totalVariants(
+        combinedTumorTypeDecompositions(mutations, cancerTypeFilter)
+    );
+}
+
+export function totalFilteredSamples(mutations: IExtendedMutation[], cancerTypeFilter?: CancerTypeFilter) {
+    return mutations.length > 0 ? totalSamples(
+        filterCountsByTumorType(mutations[0].tumorTypeDecomposition, cancerTypeFilter)
+    ): 0;
 }
 
 export function calculateOverallFrequency(counts: ICountByTumorType[]) {

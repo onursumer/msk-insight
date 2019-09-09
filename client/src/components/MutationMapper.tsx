@@ -56,6 +56,7 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                 entrezGeneId={this.entrezGeneId}
                 isoformOverrideSource={ISOFORM_OVERRIDE_SOURCE}
                 data={this.props.data}
+                showFilterResetPanel={false}
                 showPlotLegendToggle={false}
                 showPlotDownloadControls={false}
                 showTranscriptDropDown={true}

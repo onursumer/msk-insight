@@ -3,6 +3,7 @@ import {observer} from "mobx-react";
 import * as React from 'react';
 import {
     DataFilterType,
+    FilterResetPanel,
     groupDataByProteinImpactType,
     MutationMapper as ReactMutationMapper,
     MutationMapperProps,
@@ -23,7 +24,8 @@ import {
 import {
     calculateTotalBiallelicRatio,
     calculateTotalFrequency,
-    findAllUniqueCancerTypes
+    findAllUniqueCancerTypes,
+    totalFilteredSamples
 } from "../util/MutationDataUtils";
 import CancerTypeSelector from "./CancerTypeSelector";
 import MutationStatusSelector from "./MutationStatusSelector";
@@ -67,6 +69,16 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
     @computed
     public get mutationTypeFilter() {
         return findMutationTypeFilter(this.store.dataStore.dataFilters);
+    }
+
+    @computed
+    public get totalFilteredSamples() {
+        return totalFilteredSamples(this.store.dataStore.sortedFilteredData, this.cancerTypeFilter);
+    }
+
+    @computed
+    public get totalSamples() {
+        return totalFilteredSamples(this.store.dataStore.allData);
     }
 
     @computed
@@ -126,6 +138,45 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
                 </div>
             </div>
         );
+    }
+
+    /**
+     * Overriding the parent method to have customized mutation info
+     */
+    @computed
+    protected get mutationTableInfo(): JSX.Element | undefined
+    {
+        const uniqueMutationCount = this.store.dataStore.allData.length;
+        const filteredUniqueMutationCount = this.store.dataStore.sortedFilteredSelectedData.length > 0 ?
+            this.store.dataStore.sortedFilteredSelectedData.length : this.store.dataStore.sortedFilteredData.length;
+
+        const mutations =
+            <span>
+                <strong>
+                    {filteredUniqueMutationCount}
+                    {uniqueMutationCount !== filteredUniqueMutationCount && `/${uniqueMutationCount}`}
+                </strong> {filteredUniqueMutationCount === 1 ? `unique mutation` : `unique mutations`}
+            </span>;
+
+        const samples =
+            <span>
+                <strong>
+                    {this.totalFilteredSamples}
+                    {this.totalSamples !== this.totalFilteredSamples && `/${this.totalSamples}`}
+                </strong> {this.totalFilteredSamples === 1 ? `total sample`: `total samples`}
+            </span>;
+
+        const filtering = this.isFiltered ? "based on current filtering": null;
+
+        const info = <span>{mutations} in {samples} {filtering}</span>;
+
+        return this.isFiltered ? (
+            <FilterResetPanel
+                resetFilters={this.resetFilters}
+                filterInfo={info}
+                className=""
+            />
+        ): info;
     }
 
     @computed
