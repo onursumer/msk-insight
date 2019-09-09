@@ -28,6 +28,8 @@ import {
 import CancerTypeSelector from "./CancerTypeSelector";
 import MutationStatusSelector from "./MutationStatusSelector";
 
+import "./InsightMutationMapper.css";
+
 export interface IInsightMutationMapperProps extends MutationMapperProps
 {
     onInit?: (mutationMapper: InsightMutationMapper) => void;
@@ -100,7 +102,7 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
     protected get mutationFilterPanel(): JSX.Element | null
     {
         return (
-            <div>
+            <div className="insight-mutation-filter-panel">
                 <div style={FILTER_UI_STYLE}>
                     <MutationStatusSelector
                         filter={this.mutationStatusFilter}

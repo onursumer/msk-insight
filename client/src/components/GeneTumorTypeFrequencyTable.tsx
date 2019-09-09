@@ -91,9 +91,9 @@ class GeneTumorTypeFrequencyTable extends React.Component<ITumorTypeFrequencyTab
                             Header: HEADER_COMPONENT[ColumnId.MUTATION_FREQUENCIES],
                             columns: [
                                 {
-                                    id: ColumnId.SOMATIC,
+                                    id: ColumnId.SOMATIC_DRIVER,
                                     Cell: renderPercentage,
-                                    Header: HEADER_COMPONENT[ColumnId.SOMATIC],
+                                    Header: HEADER_COMPONENT[ColumnId.SOMATIC_DRIVER],
                                     accessor: somaticAccessor,
                                     maxWidth: 120
                                 },

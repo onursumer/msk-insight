@@ -96,9 +96,9 @@ class GeneFrequencyTable extends React.Component<IFrequencyTableProps>
                             defaultSortDesc: false
                         },
                         {
-                            id: ColumnId.SOMATIC,
+                            id: ColumnId.SOMATIC_DRIVER,
                             Cell: renderPercentage,
-                            Header: HEADER_COMPONENT[ColumnId.SOMATIC],
+                            Header: HEADER_COMPONENT[ColumnId.SOMATIC_DRIVER],
                             accessor: somaticAccessor
                         },
                         {
