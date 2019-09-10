@@ -46,6 +46,18 @@ class MutationMapper extends React.Component<IMutationMapperProps>
             parseInt(this.props.ensemblGene.entrezGeneId, 10): undefined;
     }
 
+    @computed
+    get showGermlinePercent()
+    {
+        return this.insightMutationMapper ? this.insightMutationMapper.showGermlinePercent : true;
+    }
+
+    @computed
+    get showSomaticPercent()
+    {
+        return this.insightMutationMapper ? this.insightMutationMapper.showSomaticPercent : false;
+    }
+
     public render()
     {
         return (
@@ -109,9 +121,6 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                         },
                     ]
                 }
-                plotTopYAxisSymbol="#"
-                plotBottomYAxisSymbol="%"
-                plotBottomYAxisDefaultMax={1}
                 plotLollipopTooltipCountInfo={this.lollipopTooltipCountInfo}
                 dataFilters={[
                     {
@@ -141,15 +150,9 @@ class MutationMapper extends React.Component<IMutationMapperProps>
     @autobind
     private lollipopTooltipCountInfo(count: number, mutations?: IExtendedMutation[]): JSX.Element
     {
-        if (mutations && mutations.length > 0) {
-            const mutationStatus = mutations[0].mutationStatus;
-
-            if (mutationStatus.toLowerCase().includes(MutationStatusFilterValue.GERMLINE.toLowerCase())) {
-                return <strong>{formatPercentValue(count)}% mutation rate</strong>;
-            }
-        }
-
-        return <strong>{count} mutation{`${count !== 1 ? "s" : ""}`}</strong>;
+        return mutations && mutations.length > 0 && this.needToShowPercent(mutations[0]) ?
+            <strong>{formatPercentValue(count)}% mutation rate</strong>:
+            <strong>{count} mutation{`${count !== 1 ? "s" : ""}`}</strong>;
     }
 
     @autobind
@@ -176,14 +179,19 @@ class MutationMapper extends React.Component<IMutationMapperProps>
     @autobind
     private getLollipopCountValue(mutation: IExtendedMutation)
     {
-        if (mutation.mutationStatus.toLowerCase().includes(MutationStatusFilterValue.GERMLINE.toLowerCase())) {
-            return this.getMutationRate(mutation);
-        }
-        else {
-            return this.getMutationCount(mutation);
-        }
+        return this.needToShowPercent(mutation) ? this.getMutationRate(mutation) : this.getMutationCount(mutation);
     }
 
+    private needToShowPercent(mutation: IExtendedMutation)
+    {
+        return (
+            mutation.mutationStatus.toLowerCase().includes(MutationStatusFilterValue.GERMLINE.toLowerCase()) &&
+            this.showGermlinePercent
+        ) || (
+            mutation.mutationStatus.toLowerCase().includes(MutationStatusFilterValue.SOMATIC.toLowerCase()) &&
+            this.showSomaticPercent
+        );
+    }
     private get mutationCountFilter() {
         return {
             type: MUTATION_COUNT_FILTER_TYPE,

@@ -1,4 +1,4 @@
-import {action, computed} from "mobx";
+import {action, computed, observable} from "mobx";
 import {observer} from "mobx-react";
 import * as React from 'react';
 import {
@@ -30,11 +30,16 @@ import {
 import CancerTypeSelector from "./CancerTypeSelector";
 import MutationStatusSelector from "./MutationStatusSelector";
 
+import {AxisScaleSwitch} from "./AxisScaleSwitch";
 import "./InsightMutationMapper.css";
 
 export interface IInsightMutationMapperProps extends MutationMapperProps
 {
     onInit?: (mutationMapper: InsightMutationMapper) => void;
+    onGermlineScaleToggle?: (checked: boolean) => void;
+    germlinePercentChecked?: boolean;
+    onSomaticScaleToggle?: (checked: boolean) => void;
+    somaticPercentChecked?: boolean;
 }
 
 const FILTER_UI_STYLE = {
@@ -46,6 +51,12 @@ const FILTER_UI_STYLE = {
 @observer
 export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationMapperProps>
 {
+    @observable
+    public showGermlinePercent = true;
+
+    @observable
+    public showSomaticPercent = false;
+
     @computed
     public get cancerTypes() {
         return findAllUniqueCancerTypes(this.props.data || []).sort();
@@ -99,6 +110,26 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
         return map;
     }
 
+    @computed
+    protected get plotTopYAxisSymbol() {
+        return this.showSomaticPercent ? "%" : "#";
+    }
+
+    @computed
+    protected get plotBottomYAxisSymbol() {
+        return this.showGermlinePercent ? "%" : "#";
+    }
+
+    @computed
+    protected get plotTopYAxisDefaultMax() {
+        return this.showSomaticPercent ? 1 : 5;
+    }
+
+    @computed
+    protected get plotBottomYAxisDefaultMax() {
+        return this.showGermlinePercent ? 1 : 5;
+    }
+
     constructor(props: IInsightMutationMapperProps)
     {
         super(props);
@@ -136,6 +167,25 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
                         onSelect={this.onCancerTypeSelect}
                     />
                 </div>
+                {this.percentToggle}
+            </div>
+        );
+    }
+
+    protected get percentToggle(): JSX.Element | undefined
+    {
+        return (
+            <div className="small" style={{display: "flex", alignItems: "center"}}>
+                <span style={{marginLeft: 5, marginRight: 5}}>Somatic: </span>
+                <AxisScaleSwitch
+                    checked={this.showSomaticPercent}
+                    onChange={this.onSomaticScaleToggle}
+                />
+                <span style={{marginLeft: 5, marginRight: 5}}>Germline: </span>
+                <AxisScaleSwitch
+                    checked={this.showGermlinePercent}
+                    onChange={this.onGermlineScaleToggle}
+                />
             </div>
         );
     }
@@ -249,6 +299,26 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
             this.store.dataStore,
             DataFilterType.PROTEIN_IMPACT_TYPE,
             PROTEIN_IMPACT_TYPE_FILTER_ID);
+    }
+
+    @action.bound
+    private onGermlineScaleToggle(checked: boolean)
+    {
+        this.showGermlinePercent = checked;
+
+        if (this.props.onGermlineScaleToggle) {
+            this.props.onGermlineScaleToggle(checked);
+        }
+    }
+
+    @action.bound
+    private onSomaticScaleToggle(checked: boolean)
+    {
+        this.showSomaticPercent = checked;
+
+        if (this.props.onSomaticScaleToggle) {
+            this.props.onSomaticScaleToggle(checked);
+        }
     }
 }
 
