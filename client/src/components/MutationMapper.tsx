@@ -17,7 +17,13 @@ import {
     MutationStatusFilter,
     MutationStatusFilterValue
 } from "../util/FilterUtils";
-import {calculateMutationRate, getVariantCount} from "../util/MutationDataUtils";
+import {
+    calculateMutationRate,
+    getVariantCount,
+    isGermlineMutation,
+    // isPathogenicMutation,
+    isSomaticMutation
+} from "../util/MutationDataUtils";
 import {loaderWithText} from "../util/StatusHelper";
 import {ColumnId, HEADER_COMPONENT} from "./ColumnHeaderHelper";
 import {renderPercentage} from "./ColumnRenderHelper";
@@ -33,6 +39,37 @@ interface IMutationMapperProps
     hugoSymbol: string;
     ensemblGene?: IEnsemblGene;
 }
+
+// function mutationStatusAccessor(mutation: IExtendedMutation)
+// {
+//     if (isSomaticMutation(mutation)) {
+//         return MutationStatusFilterValue.SOMATIC;
+//     }
+//     else if (isGermlineMutation(mutation)) {
+//         if (isPathogenicMutation(mutation)) {
+//             return MutationStatusFilterValue.PATHOGENIC_GERMLINE;
+//         }
+//         else {
+//             return MutationStatusFilterValue.BENIGN_GERMLINE;
+//         }
+//     }
+//
+//     return "Unknown";
+// }
+
+function mutationPercentAccessor(mutation: IExtendedMutation)
+{
+    if (isSomaticMutation(mutation)) {
+        return mutation.somaticFrequency;
+    }
+    else if (isGermlineMutation(mutation)) {
+        return mutation.germlineFrequency;
+    }
+    else {
+        return 0;
+    }
+}
+
 
 @observer
 class MutationMapper extends React.Component<IMutationMapperProps>
@@ -79,18 +116,11 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                 getMutationCount={this.getLollipopCountValue}
                 customMutationTableColumns={[
                     {
-                        id: ColumnId.SOMATIC,
-                        name: "% Somatic Mutant",
+                        id: ColumnId.MUTATION_PERCENT,
+                        name: "%",
                         Cell: renderPercentage,
-                        accessor: "somaticFrequency",
-                        Header: HEADER_COMPONENT[ColumnId.SOMATIC]
-                    },
-                    {
-                        id: ColumnId.GERMLINE,
-                        name: "% Pathogenic Germline",
-                        Cell: renderPercentage,
-                        accessor: "pathogenicGermlineFrequency",
-                        Header: HEADER_COMPONENT[ColumnId.GERMLINE]
+                        accessor: mutationPercentAccessor,
+                        Header: HEADER_COMPONENT[ColumnId.MUTATION_PERCENT]
                     },
                     {
                         id: ColumnId.PERCENT_BIALLELIC,
@@ -121,7 +151,7 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                         },
                     ]
                 }
-                plotYAxisLabelPadding={45}
+                plotYAxisLabelPadding={50}
                 plotLollipopTooltipCountInfo={this.lollipopTooltipCountInfo}
                 dataFilters={[
                     {
@@ -152,7 +182,7 @@ class MutationMapper extends React.Component<IMutationMapperProps>
     private lollipopTooltipCountInfo(count: number, mutations?: IExtendedMutation[]): JSX.Element
     {
         return mutations && mutations.length > 0 && this.needToShowPercent(mutations[0]) ?
-            <strong>{formatPercentValue(count, 2)}% mutation rate</strong>:
+            <strong>{formatPercentValue(count, 4)}% mutation rate</strong>:
             <strong>{count} mutation{`${count !== 1 ? "s" : ""}`}</strong>;
     }
 

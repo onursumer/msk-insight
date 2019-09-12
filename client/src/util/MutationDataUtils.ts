@@ -16,15 +16,15 @@ import {
 } from "./FilterUtils";
 
 
-function isGermlineMutation(mutation: IMutation) {
+export function isGermlineMutation(mutation: IMutation) {
     return mutation.mutationStatus.toLowerCase() === "germline";
 }
 
-function isSomaticMutation(mutation: IMutation) {
+export function isSomaticMutation(mutation: IMutation) {
     return mutation.mutationStatus.toLowerCase() === "somatic";
 }
 
-function isPathogenicMutation(mutation: IMutation) {
+export function isPathogenicMutation(mutation: IMutation) {
     return mutation.pathogenic === "1";
 }
 

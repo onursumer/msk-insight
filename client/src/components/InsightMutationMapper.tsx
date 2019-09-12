@@ -125,6 +125,11 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
         return this.showPercent ? 0 : 5;
     }
 
+    @computed
+    protected get plotYMaxLabelPostfix() {
+        return this.showPercent ? "%" : "";
+    }
+
     constructor(props: IInsightMutationMapperProps)
     {
         super(props);
@@ -141,6 +146,12 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
     {
         return (
             <div className="insight-mutation-filter-panel">
+                <div style={FILTER_UI_STYLE}>
+                    <strong>
+                        {this.totalFilteredSamples}
+                        {this.totalSamples !== this.totalFilteredSamples && `/${this.totalSamples}`}
+                    </strong> {this.totalFilteredSamples === 1 ? `total sample`: `total samples`}
+                </div>
                 <div style={FILTER_UI_STYLE}>
                     <MutationStatusSelector
                         filter={this.mutationStatusFilter}
@@ -166,6 +177,9 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
         );
     }
 
+    /**
+     * Override the parent method to get custom controls.
+     */
     protected get customControls(): JSX.Element | undefined
     {
         return this.percentToggle;
@@ -202,17 +216,9 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
                 </strong> {filteredUniqueMutationCount === 1 ? `unique mutation` : `unique mutations`}
             </span>;
 
-        const samples =
-            <span>
-                <strong>
-                    {this.totalFilteredSamples}
-                    {this.totalSamples !== this.totalFilteredSamples && `/${this.totalSamples}`}
-                </strong> {this.totalFilteredSamples === 1 ? `total sample`: `total samples`}
-            </span>;
-
         const filtering = this.isFiltered ? "based on current filtering": null;
 
-        const info = <span>{mutations} in {samples} {filtering}</span>;
+        const info = <span>{mutations} {filtering}</span>;
 
         return this.isFiltered ? (
             <FilterResetPanel

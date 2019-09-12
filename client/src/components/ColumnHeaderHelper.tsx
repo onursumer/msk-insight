@@ -7,6 +7,7 @@ export enum ColumnId {
     SOMATIC_DRIVER = "somaticDriver",
     GERMLINE = "germline",
     PERCENT_BIALLELIC = "percentBialleic",
+    MUTATION_PERCENT = "mutationPercent",
     MUTATION_FREQUENCIES = "mutationFrequencies"
 }
 
@@ -25,5 +26,6 @@ export const HEADER_COMPONENT: {[id: string] : JSX.Element} = {
             overlay={<span>Percent of pathogenic germline carriers biallelic in the corresponding tumor</span>}
         />
     ),
-    [ColumnId.MUTATION_FREQUENCIES]: <ColumnHeader headerContent="Mutation Frequencies"/>,
+    [ColumnId.MUTATION_PERCENT]: <ColumnHeader headerContent="%"/>,
+    [ColumnId.MUTATION_FREQUENCIES]: <ColumnHeader headerContent="Mutation Frequencies"/>
 };
