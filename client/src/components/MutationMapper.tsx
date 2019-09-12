@@ -49,13 +49,13 @@ class MutationMapper extends React.Component<IMutationMapperProps>
     @computed
     get showGermlinePercent()
     {
-        return this.insightMutationMapper ? this.insightMutationMapper.showGermlinePercent : true;
+        return this.insightMutationMapper ? this.insightMutationMapper.showPercent : true;
     }
 
     @computed
     get showSomaticPercent()
     {
-        return this.insightMutationMapper ? this.insightMutationMapper.showSomaticPercent : false;
+        return this.insightMutationMapper ? this.insightMutationMapper.showPercent : true;
     }
 
     public render()
@@ -121,6 +121,7 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                         },
                     ]
                 }
+                plotYAxisLabelPadding={45}
                 plotLollipopTooltipCountInfo={this.lollipopTooltipCountInfo}
                 dataFilters={[
                     {
@@ -151,7 +152,7 @@ class MutationMapper extends React.Component<IMutationMapperProps>
     private lollipopTooltipCountInfo(count: number, mutations?: IExtendedMutation[]): JSX.Element
     {
         return mutations && mutations.length > 0 && this.needToShowPercent(mutations[0]) ?
-            <strong>{formatPercentValue(count)}% mutation rate</strong>:
+            <strong>{formatPercentValue(count, 2)}% mutation rate</strong>:
             <strong>{count} mutation{`${count !== 1 ? "s" : ""}`}</strong>;
     }
 
