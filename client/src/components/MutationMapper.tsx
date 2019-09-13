@@ -2,7 +2,16 @@ import autobind from "autobind-decorator";
 import {computed} from "mobx";
 import {observer} from "mobx-react";
 import * as React from "react";
-import {CancerTypeFilter, DataFilterType, formatPercentValue, TrackName} from "react-mutation-mapper";
+import {
+    CancerTypeFilter,
+    DataFilterType,
+    DEFAULT_MUTATION_COLUMNS,
+    formatPercentValue,
+    MutationColumn,
+    MutationStatus,
+    ProteinChange,
+    TrackName
+} from "react-mutation-mapper";
 
 import {IEnsemblGene} from "../../../server/src/model/EnsemblGene";
 import {IExtendedMutation, ITumorTypeDecomposition} from "../../../server/src/model/Mutation";
@@ -21,7 +30,7 @@ import {
     calculateMutationRate,
     getVariantCount,
     isGermlineMutation,
-    // isPathogenicMutation,
+    isPathogenicMutation,
     isSomaticMutation
 } from "../util/MutationDataUtils";
 import {loaderWithText} from "../util/StatusHelper";
@@ -40,22 +49,22 @@ interface IMutationMapperProps
     ensemblGene?: IEnsemblGene;
 }
 
-// function mutationStatusAccessor(mutation: IExtendedMutation)
-// {
-//     if (isSomaticMutation(mutation)) {
-//         return MutationStatusFilterValue.SOMATIC;
-//     }
-//     else if (isGermlineMutation(mutation)) {
-//         if (isPathogenicMutation(mutation)) {
-//             return MutationStatusFilterValue.PATHOGENIC_GERMLINE;
-//         }
-//         else {
-//             return MutationStatusFilterValue.BENIGN_GERMLINE;
-//         }
-//     }
-//
-//     return "Unknown";
-// }
+function mutationStatusAccessor(mutation: IExtendedMutation)
+{
+    if (isSomaticMutation(mutation)) {
+        return MutationStatusFilterValue.SOMATIC;
+    }
+    else if (isGermlineMutation(mutation)) {
+        if (isPathogenicMutation(mutation)) {
+            return MutationStatusFilterValue.PATHOGENIC_GERMLINE;
+        }
+        else {
+            return MutationStatusFilterValue.BENIGN_GERMLINE;
+        }
+    }
+
+    return "Unknown";
+}
 
 function mutationPercentAccessor(mutation: IExtendedMutation)
 {
@@ -115,6 +124,33 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                 tracks={[TrackName.CancerHotspots, TrackName.OncoKB, TrackName.PTM]}
                 getMutationCount={this.getLollipopCountValue}
                 customMutationTableColumns={[
+                    {
+                        // override default Protein Change column to disable mutation status indicator
+                        ...DEFAULT_MUTATION_COLUMNS[MutationColumn.PROTEIN_CHANGE],
+                        Cell: (column: any) =>
+                            <ProteinChange
+                                mutation={column.original}
+                                enableMutationStatusIndicator={false}
+                            />
+                    },
+                    {
+                        // override default Mutation Status column to include benign/pathogenic germline status
+                        ...DEFAULT_MUTATION_COLUMNS[MutationColumn.MUTATION_STATUS],
+                        accessor: mutationStatusAccessor,
+                        Cell: (column: any) =>
+                            <MutationStatus
+                                value={column.value}
+                                enableTooltip={false}
+                                displayValueMap={{
+                                    [MutationStatusFilterValue.SOMATIC.toLowerCase()]:
+                                        MutationStatusFilterValue.SOMATIC,
+                                    [MutationStatusFilterValue.PATHOGENIC_GERMLINE.toLowerCase()]:
+                                        MutationStatusFilterValue.PATHOGENIC_GERMLINE,
+                                    [MutationStatusFilterValue.BENIGN_GERMLINE.toLowerCase()]:
+                                        MutationStatusFilterValue.BENIGN_GERMLINE,
+                                }}
+                            />
+                    },
                     {
                         id: ColumnId.MUTATION_PERCENT,
                         name: "%",
