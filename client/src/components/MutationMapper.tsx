@@ -4,6 +4,7 @@ import {observer} from "mobx-react";
 import * as React from "react";
 import {
     CancerTypeFilter,
+    ColumnSortDirection,
     DataFilterType,
     DEFAULT_MUTATION_COLUMNS,
     formatPercentValue,
@@ -175,6 +176,8 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                 customMutationTableProps={{
                     SubComponent: this.renderSubComponent
                 }}
+                mutationTableInitialSortColumn={MutationColumn.PROTEIN_CHANGE}
+                mutationTableInitialSortDirection={ColumnSortDirection.ASC}
                 groupFilters={
                     [
                         {

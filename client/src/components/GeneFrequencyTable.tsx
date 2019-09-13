@@ -2,7 +2,7 @@ import autobind from "autobind-decorator";
 import {computed, observable} from "mobx";
 import {observer} from "mobx-react";
 import * as React from "react";
-import {Filter} from "react-table";
+import {ColumnSortDirection} from "react-mutation-mapper";
 
 import {IGeneFrequencySummary} from "../../../server/src/model/GeneFrequencySummary";
 import {biallelicAccessor, germlineAccessor, somaticAccessor} from "../util/ColumnHelper";
@@ -41,11 +41,6 @@ function renderSubComponent(row: any) {
             />
         </div>
     );
-}
-
-function filterGene(filter: Filter, row: any, column: any)
-{
-    return row[ColumnId.HUGO_SYMBOL].toLowerCase().includes(filter.value.toLowerCase());
 }
 
 @observer
@@ -89,7 +84,6 @@ class GeneFrequencyTable extends React.Component<IFrequencyTableProps>
                     columns={[
                         {
                             id: ColumnId.HUGO_SYMBOL,
-                            filterMethod: filterGene,
                             Cell: renderHugoSymbol,
                             Header: "Gene",
                             accessor: ColumnId.HUGO_SYMBOL,
@@ -120,7 +114,7 @@ class GeneFrequencyTable extends React.Component<IFrequencyTableProps>
                     ]}
                     initialItemsPerPage={10}
                     initialSortColumn="germline"
-                    initialSortDirection="desc"
+                    initialSortDirection={ColumnSortDirection.DESC}
                     showColumnVisibility={false}
                     searchPlaceholder="Search Genes"
                 />
