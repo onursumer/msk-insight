@@ -304,6 +304,9 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
     @action.bound
     private onScaleToggle(checked: boolean)
     {
+        this.lollipopPlotControlsConfig.yMaxInput = undefined;
+        this.lollipopPlotControlsConfig.bottomYMaxInput = undefined;
+
         this.showPercent = checked;
 
         if (this.props.onScaleToggle) {
