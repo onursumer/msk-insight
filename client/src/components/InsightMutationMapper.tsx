@@ -4,9 +4,9 @@ import * as React from 'react';
 import {
     DataFilterType,
     FilterResetPanel,
-    groupDataByProteinImpactType,
     MutationMapper as ReactMutationMapper,
     MutationMapperProps,
+    onFilterOptionSelect,
     ProteinImpactTypeBadgeSelector
 } from "react-mutation-mapper";
 
@@ -18,7 +18,6 @@ import {
     MUTATION_STATUS_FILTER_ID,
     MUTATION_STATUS_FILTER_TYPE,
     MutationStatusFilterValue,
-    onDropdownOptionSelect,
     PROTEIN_IMPACT_TYPE_FILTER_ID
 } from "../util/FilterUtils";
 import {
@@ -88,24 +87,6 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
     }
 
     @computed
-    public get mutationsGroupedByProteinImpactType() {
-        return groupDataByProteinImpactType(this.store.dataStore);
-    }
-
-    @computed
-    public get mutationCountsByProteinImpactType() {
-        const map: {[proteinImpactType: string] : number} = {};
-
-        Object.keys(this.mutationsGroupedByProteinImpactType)
-            .forEach(proteinImpactType => {
-                const g = this.mutationsGroupedByProteinImpactType[proteinImpactType];
-                map[g.group] = g.data.length;
-            });
-
-        return map;
-    }
-
-    @computed
     protected get plotTopYAxisSymbol() {
         return this.showPercent ? "%" : "#";
     }
@@ -162,7 +143,7 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
                 <div style={FILTER_UI_STYLE}>
                     <ProteinImpactTypeBadgeSelector
                         filter={this.mutationTypeFilter}
-                        counts={this.mutationCountsByProteinImpactType}
+                        counts={this.store.mutationCountsByProteinImpactType}
                         onSelect={this.onProteinImpactTypeSelect}
                     />
                 </div>
@@ -274,7 +255,7 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
     @action.bound
     protected onCancerTypeSelect(selectedCancerTypeIds: string[], allValuesSelected: boolean)
     {
-        onDropdownOptionSelect(selectedCancerTypeIds,
+        onFilterOptionSelect(selectedCancerTypeIds,
             allValuesSelected,
             this.store.dataStore,
             DataFilterType.CANCER_TYPE,
@@ -284,7 +265,7 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
     @action.bound
     protected onMutationStatusSelect(selectedMutationStatusIds: string[], allValuesSelected: boolean)
     {
-        onDropdownOptionSelect(selectedMutationStatusIds,
+        onFilterOptionSelect(selectedMutationStatusIds,
             allValuesSelected,
             this.store.dataStore,
             MUTATION_STATUS_FILTER_TYPE,
@@ -294,7 +275,7 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
     @action.bound
     protected onProteinImpactTypeSelect(selectedMutationTypeIds: string[], allValuesSelected: boolean)
     {
-        onDropdownOptionSelect(selectedMutationTypeIds.map(v => v.toLowerCase()),
+        onFilterOptionSelect(selectedMutationTypeIds.map(v => v.toLowerCase()),
             allValuesSelected,
             this.store.dataStore,
             DataFilterType.PROTEIN_IMPACT_TYPE,
