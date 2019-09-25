@@ -12,6 +12,7 @@ import {renderPercentage} from "./ColumnRenderHelper";
 import Gene from "./Gene";
 import GeneFrequencyTableComponent from "./GeneFrequencyTableComponent";
 import GeneTumorTypeFrequencyDecomposition from "./GeneTumorTypeFrequencyDecomposition";
+import PenetranceList from "./PenetranceList";
 
 import "react-table/react-table.css";
 import "./FrequencyTable.css";
@@ -26,6 +27,14 @@ function renderHugoSymbol(cellProps: any)
     return (
         <Gene
             hugoSymbol={cellProps.value}
+        />
+    );
+}
+
+function renderPenetrance(cellProps: any)
+{
+    return (
+        <PenetranceList
             penetrance={cellProps.original.penetrance}
         />
     );
@@ -85,15 +94,15 @@ class GeneFrequencyTable extends React.Component<IFrequencyTableProps>
                         {
                             id: ColumnId.HUGO_SYMBOL,
                             Cell: renderHugoSymbol,
-                            Header: "Gene",
-                            accessor: ColumnId.HUGO_SYMBOL,
-                            defaultSortDesc: false
+                            Header: HEADER_COMPONENT[ColumnId.HUGO_SYMBOL],
+                            accessor: ColumnId.HUGO_SYMBOL
                         },
                         {
-                            id: ColumnId.SOMATIC_DRIVER,
-                            Cell: renderPercentage,
-                            Header: HEADER_COMPONENT[ColumnId.SOMATIC_DRIVER],
-                            accessor: somaticAccessor
+                            id: ColumnId.PENETRANCE,
+                            Cell: renderPenetrance,
+                            Header: HEADER_COMPONENT[ColumnId.PENETRANCE],
+                            accessor: ColumnId.PENETRANCE
+                            // TODO sort function!
                         },
                         {
                             id: ColumnId.GERMLINE,
@@ -108,12 +117,18 @@ class GeneFrequencyTable extends React.Component<IFrequencyTableProps>
                             accessor: biallelicAccessor
                         },
                         {
+                            id: ColumnId.SOMATIC_DRIVER,
+                            Cell: renderPercentage,
+                            Header: HEADER_COMPONENT[ColumnId.SOMATIC_DRIVER],
+                            accessor: somaticAccessor
+                        },
+                        {
                             expander: true,
                             Expander: this.renderExpander
                         }
                     ]}
                     initialItemsPerPage={10}
-                    initialSortColumn="germline"
+                    initialSortColumn={ColumnId.PENETRANCE}
                     initialSortDirection={ColumnSortDirection.DESC}
                     showColumnVisibility={false}
                     searchPlaceholder="Search Genes"

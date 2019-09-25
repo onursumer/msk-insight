@@ -170,7 +170,7 @@ export class InsightMutationMapper extends ReactMutationMapper<IInsightMutationM
     {
         return (
             <div className="small" style={{display: "flex", alignItems: "center"}}>
-                <span style={{marginLeft: 10, marginRight: 5}}>Y-Axis Scale: </span>
+                <span style={{marginLeft: 10, marginRight: 5}}>Y-Axis: </span>
                 <AxisScaleSwitch
                     checked={this.showPercent}
                     onChange={this.onScaleToggle}

@@ -7,7 +7,6 @@ import {ITumorTypeFrequencySummary} from "../../../server/src/model/GeneFrequenc
 import {biallelicAccessor, germlineAccessor, somaticAccessor} from "../util/ColumnHelper";
 import {ColumnId, HEADER_COMPONENT} from "./ColumnHeaderHelper";
 import FrequencyCell from "./FrequencyCell";
-import Gene from "./Gene";
 
 import "react-table/react-table.css";
 import "./FrequencyTable.css";
@@ -62,49 +61,18 @@ class GeneTumorTypeFrequencyTable extends React.Component<ITumorTypeFrequencyTab
                     data={this.props.data}
                     columns={[
                         {
-                            Header: (
-                                <Gene
-                                    hugoSymbol={this.props.hugoSymbol}
-                                    hugoSymbolClassName="pull-left ml-4"
-                                    penetrance={this.props.penetrance}
-                                    penetranceClassName="pull-left ml-4"
-                                />
-                            ),
-                            columns: [
-                                {
-                                    id: "tumorType",
-                                    Cell: renderTumorType,
-                                    Header: <span className="text-wrap">Tumor type</span>,
-                                    accessor: "tumorType",
-                                    minWidth: 250
-                                },
-                                {
-                                    id: "sampleCount",
-                                    Cell: renderCount,
-                                    Header: <span className="text-wrap"># Samples</span>,
-                                    accessor: "sampleCount",
-                                    maxWidth: 80
-                                }
-                            ]
+                            id: ColumnId.TUMOR_TYPE,
+                            Cell: renderTumorType,
+                            Header: HEADER_COMPONENT[ColumnId.TUMOR_TYPE],
+                            accessor: ColumnId.TUMOR_TYPE,
+                            minWidth: 250
                         },
                         {
-                            Header: HEADER_COMPONENT[ColumnId.MUTATION_FREQUENCIES],
-                            columns: [
-                                {
-                                    id: ColumnId.SOMATIC_DRIVER,
-                                    Cell: renderPercentage,
-                                    Header: HEADER_COMPONENT[ColumnId.SOMATIC_DRIVER],
-                                    accessor: somaticAccessor,
-                                    maxWidth: 120
-                                },
-                                {
-                                    id: ColumnId.GERMLINE,
-                                    Cell: renderPercentage,
-                                    Header: HEADER_COMPONENT[ColumnId.GERMLINE],
-                                    accessor: germlineAccessor,
-                                    maxWidth: 120
-                                }
-                            ]
+                            id: ColumnId.GERMLINE,
+                            Cell: renderPercentage,
+                            Header: HEADER_COMPONENT[ColumnId.GERMLINE],
+                            accessor: germlineAccessor,
+                            maxWidth: 120
                         },
                         {
                             id: ColumnId.PERCENT_BIALLELIC,
@@ -112,6 +80,20 @@ class GeneTumorTypeFrequencyTable extends React.Component<ITumorTypeFrequencyTab
                             Header: HEADER_COMPONENT[ColumnId.PERCENT_BIALLELIC],
                             accessor: biallelicAccessor,
                             maxWidth: 120
+                        },
+                        {
+                            id: ColumnId.SOMATIC_DRIVER,
+                            Cell: renderPercentage,
+                            Header: HEADER_COMPONENT[ColumnId.SOMATIC_DRIVER],
+                            accessor: somaticAccessor,
+                            maxWidth: 120
+                        },
+                        {
+                            id: ColumnId.SAMPLE_COUNT,
+                            Cell: renderCount,
+                            Header: HEADER_COMPONENT[ColumnId.SAMPLE_COUNT],
+                            accessor: ColumnId.SAMPLE_COUNT,
+                            maxWidth: 80
                         }
                     ]}
                     defaultSorted={[{
