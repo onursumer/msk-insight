@@ -6,8 +6,8 @@ import {
     CancerTypeFilter,
     ColumnSortDirection,
     DataFilterType,
-    DEFAULT_MUTATION_COLUMNS,
     formatPercentValue,
+    MUTATION_COLUMNS_DEFINITION,
     MutationColumn,
     MutationStatus,
     ProteinChange,
@@ -124,10 +124,10 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                 mainLoadingIndicator={this.loader}
                 tracks={[TrackName.CancerHotspots, TrackName.OncoKB, TrackName.PTM]}
                 getMutationCount={this.getLollipopCountValue}
-                customMutationTableColumns={[
+                mutationTableColumns={[
                     {
                         // override default Protein Change column to disable mutation status indicator
-                        ...DEFAULT_MUTATION_COLUMNS[MutationColumn.PROTEIN_CHANGE],
+                        ...MUTATION_COLUMNS_DEFINITION[MutationColumn.PROTEIN_CHANGE],
                         Cell: (column: any) =>
                             <ProteinChange
                                 mutation={column.original}
@@ -136,7 +136,7 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                     },
                     {
                         // override default Mutation Status column to include benign/pathogenic germline status
-                        ...DEFAULT_MUTATION_COLUMNS[MutationColumn.MUTATION_STATUS],
+                        ...MUTATION_COLUMNS_DEFINITION[MutationColumn.MUTATION_STATUS],
                         accessor: mutationStatusAccessor,
                         Cell: (column: any) =>
                             <MutationStatus
@@ -167,6 +167,7 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                         Header: HEADER_COMPONENT[ColumnId.PERCENT_BIALLELIC]
                     },
                     {
+                        id: 'expander',
                         expander: true,
                         Expander: this.renderExpander,
                         togglable: false,
