@@ -36,7 +36,8 @@ import {
 } from "../util/MutationDataUtils";
 import {loaderWithText} from "../util/StatusHelper";
 import {ColumnId, HEADER_COMPONENT} from "./ColumnHeaderHelper";
-import {renderPercentage} from "./ColumnRenderHelper";
+import {renderPenetrance, renderPercentage} from "./ColumnRenderHelper";
+import {sortPenetrance} from "./GeneFrequencyTable";
 import InsightMutationMapper from "./InsightMutationMapper";
 import MutationTumorTypeFrequencyDecomposition from "./MutationTumorTypeFrequencyDecomposition";
 
@@ -80,6 +81,10 @@ function mutationPercentAccessor(mutation: IExtendedMutation)
     }
 }
 
+function penetranceAccessor(mutation: IExtendedMutation)
+{
+    return [mutation.penetrance];
+}
 
 @observer
 class MutationMapper extends React.Component<IMutationMapperProps>
@@ -151,6 +156,13 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                                         MutationStatusFilterValue.BENIGN_GERMLINE,
                                 }}
                             />
+                    },
+                    {
+                        id: ColumnId.PENETRANCE,
+                        Cell: renderPenetrance,
+                        accessor: penetranceAccessor,
+                        Header: HEADER_COMPONENT[ColumnId.PENETRANCE],
+                        sortMethod: sortPenetrance
                     },
                     {
                         id: ColumnId.MUTATION_PERCENT,

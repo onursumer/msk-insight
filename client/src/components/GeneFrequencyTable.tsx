@@ -8,12 +8,11 @@ import {IGeneFrequencySummary} from "../../../server/src/model/GeneFrequencySumm
 import {biallelicAccessor, germlineAccessor, somaticAccessor} from "../util/ColumnHelper";
 import {fetchTumorTypeFrequenciesByGene} from "../util/FrequencyDataUtils";
 import {ColumnId, HEADER_COMPONENT} from "./ColumnHeaderHelper";
-import {renderPercentage} from "./ColumnRenderHelper";
+import {renderPenetrance, renderPercentage} from "./ColumnRenderHelper";
 import Gene from "./Gene";
 import GeneFrequencyTableComponent from "./GeneFrequencyTableComponent";
 import GeneTumorTypeFrequencyDecomposition from "./GeneTumorTypeFrequencyDecomposition";
 import { comparePenetrance } from './Penetrance';
-import PenetranceList from "./PenetranceList";
 
 import "react-table/react-table.css";
 import "./FrequencyTable.css";
@@ -32,16 +31,7 @@ function renderHugoSymbol(cellProps: any)
     );
 }
 
-function renderPenetrance(cellProps: any)
-{
-    return (
-        <PenetranceList
-            penetrance={cellProps.original.penetrance}
-        />
-    );
-}
-
-function sortPenetrance(a: string[], b: string[])
+export function sortPenetrance(a: string[], b: string[])
 {
     const aSorted = a.sort(comparePenetrance);
     const bSorted = b.sort(comparePenetrance);
