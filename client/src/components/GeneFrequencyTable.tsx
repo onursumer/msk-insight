@@ -12,6 +12,7 @@ import {renderPercentage} from "./ColumnRenderHelper";
 import Gene from "./Gene";
 import GeneFrequencyTableComponent from "./GeneFrequencyTableComponent";
 import GeneTumorTypeFrequencyDecomposition from "./GeneTumorTypeFrequencyDecomposition";
+import { comparePenetrance } from './Penetrance';
 import PenetranceList from "./PenetranceList";
 
 import "react-table/react-table.css";
@@ -38,6 +39,19 @@ function renderPenetrance(cellProps: any)
             penetrance={cellProps.original.penetrance}
         />
     );
+}
+
+function sortPenetrance(a: string[], b: string[])
+{
+    const aSorted = a.sort(comparePenetrance);
+    const bSorted = b.sort(comparePenetrance);
+    for (let i = 0; i < Math.min(aSorted.length, bSorted.length); i++) {
+        const comparison = -comparePenetrance(aSorted[i], bSorted[i]) 
+        if (comparison !== 0) {
+            return comparison;
+        }
+    }
+    return Math.sign(a.length - b.length);
 }
 
 function renderSubComponent(row: any) {
@@ -88,7 +102,11 @@ class GeneFrequencyTable extends React.Component<IFrequencyTableProps>
                     onSearch={this.handleSearch}
                     info={this.info}
                     reactTableProps={{
-                        SubComponent: renderSubComponent
+                        SubComponent: renderSubComponent,
+                        defaultSorted: [
+                            {id: ColumnId.PENETRANCE, desc: true}, 
+                            {id: ColumnId.GERMLINE, desc: true}
+                        ]
                     }}
                     columns={[
                         {
@@ -101,8 +119,8 @@ class GeneFrequencyTable extends React.Component<IFrequencyTableProps>
                             id: ColumnId.PENETRANCE,
                             Cell: renderPenetrance,
                             Header: HEADER_COMPONENT[ColumnId.PENETRANCE],
-                            accessor: ColumnId.PENETRANCE
-                            // TODO sort function!
+                            accessor: ColumnId.PENETRANCE,
+                            sortMethod: sortPenetrance
                         },
                         {
                             id: ColumnId.GERMLINE,
