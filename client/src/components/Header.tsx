@@ -20,7 +20,7 @@ class Header extends React.Component<{}>
         return (
             <header className="sticky-top">
                 <Navbar bg="mskcc-header" expand="lg" className="navbar-dark main-navbar">
-                    <Container>
+                    <Container fluid={true}>
                         <Navbar.Brand>
                             <Link to="/" className="brand-title-link">
                                 <i className="fa fa-arrow-up" style={{color: "#FF9900"}} /> INSIGHT
@@ -38,7 +38,7 @@ class Header extends React.Component<{}>
                     </Container>
                 </Navbar>
                 <Navbar bg="mskcc-subheader" expand="lg" className="navbar-dark sub-navbar">
-                    <Container>
+                    <Container fluid={true}>
                         A resource for the integration of somatic with germline heritability in tumorigenesis
                     </Container>
                 </Navbar>

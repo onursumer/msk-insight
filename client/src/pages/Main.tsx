@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {Container} from "react-bootstrap";
 import {
     BrowserRouter, Route, Switch
 } from "react-router-dom";
@@ -33,13 +34,14 @@ class Main extends React.Component<{}>
             <BrowserRouter>
                 <div className="Main">
                     <Header />
-                    <div style={{
-                        marginLeft: "2rem",
-                        marginRight: "2rem",
-                        paddingTop: 20,
-                        paddingBottom: 100,
-                        fontSize: "1.25rem",
-                        color: "#2c3e50"}}
+                    <Container
+                        fluid={true}
+                        style={{
+                            paddingTop: 20,
+                            paddingBottom: 100,
+                            fontSize: "1.25rem",
+                            color: "#2c3e50"
+                        }}
                     >
                         <Switch>
                             <Route exact={true} path="/" component={HomePage}/>
@@ -47,7 +49,7 @@ class Main extends React.Component<{}>
                             <Route exact={true} path="/about" component={About}/>
                             <Route exact={true} path="/download" component={Download}/>
                         </Switch>
-                    </div>
+                    </Container>
                     <Footer />
                 </div>
             </BrowserRouter>
