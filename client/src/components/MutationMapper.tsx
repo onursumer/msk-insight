@@ -7,6 +7,7 @@ import {
     ColumnSortDirection,
     DataFilterType, defaultSortMethod,
     formatPercentValue,
+    initDefaultMutationMapperStore,
     MUTATION_COLUMNS_DEFINITION,
     MutationColumn,
     MutationStatus,
@@ -112,125 +113,136 @@ class MutationMapper extends React.Component<IMutationMapperProps>
         return this.insightMutationMapper ? this.insightMutationMapper.showPercent : true;
     }
 
+    @computed
+    get mutationMapperProps() {
+        return {
+            apiCacheLimit: API_CACHE_LIMIT,
+            hugoSymbol: this.props.hugoSymbol,
+            entrezGeneId: this.entrezGeneId,
+            isoformOverrideSource: ISOFORM_OVERRIDE_SOURCE,
+            data: this.props.data,
+            showFilterResetPanel: false,
+            showPlotLegendToggle: false,
+            showPlotDownloadControls: false,
+            showTranscriptDropDown: true,
+            showOnlyAnnotatedTranscriptsInDropdown: true,
+            filterMutationsBySelectedTranscript: true,
+            mainLoadingIndicator: this.loader,
+            tracks: [TrackName.CancerHotspots, TrackName.OncoKB, TrackName.PTM],
+            getMutationCount: this.getLollipopCountValue,
+            mutationTableColumns: [
+                {
+                    // override default Protein Change column to disable mutation status indicator
+                    ...MUTATION_COLUMNS_DEFINITION[MutationColumn.PROTEIN_CHANGE],
+                    Cell: (column: any) =>
+                        <ProteinChange
+                            mutation={column.original}
+                            enableMutationStatusIndicator={false}
+                        />
+                },
+                {
+                    // override default Mutation Status column to include benign/pathogenic germline status
+                ...MUTATION_COLUMNS_DEFINITION[MutationColumn.MUTATION_STATUS],
+                    accessor: mutationStatusAccessor,
+                    width: 200,
+                    Cell: (column: any) =>
+                    <MutationStatus
+                        value={column.value}
+                        enableTooltip={false}
+                        displayValueMap={{
+                            [MutationStatusFilterValue.SOMATIC.toLowerCase()]:
+                            MutationStatusFilterValue.SOMATIC,
+                            [MutationStatusFilterValue.PATHOGENIC_GERMLINE.toLowerCase()]:
+                            MutationStatusFilterValue.PATHOGENIC_GERMLINE,
+                            [MutationStatusFilterValue.BENIGN_GERMLINE.toLowerCase()]:
+                            MutationStatusFilterValue.BENIGN_GERMLINE,
+                        }}
+                        styleMap={{
+                            [MutationStatusFilterValue.PATHOGENIC_GERMLINE.toLowerCase()]: {
+                                background: "#FFA963"
+                            }
+                        }}
+                    />
+                },
+                {
+                    id: ColumnId.PENETRANCE,
+                        Cell: renderPenetrance,
+                    accessor: penetranceAccessor,
+                    Header: HEADER_COMPONENT[ColumnId.PENETRANCE],
+                    sortMethod: sortPenetrance
+                },
+                MUTATION_COLUMNS_DEFINITION[MutationColumn.MUTATION_TYPE],
+                {
+                    id: ColumnId.MUTATION_PERCENT,
+                    name: "%",
+                    Cell: renderPercentage,
+                    accessor: mutationPercentAccessor,
+                    Header: HEADER_COMPONENT[ColumnId.MUTATION_PERCENT],
+                    sortMethod: defaultSortMethod
+                },
+                {
+                    expander: true,
+                    Expander: this.renderExpander,
+                    togglable: false,
+                    width: 25
+                },
+                {
+                    id: ColumnId.PERCENT_BIALLELIC,
+                    name: "% Biallelic",
+                    Cell: renderPercentage,
+                    accessor: "ratioBiallelicPathogenic",
+                    Header: HEADER_COMPONENT[ColumnId.PERCENT_BIALLELIC],
+                    sortMethod: defaultSortMethod
+                },
+                MUTATION_COLUMNS_DEFINITION[MutationColumn.ANNOTATION],
+                MUTATION_COLUMNS_DEFINITION[MutationColumn.GNOMAD],
+                MUTATION_COLUMNS_DEFINITION[MutationColumn.CLINVAR],
+                MUTATION_COLUMNS_DEFINITION[MutationColumn.CHROMOSOME],
+                MUTATION_COLUMNS_DEFINITION[MutationColumn.START_POSITION],
+                MUTATION_COLUMNS_DEFINITION[MutationColumn.END_POSITION],
+                MUTATION_COLUMNS_DEFINITION[MutationColumn.REFERENCE_ALLELE],
+                MUTATION_COLUMNS_DEFINITION[MutationColumn.VARIANT_ALLELE]
+            ],
+            customMutationTableProps: {
+                SubComponent: this.renderSubComponent
+            },
+            mutationTableInitialSortColumn: MutationColumn.PROTEIN_CHANGE,
+            mutationTableInitialSortDirection: ColumnSortDirection.ASC,
+            groupFilters: [
+                {
+                    group: "Somatic",
+                    filter: {type: DataFilterType.MUTATION, values: [{mutationStatus: "somatic"}]}
+                },
+                {
+                    group: "Germline",
+                        filter: {type: DataFilterType.MUTATION, values: [{mutationStatus: "germline"}]}
+                },
+            ],
+            plotYAxisLabelPadding: 50,
+            plotLollipopTooltipCountInfo: this.lollipopTooltipCountInfo,
+            dataFilters: [
+                {
+                    id: MUTATION_STATUS_FILTER_ID,
+                    type: MUTATION_STATUS_FILTER_TYPE,
+                    values: getDefaultMutationStatusFilterValues()
+                }
+            ],
+            filterAppliersOverride: this.customFilterAppliers
+        };
+    }
+
+    @computed
+    get mutationMapperStore() {
+        return initDefaultMutationMapperStore(this.mutationMapperProps);
+    }
+
     public render()
     {
         return (
             <InsightMutationMapper
-                apiCacheLimit={API_CACHE_LIMIT}
+                {...this.mutationMapperProps}
                 onInit={this.onMutationMapperInit}
-                hugoSymbol={this.props.hugoSymbol}
-                entrezGeneId={this.entrezGeneId}
-                isoformOverrideSource={ISOFORM_OVERRIDE_SOURCE}
-                data={this.props.data}
-                showFilterResetPanel={false}
-                showPlotLegendToggle={false}
-                showPlotDownloadControls={false}
-                showTranscriptDropDown={true}
-                showOnlyAnnotatedTranscriptsInDropdown={true}
-                filterMutationsBySelectedTranscript={true}
-                mainLoadingIndicator={this.loader}
-                tracks={[TrackName.CancerHotspots, TrackName.OncoKB, TrackName.PTM]}
-                getMutationCount={this.getLollipopCountValue}
-                mutationTableColumns={[
-                    {
-                        // override default Protein Change column to disable mutation status indicator
-                        ...MUTATION_COLUMNS_DEFINITION[MutationColumn.PROTEIN_CHANGE],
-                        Cell: (column: any) =>
-                            <ProteinChange
-                                mutation={column.original}
-                                enableMutationStatusIndicator={false}
-                            />
-                    },
-                    {
-                        // override default Mutation Status column to include benign/pathogenic germline status
-                        ...MUTATION_COLUMNS_DEFINITION[MutationColumn.MUTATION_STATUS],
-                        accessor: mutationStatusAccessor,
-                        width: 200,
-                        Cell: (column: any) =>
-                            <MutationStatus
-                                value={column.value}
-                                enableTooltip={false}
-                                displayValueMap={{
-                                    [MutationStatusFilterValue.SOMATIC.toLowerCase()]:
-                                        MutationStatusFilterValue.SOMATIC,
-                                    [MutationStatusFilterValue.PATHOGENIC_GERMLINE.toLowerCase()]:
-                                        MutationStatusFilterValue.PATHOGENIC_GERMLINE,
-                                    [MutationStatusFilterValue.BENIGN_GERMLINE.toLowerCase()]:
-                                        MutationStatusFilterValue.BENIGN_GERMLINE,
-                                }}
-                                styleMap={{
-                                    [MutationStatusFilterValue.PATHOGENIC_GERMLINE.toLowerCase()]: {
-                                        background: "#FFA963"
-                                    }
-                                }}
-                            />
-                    },
-                    {
-                        id: ColumnId.PENETRANCE,
-                        Cell: renderPenetrance,
-                        accessor: penetranceAccessor,
-                        Header: HEADER_COMPONENT[ColumnId.PENETRANCE],
-                        sortMethod: sortPenetrance
-                    },
-                    MUTATION_COLUMNS_DEFINITION[MutationColumn.MUTATION_TYPE],
-                    {
-                        id: ColumnId.MUTATION_PERCENT,
-                        name: "%",
-                        Cell: renderPercentage,
-                        accessor: mutationPercentAccessor,
-                        Header: HEADER_COMPONENT[ColumnId.MUTATION_PERCENT],
-                        sortMethod: defaultSortMethod
-                    },
-                    {
-                        expander: true,
-                        Expander: this.renderExpander,
-                        togglable: false,
-                        width: 25
-                    },
-                    {
-                        id: ColumnId.PERCENT_BIALLELIC,
-                        name: "% Biallelic",
-                        Cell: renderPercentage,
-                        accessor: "ratioBiallelicPathogenic",
-                        Header: HEADER_COMPONENT[ColumnId.PERCENT_BIALLELIC],
-                        sortMethod: defaultSortMethod
-                    },
-                    MUTATION_COLUMNS_DEFINITION[MutationColumn.ANNOTATION],
-                    MUTATION_COLUMNS_DEFINITION[MutationColumn.GNOMAD],
-                    MUTATION_COLUMNS_DEFINITION[MutationColumn.CLINVAR],
-                    MUTATION_COLUMNS_DEFINITION[MutationColumn.CHROMOSOME],
-                    MUTATION_COLUMNS_DEFINITION[MutationColumn.START_POSITION],
-                    MUTATION_COLUMNS_DEFINITION[MutationColumn.END_POSITION],
-                    MUTATION_COLUMNS_DEFINITION[MutationColumn.REFERENCE_ALLELE],
-                    MUTATION_COLUMNS_DEFINITION[MutationColumn.VARIANT_ALLELE]
-                ]}
-                customMutationTableProps={{
-                    SubComponent: this.renderSubComponent
-                }}
-                mutationTableInitialSortColumn={MutationColumn.PROTEIN_CHANGE}
-                mutationTableInitialSortDirection={ColumnSortDirection.ASC}
-                groupFilters={
-                    [
-                        {
-                            group: "Somatic",
-                            filter: {type: DataFilterType.MUTATION, values: [{mutationStatus: "somatic"}]}
-                        },
-                        {
-                            group: "Germline",
-                            filter: {type: DataFilterType.MUTATION, values: [{mutationStatus: "germline"}]}
-                        },
-                    ]
-                }
-                plotYAxisLabelPadding={50}
-                plotLollipopTooltipCountInfo={this.lollipopTooltipCountInfo}
-                dataFilters={[
-                    {
-                        id: MUTATION_STATUS_FILTER_ID,
-                        type: MUTATION_STATUS_FILTER_TYPE,
-                        values: getDefaultMutationStatusFilterValues()
-                    }
-                ]}
-                filterAppliersOverride={this.customFilterAppliers}
+                store={this.mutationMapperStore}
             />
         );
     }
