@@ -13,8 +13,6 @@ import GeneFrequencyTableComponent from "./GeneFrequencyTableComponent";
 import GeneTumorTypeFrequencyDecomposition from "./GeneTumorTypeFrequencyDecomposition";
 import { comparePenetrance } from './Penetrance';
 
-import "react-table/react-table.css";
-import "./FrequencyTable.css";
 
 interface IFrequencyTableProps
 {

@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Link} from "react-router-dom";
+import Link from 'next/link'
 
 interface IGeneProps
 {
@@ -13,8 +13,8 @@ class Gene extends React.Component<IGeneProps>
     {
         return (
             <span className={this.props.className || "pull-left ml-3"}>
-                <Link to={`/gene/${this.props.hugoSymbol.toUpperCase()}`}>
-                    {this.props.hugoSymbol}
+                <Link href={`/gene/${this.props.hugoSymbol.toUpperCase()}`}>
+                    <a>{this.props.hugoSymbol}</a>
                 </Link>
             </span>
         );

@@ -33,7 +33,6 @@ import CancerTypeSelector from "./CancerTypeSelector";
 import MutationStatusSelector, {onMutationStatusFilterOptionSelect} from "./MutationStatusSelector";
 
 import {AxisScale, AxisScaleSwitch} from "./AxisScaleSwitch";
-import "./SignalMutationMapper.css";
 
 export interface ISignalMutationMapperProps extends MutationMapperProps
 {

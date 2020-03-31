@@ -7,8 +7,6 @@ import ReactTable from "react-table";
 import {ITumorTypeDecomposition} from "../model/Mutation";
 import FrequencyCell from "./FrequencyCell";
 
-import "react-table/react-table.css";
-import "./FrequencyTable.css";
 
 interface ITumorTypeFrequencyTableProps
 {

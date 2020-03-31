@@ -9,8 +9,6 @@ import {biallelicAccessor, germlineAccessor, somaticAccessor} from "../util/Colu
 import {ColumnId, HEADER_COMPONENT} from "./ColumnHeaderHelper";
 import FrequencyCell from "./FrequencyCell";
 
-import "react-table/react-table.css";
-import "./FrequencyTable.css";
 
 interface ITumorTypeFrequencyTableProps
 {

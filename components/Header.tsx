@@ -11,8 +11,6 @@ import {
 
 import MskccLogo from "./MskccLogo";
 
-import "./Header.css";
-
 class Header extends React.Component<{}>
 {
     public render()

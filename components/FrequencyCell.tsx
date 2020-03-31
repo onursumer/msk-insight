@@ -2,8 +2,6 @@ import {observer} from "mobx-react";
 import Tooltip from "rc-tooltip";
 import * as React from "react";
 
-import 'rc-tooltip/assets/bootstrap_white.css';
-
 interface IFrequencyCellProps {
     frequency: number | null;
     overlay?: () => JSX.Element;

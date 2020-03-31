@@ -8,7 +8,6 @@ import {
 
 import MskccLogo from "./MskccLogo";
 
-import "./Footer.css";
 
 class Footer extends React.Component<{}>
 {

@@ -2,24 +2,23 @@ import {action, observable} from "mobx";
 import {observer} from "mobx-react";
 import * as React from "react";
 
-import {ITumorTypeDecomposition} from "../model/Mutation";
+import {ITumorTypeFrequencySummary} from "../model/GeneFrequencySummary";
 import {DataStatus} from "../store/DataStatus";
-import MutationTumorTypeFrequencyTable from "./MutationTumorTypeFrequencyTable";
 
-import "react-table/react-table.css";
-import "./FrequencyTable.css";
+import GeneTumorTypeFrequencyTable from "./GeneTumorTypeFrequencyTable";
 
 interface ITumorTypeFrequencyDecompositionProps
 {
-    dataPromise: Promise<ITumorTypeDecomposition[]>;
+    dataPromise: Promise<ITumorTypeFrequencySummary[]>;
+    penetrance: string[];
     hugoSymbol: string;
 }
 
 @observer
-class MutationTumorTypeFrequencyDecomposition extends React.Component<ITumorTypeFrequencyDecompositionProps>
+class GeneTumorTypeFrequencyDecomposition extends React.Component<ITumorTypeFrequencyDecompositionProps>
 {
     @observable
-    private data: ITumorTypeDecomposition[] = [];
+    private data: ITumorTypeFrequencySummary[] = [];
 
     @observable
     private status: DataStatus = 'pending';
@@ -29,8 +28,9 @@ class MutationTumorTypeFrequencyDecomposition extends React.Component<ITumorType
         return this.status === 'pending' ? (
             <i className="fa fa-spinner fa-pulse fa-2x" />
         ): (
-            <MutationTumorTypeFrequencyTable
+            <GeneTumorTypeFrequencyTable
                 data={this.data}
+                penetrance={this.props.penetrance}
                 hugoSymbol={this.props.hugoSymbol}
             />
         );
@@ -44,7 +44,7 @@ class MutationTumorTypeFrequencyDecomposition extends React.Component<ITumorType
     }
 
     @action.bound
-    private handleDataLoad(frequencies: ITumorTypeDecomposition[]) {
+    private handleDataLoad(frequencies: ITumorTypeFrequencySummary[]) {
         this.data = frequencies;
         this.status = 'complete';
     }
@@ -55,4 +55,4 @@ class MutationTumorTypeFrequencyDecomposition extends React.Component<ITumorType
     }
 }
 
-export default MutationTumorTypeFrequencyDecomposition;
+export default GeneTumorTypeFrequencyDecomposition;
