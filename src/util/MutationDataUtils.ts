@@ -37,7 +37,7 @@ export function fetchMutationsByGene(hugoSymbol: string): Promise<IMutation[]>
 {
     return new Promise<IMutation[]>((resolve, reject) => {
         // TODO use the genome nexus API client
-        fetch(`https://www.genomenexus.org/signal/mutation?hugoGeneSymbol=${hugoSymbol}`)
+        fetch(`/data/mutation/${hugoSymbol}.json`)
             .then(response => resolve(response.json()))
             .catch(err => reject(err));
     });

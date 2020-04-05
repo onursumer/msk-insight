@@ -5,7 +5,8 @@ import * as React from "react";
 import {
     CancerTypeFilter,
     ColumnSortDirection,
-    DataFilterType, defaultSortMethod,
+    DataFilterType,
+    defaultSortMethod,
     formatPercentValue,
     MUTATION_COLUMNS_DEFINITION,
     MutationColumn,
@@ -39,6 +40,7 @@ import {
 import {loaderWithText} from "../util/StatusHelper";
 import {ColumnId, HEADER_COMPONENT} from "./ColumnHeaderHelper";
 import {renderPenetrance, renderPercentage} from "./ColumnRenderHelper";
+import {DataFetcher} from "./DataFetcher";
 import {sortPenetrance} from "./GeneFrequencyTable";
 import MutationTumorTypeFrequencyDecomposition from "./MutationTumorTypeFrequencyDecomposition";
 import SignalMutationMapper from "./SignalMutationMapper";
@@ -234,6 +236,7 @@ class MutationMapper extends React.Component<IMutationMapperProps>
                     }
                 ]}
                 filterAppliersOverride={this.customFilterAppliers}
+                dataFetcher={this.dataFetcher}
             />
         );
     }
@@ -245,7 +248,14 @@ class MutationMapper extends React.Component<IMutationMapperProps>
             [MUTATION_STATUS_FILTER_TYPE]: this.applyMutationStatusFilter,
             [MUTATION_COUNT_FILTER_TYPE]: this.applyMutationCountFilter
         };
-    };
+    }
+
+    private get dataFetcher()
+    {
+        return new DataFetcher({
+            oncoKbUrl: ONCOKB_API_URL
+        });
+    }
 
     @autobind
     private lollipopTooltipCountInfo(count: number, mutations?: IExtendedMutation[]): JSX.Element

@@ -1,4 +1,4 @@
-import {GenomeNexusAPI} from "cbioportal-frontend-commons";
+import {GenomeNexusAPI} from "genome-nexus-ts-api-client";
 
 // TODO customize domain?
 const genomeNexusInternalClient = new GenomeNexusAPI("https://www.genomenexus.org/");

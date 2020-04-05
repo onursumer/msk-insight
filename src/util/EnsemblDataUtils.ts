@@ -1,4 +1,4 @@
-import {GenomeNexusAPI} from "cbioportal-frontend-commons";
+import {GenomeNexusAPI} from "genome-nexus-ts-api-client";
 
 import {IEnsemblGene} from "../model/EnsemblGene";
 import {getGenomeNexusClient} from "./ApiClientUtils";
