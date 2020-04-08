@@ -2125,6 +2125,29 @@ cbioportal-frontend-commons@^0.2.4:
     typescript "3.2.2"
     url "^0.11.0"
 
+cbioportal-frontend-commons@^0.2.7:
+  version "0.2.7"
+  resolved "https://registry.yarnpkg.com/cbioportal-frontend-commons/-/cbioportal-frontend-commons-0.2.7.tgz#e8da4e53593f3d4983fd6f3405b0978245631a6e"
+  integrity sha512-OZ7WnwCqBsSMfp105AgCyfw54jjGaOXzdfudWORRYV9EO51QHn+xwpzYussLzv+DR7vY9t6WcsKDd5mL3Zl4jA==
+  dependencies:
+    autobind-decorator "^2.1.0"
+    classnames "^2.2.5"
+    jquery "^3.2.1"
+    lodash "^4.17.11"
+    measure-text "0.0.4"
+    mobxpromise "github:cbioportal/mobxpromise#v1.0.2"
+    object-sizeof "^1.2.0"
+    oncokb-ts-api-client "^1.0.0"
+    rc-tooltip "3.7.3"
+    react-file-download "^0.3.2"
+    react-select "^3.0.4"
+    save-svg-as-png "^1.4.6"
+    seamless-immutable "^7.0.1"
+    superagent "^3.8.3"
+    svg2pdf.js "^1.3.3"
+    typescript "3.2.2"
+    url "^0.11.0"
+
 center-align@^0.1.1:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/center-align/-/center-align-0.1.3.tgz#aa0d32629b6ee972200411cbd4461c907bc2b7ad"
@@ -6801,6 +6824,14 @@ oncokb-styles@~0.1.2:
   resolved "https://registry.yarnpkg.com/oncokb-styles/-/oncokb-styles-0.1.2.tgz#8b26c0a0829787cdc1b595d3a021b3266607102b"
   integrity sha512-tuy5s3qFxgf1ogMATQSRPNgLlAMrvOOTCAN1dm/wJ+VZoStbJ7g36/qHwc99UPfh3vrB05broLodF+k58p5tUw==
 
+oncokb-ts-api-client@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/oncokb-ts-api-client/-/oncokb-ts-api-client-1.0.0.tgz#c55588acc9cd95eca37c753d74b776cdb907a951"
+  integrity sha512-ZUGQS0NkEehJ9EoAFsZZBBH97AuU6th0MxUg0C0Q/wc2iJhYKCLSut5fVfRCcgcrKvTj+VoTHGqUiYvmQiHtjw==
+  dependencies:
+    superagent "^3.8.3"
+    typescript "3.2.2"
+
 onetime@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/onetime/-/onetime-2.0.1.tgz#067428230fd67443b2794b22bba528b6867962d4"
@@ -7950,18 +7981,20 @@ react-motion@^0.5.2:
     prop-types "^15.5.8"
     raf "^3.1.0"
 
-react-mutation-mapper@^0.5.3:
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/react-mutation-mapper/-/react-mutation-mapper-0.5.3.tgz#267736ba9383e27219a52fa627d5ad67ea69e087"
-  integrity sha512-AouUoe9Cgv3qJYHwdukp49as7F6K2Nkj9x6DmPsoSJXsRFsRhQz2ncPZ3hcC3fGihZGuSYOKyvIRpJ5z/YEkOA==
+react-mutation-mapper@^0.5.7-alpha.0:
+  version "0.5.7-alpha.0"
+  resolved "https://registry.yarnpkg.com/react-mutation-mapper/-/react-mutation-mapper-0.5.7-alpha.0.tgz#719a54ea3e3878d022e3a8db55ffe9cbae09f1b0"
+  integrity sha512-ANusAYTC6BH7AfLXyl2/TjSilkRvgcjohuoaqO+B0JYdNqpv+Ct+A3zs8/3nzArMqKwI/36cX2U7HJCk9+EvZQ==
   dependencies:
     autobind-decorator "^2.1.0"
-    cbioportal-frontend-commons "^0.2.4"
+    cbioportal-frontend-commons "^0.2.7"
     classnames "^2.2.5"
+    genome-nexus-ts-api-client "^1.1.2-beta.0"
     jquery "^3.2.1"
     lodash "^4.17.11"
     mobxpromise "github:cbioportal/mobxpromise#v1.0.2"
     oncokb-styles "~0.1.2"
+    oncokb-ts-api-client "^1.0.0"
     react-collapse "^4.0.3"
     react-motion "^0.5.2"
     react-rangeslider "^2.2.0"
