@@ -1,0 +1,6734 @@
+[
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41276049,
+      "end": 41276381,
+      "referenceAllele": "AAGATTTTCTGCATAGCATTAATGACATTTTGTACTTCTTCAACGCGAAGAGCAGATAAATCCATTTCTTTCTGTTCCAATGAACTTTAACACATTAGAAAAACATATATATATATCTTTTTAAAAGGTTTATAAAATGACAACTTCATTTTATCATTTTAAAATAAAGTAAATTTAAGATTTGGAAGGTTTTAGAATAATACAAACCAAAGAACTAATGACAACGTCCTTTATTTTTAAAGATTCTAGAAGTTGCTTTTTGTAATTAGACAACATAAATTCTGAATTTTTTCACATATTGCTGCCAACCCCTTGGGTCTTTTCCTTTCTCCA",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41276049_41276381delAAGATTTTCTGCATAGCATTAATGACATTTTGTACTTCTTCAACGCGAAGAGCAGATAAATCCATTTCTTTCTGTTCCAATGAACTTTAACACATTAGAAAAACATATATATATATCTTTTTAAAAGGTTTATAAAATGACAACTTCATTTTATCATTTTAAAATAAAGTAAATTTAAGATTTGGAAGGTTTTAGAATAATACAAACCAAAGAACTAATGACAACGTCCTTTATTTTTAAAGATTCTAGAAGTTGCTTTTTGTAATTAGACAACATAAATTCTGAATTTTTTCACATATTGCTGCCAACCCCTTGGGTCTTTTCCTTTCTCCA",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246509,
+      "end": 41246509,
+      "referenceAllele": "G",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41246509_41246509delG",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246466,
+      "end": 41246476,
+      "referenceAllele": "GAGCATGGCAG",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41246466_41246476delGAGCATGGCAGinsT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246365,
+      "end": 41246366,
+      "referenceAllele": "-",
+      "variantAllele": "ACCTAAC"
+    },
+    "variant": "17:g.41246365_41246366insACCTAAC",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246277,
+      "end": 41246277,
+      "referenceAllele": "C",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41246277_41246277delC",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246179,
+      "end": 41246179,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41246179C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246158,
+      "end": 41246158,
+      "referenceAllele": "T",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41246158_41246158delT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246532,
+      "end": 41246532,
+      "referenceAllele": "T",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41246532_41246532delT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245918,
+      "end": 41245918,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245918G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245842,
+      "end": 41245849,
+      "referenceAllele": "TTAGGATT",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41245842_41245849delTTAGGATT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245848,
+      "end": 41245848,
+      "referenceAllele": "T",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41245848_41245848delT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245759,
+      "end": 41245759,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245759C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245724,
+      "end": 41245725,
+      "referenceAllele": "-",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41245724_41245725insT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245606,
+      "end": 41245606,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245606C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245603,
+      "end": 41245603,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245603C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245587,
+      "end": 41245587,
+      "referenceAllele": "T",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41245587_41245587delT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246018,
+      "end": 41246018,
+      "referenceAllele": "T",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41246018_41246018delT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245586,
+      "end": 41245587,
+      "referenceAllele": "-",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41245586_41245587insT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245453,
+      "end": 41245453,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245453C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245492,
+      "end": 41245493,
+      "referenceAllele": "-",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245492_41245493insA",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41258473,
+      "end": 41258474,
+      "referenceAllele": "-",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41258473_41258474insT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41256974,
+      "end": 41256974,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41256974C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245401,
+      "end": 41245402,
+      "referenceAllele": "CT",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41245401_41245402delCT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245366,
+      "end": 41245367,
+      "referenceAllele": "TT",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41245366_41245367delTT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245333,
+      "end": 41245333,
+      "referenceAllele": "T",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245333T>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41256962,
+      "end": 41256963,
+      "referenceAllele": "TC",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41256962_41256963delTC",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41256963,
+      "end": 41256963,
+      "referenceAllele": "C",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41256963_41256963delC",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245279,
+      "end": 41245279,
+      "referenceAllele": "C",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41245279_41245279delC",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245012,
+      "end": 41245012,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245012C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244890,
+      "end": 41244891,
+      "referenceAllele": "AG",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41244890_41244891delAG",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245006,
+      "end": 41245006,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245006C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244838,
+      "end": 41244838,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41244838C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244817,
+      "end": 41244817,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41244817C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244816,
+      "end": 41244816,
+      "referenceAllele": "C",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41244816_41244816delC",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244596,
+      "end": 41244596,
+      "referenceAllele": "A",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41244596_41244596delA",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244787,
+      "end": 41244787,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41244787G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41256279,
+      "end": 41256279,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41256279C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41256279,
+      "end": 41256279,
+      "referenceAllele": "C",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41256279C>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244510,
+      "end": 41244511,
+      "referenceAllele": "TC",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41244510_41244511delTC",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244508,
+      "end": 41244508,
+      "referenceAllele": "T",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41244508_41244508delT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244440,
+      "end": 41244440,
+      "referenceAllele": "A",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41244440_41244440delA",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41256258,
+      "end": 41256259,
+      "referenceAllele": "-",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41256258_41256259insA",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244311,
+      "end": 41244311,
+      "referenceAllele": "T",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41244311_41244311delT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41256250,
+      "end": 41256251,
+      "referenceAllele": "-",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41256250_41256251insT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244219,
+      "end": 41244219,
+      "referenceAllele": "T",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41244219_41244219delT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244110,
+      "end": 41244110,
+      "referenceAllele": "A",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41244110A>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244049,
+      "end": 41244049,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41244049C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243913,
+      "end": 41243913,
+      "referenceAllele": "G",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41243913G>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243882,
+      "end": 41243894,
+      "referenceAllele": "CTCTTCATCCTCA",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41243882_41243894delCTCTTCATCCTCA",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243776,
+      "end": 41243776,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41243776C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243598,
+      "end": 41243598,
+      "referenceAllele": "A",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41243598_41243598delA",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243523,
+      "end": 41243523,
+      "referenceAllele": "G",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41243523G>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243480,
+      "end": 41243483,
+      "referenceAllele": "TTGA",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41243480_41243483delTTGA",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243507,
+      "end": 41243510,
+      "referenceAllele": "TCTT",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41243507_41243510delTCTT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243034,
+      "end": 41243035,
+      "referenceAllele": "-",
+      "variantAllele": "CAGA"
+    },
+    "variant": "17:g.41243034_41243035insCAGA",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41242984,
+      "end": 41242984,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41242984G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243006,
+      "end": 41243013,
+      "referenceAllele": "TTCAGAGA",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41243006_41243013delTTCAGAGA",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41234442,
+      "end": 41234442,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41234442C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41234556,
+      "end": 41234556,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41234556G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41226526,
+      "end": 41226527,
+      "referenceAllele": "AG",
+      "variantAllele": "TT"
+    },
+    "variant": "17:g.41226526_41226527delAGinsTT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41226500,
+      "end": 41226500,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41226500C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41226447,
+      "end": 41226447,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41226447C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41223256,
+      "end": 41223256,
+      "referenceAllele": "C",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41223256C>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41223232,
+      "end": 41223232,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41223232C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41223001,
+      "end": 41223001,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41223001C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41223115,
+      "end": 41223115,
+      "referenceAllele": "T",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41223115T>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41222973,
+      "end": 41222973,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41222973A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41219713,
+      "end": 41219713,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41219713C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41222971,
+      "end": 41222971,
+      "referenceAllele": "C",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41222971_41222971delC",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41219635,
+      "end": 41219637,
+      "referenceAllele": "AAC",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41219635_41219637delAAC",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41215930,
+      "end": 41215930,
+      "referenceAllele": "G",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41215930G>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41215921,
+      "end": 41215921,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41215921C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41215921,
+      "end": 41215921,
+      "referenceAllele": "C",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41215921C>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41219643,
+      "end": 41219643,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41219643G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41215920,
+      "end": 41215920,
+      "referenceAllele": "G",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41215920G>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41215373,
+      "end": 41215373,
+      "referenceAllele": "T",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41215373T>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41215361,
+      "end": 41215361,
+      "referenceAllele": "T",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41215361_41215361delT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41209125,
+      "end": 41209125,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41209125C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41209118,
+      "end": 41209118,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41209118C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41209094,
+      "end": 41209094,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41209094C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41209080,
+      "end": 41209081,
+      "referenceAllele": "GG",
+      "variantAllele": "AA"
+    },
+    "variant": "17:g.41209080_41209081delGGinsAA",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41203123,
+      "end": 41203123,
+      "referenceAllele": "C",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41203123_41203123delC",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41203094,
+      "end": 41203094,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41203094G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41203080,
+      "end": 41203080,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41203080C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41201213,
+      "end": 41201213,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41201213T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41201203,
+      "end": 41201203,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41201203C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41201199,
+      "end": 41201199,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41201199C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41201146,
+      "end": 41201146,
+      "referenceAllele": "G",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41201146_41201146delG",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41215905,
+      "end": 41215905,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41215905A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41199719,
+      "end": 41199719,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41199719C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41251790,
+      "end": 41251790,
+      "referenceAllele": "A",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41251790A>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41197783,
+      "end": 41197784,
+      "referenceAllele": "CG",
+      "variantAllele": "AA"
+    },
+    "variant": "17:g.41197783_41197784delCGinsAA",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41197781,
+      "end": 41197781,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41197781C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41247939,
+      "end": 41247940,
+      "referenceAllele": "AC",
+      "variantAllele": "TT"
+    },
+    "variant": "17:g.41247939_41247940delACinsTT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41197783,
+      "end": 41197783,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41197783C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41276049,
+      "end": 41276049,
+      "referenceAllele": "A",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41276049A>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41276046,
+      "end": 41276047,
+      "referenceAllele": "-",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41276046_41276047insG",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41276043,
+      "end": 41276043,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41276043C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41276043,
+      "end": 41276043,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41276043C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246707,
+      "end": 41246707,
+      "referenceAllele": "T",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41246707_41246707delT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246679,
+      "end": 41246679,
+      "referenceAllele": "A",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41246679_41246679delA",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246599,
+      "end": 41246599,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41246599G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246559,
+      "end": 41246560,
+      "referenceAllele": "-",
+      "variantAllele": "CATTA"
+    },
+    "variant": "17:g.41246559_41246560insCATTA",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41247906,
+      "end": 41247907,
+      "referenceAllele": "-",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41247906_41247907insG",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246547,
+      "end": 41246547,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41246547G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246540,
+      "end": 41246540,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41246540T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246512,
+      "end": 41246512,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41246512G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246483,
+      "end": 41246483,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41246483C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246522,
+      "end": 41246522,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41246522C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246447,
+      "end": 41246447,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41246447A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246440,
+      "end": 41246442,
+      "referenceAllele": "CAT",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41246440_41246442delCAT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246433,
+      "end": 41246433,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41246433C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246428,
+      "end": 41246428,
+      "referenceAllele": "T",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41246428T>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246440,
+      "end": 41246440,
+      "referenceAllele": "C",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41246440C>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246411,
+      "end": 41246411,
+      "referenceAllele": "A",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41246411A>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41267763,
+      "end": 41267763,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41267763C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41267761,
+      "end": 41267761,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41267761C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246311,
+      "end": 41246311,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41246311A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246293,
+      "end": 41246293,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41246293C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246315,
+      "end": 41246315,
+      "referenceAllele": "A",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41246315A>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246277,
+      "end": 41246277,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41246277C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246254,
+      "end": 41246254,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41246254G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246227,
+      "end": 41246227,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41246227T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246215,
+      "end": 41246215,
+      "referenceAllele": "C",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41246215C>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246224,
+      "end": 41246224,
+      "referenceAllele": "A",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41246224A>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41267744,
+      "end": 41267744,
+      "referenceAllele": "T",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41267744T>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41267725,
+      "end": 41267725,
+      "referenceAllele": "T",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41267725T>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41267738,
+      "end": 41267738,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41267738C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41258562,
+      "end": 41258565,
+      "referenceAllele": "AAAG",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41258562_41258565delAAAG",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246181,
+      "end": 41246181,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41246181A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246156,
+      "end": 41246156,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41246156G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246152,
+      "end": 41246152,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41246152G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246147,
+      "end": 41246147,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41246147C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246141,
+      "end": 41246141,
+      "referenceAllele": "T",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41246141T>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246121,
+      "end": 41246121,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41246121T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41258561,
+      "end": 41258561,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41258561T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246102,
+      "end": 41246102,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41246102A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246089,
+      "end": 41246089,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41246089C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246092,
+      "end": 41246092,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41246092A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246061,
+      "end": 41246061,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41246061C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246062,
+      "end": 41246062,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41246062G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246040,
+      "end": 41246040,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41246040T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246037,
+      "end": 41246037,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41246037C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246014,
+      "end": 41246014,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41246014G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41258531,
+      "end": 41258531,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41258531G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245987,
+      "end": 41245987,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41245987C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245977,
+      "end": 41245977,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245977G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245967,
+      "end": 41245967,
+      "referenceAllele": "C",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41245967C>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245949,
+      "end": 41245949,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41245949A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245947,
+      "end": 41245947,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41245947T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245932,
+      "end": 41245932,
+      "referenceAllele": "G",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41245932G>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245932,
+      "end": 41245932,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245932G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245900,
+      "end": 41245900,
+      "referenceAllele": "T",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41245900T>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245845,
+      "end": 41245845,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245845G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245861,
+      "end": 41245861,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245861G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245843,
+      "end": 41245843,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41245843T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245835,
+      "end": 41245835,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41245835T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41258513,
+      "end": 41258513,
+      "referenceAllele": "G",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41258513G>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245824,
+      "end": 41245824,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41245824T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245817,
+      "end": 41245817,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41245817T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245803,
+      "end": 41245803,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245803G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245785,
+      "end": 41245785,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245785C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245784,
+      "end": 41245784,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245784G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245777,
+      "end": 41245777,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41245777T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245776,
+      "end": 41245776,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41245776A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245759,
+      "end": 41245759,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41245759C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41258506,
+      "end": 41258506,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41258506T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41258504,
+      "end": 41258504,
+      "referenceAllele": "A",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41258504A>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245714,
+      "end": 41245714,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41245714T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245784,
+      "end": 41245784,
+      "referenceAllele": "G",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41245784G>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245700,
+      "end": 41245702,
+      "referenceAllele": "AGA",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41245700_41245702delAGA",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245685,
+      "end": 41245685,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41245685A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245683,
+      "end": 41245683,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245683G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245675,
+      "end": 41245675,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245675G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245667,
+      "end": 41245667,
+      "referenceAllele": "G",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41245667G>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245667,
+      "end": 41245667,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245667G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245653,
+      "end": 41245653,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41245653C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245641,
+      "end": 41245641,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41245641C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245637,
+      "end": 41245637,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41245637A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245626,
+      "end": 41245626,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41245626A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245624,
+      "end": 41245624,
+      "referenceAllele": "C",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41245624C>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245594,
+      "end": 41245595,
+      "referenceAllele": "-",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41245594_41245595insC",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245577,
+      "end": 41245577,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41245577T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245574,
+      "end": 41245574,
+      "referenceAllele": "C",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41245574C>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245573,
+      "end": 41245573,
+      "referenceAllele": "G",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41245573G>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245568,
+      "end": 41245568,
+      "referenceAllele": "G",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41245568G>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245570,
+      "end": 41245570,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245570C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245550,
+      "end": 41245550,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41245550T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41258486,
+      "end": 41258486,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41258486C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245547,
+      "end": 41245547,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41245547T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41276095,
+      "end": 41276095,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41276095G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245542,
+      "end": 41245542,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41245542A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245526,
+      "end": 41245526,
+      "referenceAllele": "A",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41245526A>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41258483,
+      "end": 41258483,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41258483T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245534,
+      "end": 41245534,
+      "referenceAllele": "T",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245534T>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245492,
+      "end": 41245492,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41245492C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245461,
+      "end": 41245461,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245461G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245439,
+      "end": 41245439,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41245439T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245432,
+      "end": 41245432,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245432G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41258469,
+      "end": 41258469,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41258469A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245428,
+      "end": 41245428,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41245428C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245513,
+      "end": 41245513,
+      "referenceAllele": "T",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245513T>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245425,
+      "end": 41245425,
+      "referenceAllele": "G",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41245425G>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41256985,
+      "end": 41256985,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41256985T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245393,
+      "end": 41245393,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41245393T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245381,
+      "end": 41245381,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41245381T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245370,
+      "end": 41245370,
+      "referenceAllele": "A",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41245370A>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41256969,
+      "end": 41256969,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41256969G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245368,
+      "end": 41245368,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245368G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245341,
+      "end": 41245341,
+      "referenceAllele": "T",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41245341T>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41276093,
+      "end": 41276093,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41276093G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245330,
+      "end": 41245330,
+      "referenceAllele": "C",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41245330C>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245330,
+      "end": 41245330,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245330C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245326,
+      "end": 41245326,
+      "referenceAllele": "G",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41245326G>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245293,
+      "end": 41245293,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41245293A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245316,
+      "end": 41245316,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41245316A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245289,
+      "end": 41245289,
+      "referenceAllele": "A",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41245289A>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245280,
+      "end": 41245280,
+      "referenceAllele": "C",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41245280C>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245262,
+      "end": 41245262,
+      "referenceAllele": "T",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245262T>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245233,
+      "end": 41245233,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41245233A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245230,
+      "end": 41245230,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245230G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245201,
+      "end": 41245201,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41245201T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245197,
+      "end": 41245197,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245197G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245190,
+      "end": 41245190,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245190C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245180,
+      "end": 41245180,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41245180T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245161,
+      "end": 41245161,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245161G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245156,
+      "end": 41245156,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245156G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245155,
+      "end": 41245155,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245155G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245136,
+      "end": 41245137,
+      "referenceAllele": "CT",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41245136_41245137delCT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245132,
+      "end": 41245132,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41245132C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245120,
+      "end": 41245120,
+      "referenceAllele": "T",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245120T>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245118,
+      "end": 41245118,
+      "referenceAllele": "G",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41245118G>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245101,
+      "end": 41245101,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41245101T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245095,
+      "end": 41245095,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41245095C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245090,
+      "end": 41245090,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41245090T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245080,
+      "end": 41245080,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245080C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245071,
+      "end": 41245071,
+      "referenceAllele": "G",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41245071G>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245136,
+      "end": 41245136,
+      "referenceAllele": "C",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41245136C>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245067,
+      "end": 41245067,
+      "referenceAllele": "T",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41245067T>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245048,
+      "end": 41245048,
+      "referenceAllele": "C",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41245048C>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245026,
+      "end": 41245026,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41245026C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245027,
+      "end": 41245027,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41245027G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41245023,
+      "end": 41245023,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41245023T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244984,
+      "end": 41244984,
+      "referenceAllele": "T",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41244984T>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41256933,
+      "end": 41256933,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41256933C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244982,
+      "end": 41244982,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41244982A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244964,
+      "end": 41244964,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41244964T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244952,
+      "end": 41244952,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41244952G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244935,
+      "end": 41244935,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41244935C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244904,
+      "end": 41244904,
+      "referenceAllele": "A",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41244904A>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244914,
+      "end": 41244914,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41244914T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244902,
+      "end": 41244902,
+      "referenceAllele": "A",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41244902A>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244882,
+      "end": 41244882,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41244882G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244879,
+      "end": 41244879,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41244879C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244864,
+      "end": 41244864,
+      "referenceAllele": "T",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41244864T>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244840,
+      "end": 41244841,
+      "referenceAllele": "-",
+      "variantAllele": "AT"
+    },
+    "variant": "17:g.41244840_41244841insAT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244826,
+      "end": 41244826,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41244826C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244822,
+      "end": 41244822,
+      "referenceAllele": "T",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41244822T>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244815,
+      "end": 41244815,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41244815T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244782,
+      "end": 41244782,
+      "referenceAllele": "T",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41244782_41244782delT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244775,
+      "end": 41244775,
+      "referenceAllele": "T",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41244775T>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244747,
+      "end": 41244747,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41244747T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244737,
+      "end": 41244737,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41244737C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244765,
+      "end": 41244765,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41244765C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244734,
+      "end": 41244734,
+      "referenceAllele": "T",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41244734T>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244676,
+      "end": 41244676,
+      "referenceAllele": "A",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41244676A>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244664,
+      "end": 41244664,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41244664C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244638,
+      "end": 41244638,
+      "referenceAllele": "T",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41244638T>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244614,
+      "end": 41244614,
+      "referenceAllele": "A",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41244614A>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41256884,
+      "end": 41256884,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41256884C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244734,
+      "end": 41244734,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41244734T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41256878,
+      "end": 41256878,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41256878C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41256877,
+      "end": 41256877,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41256877A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244526,
+      "end": 41244526,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41244526T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244524,
+      "end": 41244524,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41244524C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41256277,
+      "end": 41256277,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41256277A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244501,
+      "end": 41244501,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41244501T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41256275,
+      "end": 41256275,
+      "referenceAllele": "G",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41256275G>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244488,
+      "end": 41244488,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41244488T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244465,
+      "end": 41244465,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41244465C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244455,
+      "end": 41244455,
+      "referenceAllele": "A",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41244455A>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244429,
+      "end": 41244429,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41244429C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244418,
+      "end": 41244418,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41244418T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41256266,
+      "end": 41256266,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41256266T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244383,
+      "end": 41244383,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41244383G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244382,
+      "end": 41244382,
+      "referenceAllele": "A",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41244382A>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244379,
+      "end": 41244379,
+      "referenceAllele": "T",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41244379T>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244310,
+      "end": 41244310,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41244310A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244301,
+      "end": 41244301,
+      "referenceAllele": "T",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41244301T>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244278,
+      "end": 41244278,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41244278T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244278,
+      "end": 41244278,
+      "referenceAllele": "T",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41244278T>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244252,
+      "end": 41244252,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41244252G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244246,
+      "end": 41244246,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41244246C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244243,
+      "end": 41244243,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41244243T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244240,
+      "end": 41244240,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41244240C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244219,
+      "end": 41244221,
+      "referenceAllele": "TTT",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41244219_41244221delTTT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244221,
+      "end": 41244221,
+      "referenceAllele": "T",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41244221T>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244218,
+      "end": 41244220,
+      "referenceAllele": "CTT",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41244218_41244220delCTT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244214,
+      "end": 41244217,
+      "referenceAllele": "CTTG",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41244214_41244217delCTTG",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244202,
+      "end": 41244204,
+      "referenceAllele": "CTT",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41244202_41244204delCTT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244191,
+      "end": 41244191,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41244191A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244201,
+      "end": 41244202,
+      "referenceAllele": "-",
+      "variantAllele": "CTT"
+    },
+    "variant": "17:g.41244201_41244202insCTT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244186,
+      "end": 41244186,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41244186T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244182,
+      "end": 41244182,
+      "referenceAllele": "T",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41244182T>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244189,
+      "end": 41244190,
+      "referenceAllele": "AC",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41244189_41244190delAC",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244133,
+      "end": 41244133,
+      "referenceAllele": "T",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41244133T>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244171,
+      "end": 41244171,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41244171G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244120,
+      "end": 41244120,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41244120G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244130,
+      "end": 41244130,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41244130T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244113,
+      "end": 41244113,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41244113A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244111,
+      "end": 41244111,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41244111C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244100,
+      "end": 41244100,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41244100G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244076,
+      "end": 41244076,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41244076C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244057,
+      "end": 41244067,
+      "referenceAllele": "CTAGTATCTTC",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41244057_41244067delCTAGTATCTTC",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244061,
+      "end": 41244061,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41244061T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244037,
+      "end": 41244037,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41244037T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244064,
+      "end": 41244064,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41244064C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244023,
+      "end": 41244023,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41244023A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41244008,
+      "end": 41244008,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41244008G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243992,
+      "end": 41243992,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41243992G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243952,
+      "end": 41243952,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41243952G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243988,
+      "end": 41243988,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41243988C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243951,
+      "end": 41243951,
+      "referenceAllele": "A",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41243951A>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243948,
+      "end": 41243948,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41243948C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243948,
+      "end": 41243948,
+      "referenceAllele": "C",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41243948C>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243940,
+      "end": 41243940,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41243940C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243941,
+      "end": 41243941,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41243941G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243912,
+      "end": 41243912,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41243912T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243899,
+      "end": 41243899,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41243899A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243908,
+      "end": 41243908,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41243908C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41256214,
+      "end": 41256214,
+      "referenceAllele": "A",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41256214A>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243882,
+      "end": 41243882,
+      "referenceAllele": "C",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41243882C>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243857,
+      "end": 41243857,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41243857A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41276078,
+      "end": 41276078,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41276078T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243840,
+      "end": 41243840,
+      "referenceAllele": "A",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41243840A>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243837,
+      "end": 41243837,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41243837T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243835,
+      "end": 41243835,
+      "referenceAllele": "G",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41243835G>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243835,
+      "end": 41243835,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41243835G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243831,
+      "end": 41243831,
+      "referenceAllele": "A",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41243831A>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243802,
+      "end": 41243802,
+      "referenceAllele": "G",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41243802G>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243811,
+      "end": 41243811,
+      "referenceAllele": "G",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41243811G>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243801,
+      "end": 41243801,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41243801G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243789,
+      "end": 41243792,
+      "referenceAllele": "AGAC",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41243789_41243792delAGAC",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243800,
+      "end": 41243800,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41243800C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243786,
+      "end": 41243787,
+      "referenceAllele": "-",
+      "variantAllele": "AA"
+    },
+    "variant": "17:g.41243786_41243787insAA",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243783,
+      "end": 41243784,
+      "referenceAllele": "-",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41243783_41243784insT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243765,
+      "end": 41243765,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41243765T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243730,
+      "end": 41243730,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41243730T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41256199,
+      "end": 41256199,
+      "referenceAllele": "A",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41256199A>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243725,
+      "end": 41243725,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41243725T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243712,
+      "end": 41243712,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41243712G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243680,
+      "end": 41243680,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41243680T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243670,
+      "end": 41243670,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41243670G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243655,
+      "end": 41243655,
+      "referenceAllele": "G",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41243655G>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41256189,
+      "end": 41256189,
+      "referenceAllele": "T",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41256189T>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243766,
+      "end": 41243766,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41243766A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243610,
+      "end": 41243610,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41243610T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243596,
+      "end": 41243596,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41243596T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243583,
+      "end": 41243583,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41243583T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41256182,
+      "end": 41256182,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41256182C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243553,
+      "end": 41243553,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41243553C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243522,
+      "end": 41243522,
+      "referenceAllele": "T",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41243522T>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243513,
+      "end": 41243513,
+      "referenceAllele": "T",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41243513_41243513delT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243512,
+      "end": 41243512,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41243512C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243509,
+      "end": 41243509,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41243509T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243502,
+      "end": 41243502,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41243502G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243500,
+      "end": 41243500,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41243500C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243060,
+      "end": 41243060,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41243060A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243069,
+      "end": 41243069,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41243069G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243060,
+      "end": 41243060,
+      "referenceAllele": "A",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41243060A>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243056,
+      "end": 41243056,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41243056T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243031,
+      "end": 41243031,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41243031C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243033,
+      "end": 41243033,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41243033C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243025,
+      "end": 41243026,
+      "referenceAllele": "CT",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41243025_41243026delCT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243014,
+      "end": 41243014,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41243014C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243009,
+      "end": 41243010,
+      "referenceAllele": "AG",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41243009_41243010delAG",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41243002,
+      "end": 41243002,
+      "referenceAllele": "A",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41243002A>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41242965,
+      "end": 41242965,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41242965G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41242951,
+      "end": 41242951,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41242951C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41234565,
+      "end": 41234565,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41234565T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41234602,
+      "end": 41234602,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41234602C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41234529,
+      "end": 41234529,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41234529C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41234528,
+      "end": 41234528,
+      "referenceAllele": "A",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41234528_41234528delA",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41234517,
+      "end": 41234517,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41234517G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41234523,
+      "end": 41234523,
+      "referenceAllele": "C",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41234523C>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41234516,
+      "end": 41234516,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41234516T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41256153,
+      "end": 41256153,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41256153C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41256153,
+      "end": 41256153,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41256153C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41234431,
+      "end": 41234431,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41234431T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41234428,
+      "end": 41234428,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41234428T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41234404,
+      "end": 41234404,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41234404T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41234416,
+      "end": 41234416,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41234416C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41228641,
+      "end": 41228641,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41228641G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41228652,
+      "end": 41228652,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41228652C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41228628,
+      "end": 41228628,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41228628A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41228600,
+      "end": 41228600,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41228600G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41228598,
+      "end": 41228598,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41228598G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41228596,
+      "end": 41228596,
+      "referenceAllele": "T",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41228596_41228596delT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41276071,
+      "end": 41276071,
+      "referenceAllele": "T",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41276071T>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41234451,
+      "end": 41234451,
+      "referenceAllele": "G",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41234451G>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41228587,
+      "end": 41228587,
+      "referenceAllele": "T",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41228587T>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41256122,
+      "end": 41256122,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41256122A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41256121,
+      "end": 41256121,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41256121G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41228579,
+      "end": 41228579,
+      "referenceAllele": "T",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41228579T>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41228567,
+      "end": 41228567,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41228567A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41228561,
+      "end": 41228561,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41228561C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41228508,
+      "end": 41228508,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41228508T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41228491,
+      "end": 41228491,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41228491T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41228504,
+      "end": 41228504,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41228504C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41228505,
+      "end": 41228505,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41228505C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41228505,
+      "end": 41228505,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41228505C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41226543,
+      "end": 41226543,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41226543A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41226503,
+      "end": 41226503,
+      "referenceAllele": "C",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41226503C>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41226499,
+      "end": 41226499,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41226499C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41226488,
+      "end": 41226488,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41226488C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41226518,
+      "end": 41226518,
+      "referenceAllele": "G",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41226518G>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41226471,
+      "end": 41226471,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41226471G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41226448,
+      "end": 41226449,
+      "referenceAllele": "TT",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41226448_41226449delTT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41251882,
+      "end": 41251882,
+      "referenceAllele": "T",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41251882T>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41251880,
+      "end": 41251880,
+      "referenceAllele": "A",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41251880A>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41226423,
+      "end": 41226423,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41226423C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41251879,
+      "end": 41251879,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41251879C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41226403,
+      "end": 41226403,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41226403T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41226398,
+      "end": 41226398,
+      "referenceAllele": "G",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41226398G>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41226397,
+      "end": 41226398,
+      "referenceAllele": "AG",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41226397_41226398delAG",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41226388,
+      "end": 41226388,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41226388G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41226387,
+      "end": 41226387,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41226387C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41226387,
+      "end": 41226387,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41226387C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41251876,
+      "end": 41251876,
+      "referenceAllele": "G",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41251876G>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41226374,
+      "end": 41226374,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41226374G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41226379,
+      "end": 41226379,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41226379C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41226369,
+      "end": 41226369,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41226369A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41223262,
+      "end": 41223262,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41223262G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41223263,
+      "end": 41223263,
+      "referenceAllele": "G",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41223263G>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41223252,
+      "end": 41223252,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41223252C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41223249,
+      "end": 41223249,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41223249G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41251871,
+      "end": 41251871,
+      "referenceAllele": "G",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41251871G>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41223215,
+      "end": 41223215,
+      "referenceAllele": "A",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41223215_41223215delA",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41223196,
+      "end": 41223196,
+      "referenceAllele": "G",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41223196G>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41223166,
+      "end": 41223166,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41223166G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41223165,
+      "end": 41223165,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41223165C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41223149,
+      "end": 41223149,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41223149T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41223135,
+      "end": 41223135,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41223135G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41223119,
+      "end": 41223119,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41223119T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41223118,
+      "end": 41223118,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41223118A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41223115,
+      "end": 41223115,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41223115T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41223098,
+      "end": 41223098,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41223098G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41223094,
+      "end": 41223094,
+      "referenceAllele": "T",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41223094T>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41223240,
+      "end": 41223240,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41223240A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41223091,
+      "end": 41223091,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41223091G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41223088,
+      "end": 41223088,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41223088C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41223085,
+      "end": 41223085,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41223085C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41223049,
+      "end": 41223049,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41223049T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41251851,
+      "end": 41251851,
+      "referenceAllele": "C",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41251851C>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41223036,
+      "end": 41223036,
+      "referenceAllele": "A",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41223036A>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41223048,
+      "end": 41223048,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41223048A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41223032,
+      "end": 41223032,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41223032G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41223021,
+      "end": 41223021,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41223021G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41223017,
+      "end": 41223017,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41223017T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41223000,
+      "end": 41223000,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41223000T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41222997,
+      "end": 41222997,
+      "referenceAllele": "C",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41222997C>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41222995,
+      "end": 41222995,
+      "referenceAllele": "C",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41222995_41222995delC",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41222975,
+      "end": 41222975,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41222975C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41222971,
+      "end": 41222971,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41222971C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41222960,
+      "end": 41222960,
+      "referenceAllele": "C",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41222960C>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41222949,
+      "end": 41222967,
+      "referenceAllele": "TCTTCTGGGGTCAGGCCAG",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41222949_41222967delTCTTCTGGGGTCAGGCCAG",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41219732,
+      "end": 41219732,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41219732T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41222940,
+      "end": 41222940,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41222940C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41219700,
+      "end": 41219700,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41219700T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41219707,
+      "end": 41219707,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41219707G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41219679,
+      "end": 41219679,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41219679T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41219694,
+      "end": 41219694,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41219694C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41219668,
+      "end": 41219668,
+      "referenceAllele": "A",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41219668A>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41219667,
+      "end": 41219667,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41219667T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41219651,
+      "end": 41219651,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41219651T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41251834,
+      "end": 41251834,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41251834G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41219635,
+      "end": 41219635,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41219635A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41219631,
+      "end": 41219631,
+      "referenceAllele": "T",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41219631T>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41219611,
+      "end": 41219611,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41219611G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41219619,
+      "end": 41219619,
+      "referenceAllele": "G",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41219619G>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41219625,
+      "end": 41219625,
+      "referenceAllele": "C",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41219625C>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41215986,
+      "end": 41215986,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41215986C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41215975,
+      "end": 41215975,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41215975A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41215947,
+      "end": 41215947,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41215947C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41251830,
+      "end": 41251830,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41251830C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41215926,
+      "end": 41215926,
+      "referenceAllele": "C",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41215926C>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41215943,
+      "end": 41215943,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41215943T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41215876,
+      "end": 41215876,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41215876T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41215871,
+      "end": 41215871,
+      "referenceAllele": "A",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41215871A>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41215396,
+      "end": 41215396,
+      "referenceAllele": "G",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41215396G>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41215385,
+      "end": 41215385,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41215385T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41215368,
+      "end": 41215368,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41215368T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41215367,
+      "end": 41215367,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41215367T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41215363,
+      "end": 41215366,
+      "referenceAllele": "TTTC",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41215363_41215366delTTTC",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41215364,
+      "end": 41215364,
+      "referenceAllele": "T",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41215364T>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41215354,
+      "end": 41215354,
+      "referenceAllele": "T",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41215354T>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41215352,
+      "end": 41215352,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41215352C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41209139,
+      "end": 41209139,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41209139A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41209095,
+      "end": 41209095,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41209095G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41251825,
+      "end": 41251825,
+      "referenceAllele": "G",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41251825_41251825delG",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41251814,
+      "end": 41251814,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41251814C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41209079,
+      "end": 41209080,
+      "referenceAllele": "-",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41209079_41209080insG",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41209077,
+      "end": 41209077,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41209077C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41209077,
+      "end": 41209077,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41209077C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41209051,
+      "end": 41209051,
+      "referenceAllele": "T",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41209051T>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41203148,
+      "end": 41203148,
+      "referenceAllele": "G",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41203148G>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41203154,
+      "end": 41203154,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41203154G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41251812,
+      "end": 41251812,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41251812G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41203123,
+      "end": 41203123,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41203123C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41203108,
+      "end": 41203108,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41203108G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41251811,
+      "end": 41251811,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41251811C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41203100,
+      "end": 41203100,
+      "referenceAllele": "G",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41203100G>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41203092,
+      "end": 41203093,
+      "referenceAllele": "-",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41203092_41203093insG",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41203067,
+      "end": 41203067,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41203067C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41203077,
+      "end": 41203077,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41203077T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41203065,
+      "end": 41203065,
+      "referenceAllele": "C",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41203065C>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41201219,
+      "end": 41201219,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41201219G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41201211,
+      "end": 41201211,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41201211T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41201210,
+      "end": 41201210,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41201210A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41201196,
+      "end": 41201196,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41201196A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41201194,
+      "end": 41201194,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41201194C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41201175,
+      "end": 41201175,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41201175G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41251803,
+      "end": 41251803,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41251803T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41201130,
+      "end": 41201130,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41201130A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41201138,
+      "end": 41201138,
+      "referenceAllele": "T",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41201138T>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41199716,
+      "end": 41199716,
+      "referenceAllele": "A",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41199716A>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41199730,
+      "end": 41199730,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41199730C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41199715,
+      "end": 41199715,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41199715G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41199697,
+      "end": 41199697,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41199697C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41199691,
+      "end": 41199691,
+      "referenceAllele": "T",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41199691T>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41199648,
+      "end": 41199648,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41199648C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41197829,
+      "end": 41197829,
+      "referenceAllele": "G",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41197829G>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41251778,
+      "end": 41251778,
+      "referenceAllele": "C",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41251778_41251778delC",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41251786,
+      "end": 41251786,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41251786C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41251783,
+      "end": 41251783,
+      "referenceAllele": "G",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41251783G>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41197817,
+      "end": 41197817,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41197817T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41249323,
+      "end": 41249323,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41249323C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41249315,
+      "end": 41249315,
+      "referenceAllele": "T",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41249315_41249315delT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41197784,
+      "end": 41197784,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41197784G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41197773,
+      "end": 41197773,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41197773C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41197756,
+      "end": 41197756,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41197756A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41197756,
+      "end": 41197756,
+      "referenceAllele": "A",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41197756A>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41197728,
+      "end": 41197729,
+      "referenceAllele": "-",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41197728_41197729insT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41249298,
+      "end": 41249298,
+      "referenceAllele": "A",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41249298A>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41197711,
+      "end": 41197711,
+      "referenceAllele": "G",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41197711G>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41249297,
+      "end": 41249297,
+      "referenceAllele": "G",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41249297G>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41197700,
+      "end": 41197700,
+      "referenceAllele": "A",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41197700A>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41249283,
+      "end": 41249283,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41249283C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41249263,
+      "end": 41249263,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41249263G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41249258,
+      "end": 41249258,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41249258C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41249253,
+      "end": 41249253,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41249253T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41247941,
+      "end": 41247941,
+      "referenceAllele": "T",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41247941T>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41249252,
+      "end": 41249252,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41249252T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41276054,
+      "end": 41276054,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41276054T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41247921,
+      "end": 41247921,
+      "referenceAllele": "C",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41247921C>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41247903,
+      "end": 41247903,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41247903T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41247892,
+      "end": 41247892,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41247892T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41276049,
+      "end": 41276049,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41276049A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41276050,
+      "end": 41276050,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41276050A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41247872,
+      "end": 41247872,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41247872C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41247860,
+      "end": 41247860,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41247860T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41247847,
+      "end": 41247847,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41247847C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246885,
+      "end": 41246885,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41246885T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41247863,
+      "end": 41247863,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41247863C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41276045,
+      "end": 41276046,
+      "referenceAllele": "CT",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41276045_41276046delCT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246872,
+      "end": 41246872,
+      "referenceAllele": "A",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41246872_41246872delA",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246855,
+      "end": 41246855,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41246855C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246856,
+      "end": 41246856,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41246856G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246854,
+      "end": 41246854,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41246854C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246849,
+      "end": 41246849,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41246849T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246832,
+      "end": 41246832,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41246832T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246804,
+      "end": 41246804,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41246804G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246812,
+      "end": 41246812,
+      "referenceAllele": "A",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41246812A>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41276039,
+      "end": 41276039,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41276039G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246783,
+      "end": 41246783,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41246783C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246780,
+      "end": 41246780,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41246780C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246753,
+      "end": 41246754,
+      "referenceAllele": "AG",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41246753_41246754delAG",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246775,
+      "end": 41246775,
+      "referenceAllele": "G",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41246775G>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246747,
+      "end": 41246747,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41246747T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246749,
+      "end": 41246750,
+      "referenceAllele": "AA",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41246749_41246750delAA",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246744,
+      "end": 41246744,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41246744G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41267807,
+      "end": 41267807,
+      "referenceAllele": "A",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41267807_41267807delA",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41267808,
+      "end": 41267808,
+      "referenceAllele": "G",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41267808G>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246741,
+      "end": 41246741,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41246741C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41267809,
+      "end": 41267809,
+      "referenceAllele": "G",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41267809G>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41267809,
+      "end": 41267809,
+      "referenceAllele": "G",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41267809G>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41267807,
+      "end": 41267808,
+      "referenceAllele": "-",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41267807_41267808insG",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41267809,
+      "end": 41267809,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41267809G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41267814,
+      "end": 41267814,
+      "referenceAllele": "G",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41267814G>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41267810,
+      "end": 41267810,
+      "referenceAllele": "G",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41267810G>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246737,
+      "end": 41246737,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41246737C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246736,
+      "end": 41246736,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41246736A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246725,
+      "end": 41246725,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41246725C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41267802,
+      "end": 41267802,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41267802A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246702,
+      "end": 41246705,
+      "referenceAllele": "TGAG",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41246702_41246705delTGAG",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246720,
+      "end": 41246720,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41246720T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246690,
+      "end": 41246690,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41246690C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246646,
+      "end": 41246646,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41246646T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246657,
+      "end": 41246657,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41246657C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246626,
+      "end": 41246626,
+      "referenceAllele": "T",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41246626T>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246645,
+      "end": 41246645,
+      "referenceAllele": "C",
+      "variantAllele": "A"
+    },
+    "variant": "17:g.41246645C>A",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41267784,
+      "end": 41267784,
+      "referenceAllele": "G",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41267784G>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246605,
+      "end": 41246605,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41246605T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246604,
+      "end": 41246604,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41246604C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246597,
+      "end": 41246597,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41246597T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246624,
+      "end": 41246625,
+      "referenceAllele": "GC",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41246624_41246625delGC",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246592,
+      "end": 41246592,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41246592T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246567,
+      "end": 41246567,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41246567T>C",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246566,
+      "end": 41246567,
+      "referenceAllele": "AT",
+      "variantAllele": "-"
+    },
+    "variant": "17:g.41246566_41246567delAT",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246561,
+      "end": 41246561,
+      "referenceAllele": "A",
+      "variantAllele": "G"
+    },
+    "variant": "17:g.41246561A>G",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246560,
+      "end": 41246560,
+      "referenceAllele": "C",
+      "variantAllele": "T"
+    },
+    "variant": "17:g.41246560C>T",
+    "hotspots": []
+  },
+  {
+    "genomicLocation": {
+      "chromosome": "17",
+      "start": 41246595,
+      "end": 41246595,
+      "referenceAllele": "T",
+      "variantAllele": "C"
+    },
+    "variant": "17:g.41246595T>C",
+    "hotspots": []
+  }
+]
