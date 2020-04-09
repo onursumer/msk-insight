@@ -18,6 +18,7 @@ import {
 
 import {IEnsemblGene} from "../model/EnsemblGene";
 import {IExtendedMutation, ITumorTypeDecomposition} from "../model/Mutation";
+import {DataFetcher} from "../store/DataFetcher";
 import {
     applyCancerTypeFilter,
     applyMutationStatusFilter,
@@ -40,7 +41,6 @@ import {
 import {loaderWithText} from "../util/StatusHelper";
 import {ColumnId, HEADER_COMPONENT} from "./ColumnHeaderHelper";
 import {renderPenetrance, renderPercentage} from "./ColumnRenderHelper";
-import {DataFetcher} from "./DataFetcher";
 import {sortPenetrance} from "./GeneFrequencyTable";
 import MutationTumorTypeFrequencyDecomposition from "./MutationTumorTypeFrequencyDecomposition";
 import SignalMutationMapper from "./SignalMutationMapper";
@@ -328,7 +328,7 @@ class MutationMapper extends React.Component<IMutationMapperProps>
     }
 
     private get loader() {
-        return loaderWithText("Annotating with Genome Nexus...");
+        return loaderWithText("Annotating...");
     }
 
     @autobind

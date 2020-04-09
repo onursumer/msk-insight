@@ -1,5 +1,6 @@
 const csvToJson = require('csvtojson');
 const fs = require('fs');
+const {indexAnnotationsByGenomicLocation} = require('cbioportal-utils');
 const {GenomeNexusAPI, GenomeNexusAPIInternal } = require('genome-nexus-ts-api-client');
 const process = require('process');
 const yargs = require('yargs');
@@ -82,9 +83,10 @@ async function fetchVariantAnnotations(genes, genomicLocationMap) {
         }).catch(e => unsuccessfulQueries.push(gene));
 
         if (!unsuccessfulQueries.includes(gene)) {
+            const indexedVariantAnnotations = indexAnnotationsByGenomicLocation(variantAnnotations);
             fs.writeFileSync(
                 `./public/data/variantAnnotation/${key}.json`,
-                JSON.stringify(variantAnnotations, null, 2),
+                JSON.stringify(indexedVariantAnnotations, null, 2),
                 "utf8"
             );
         }
@@ -164,17 +166,17 @@ function getArgs() {
             default: true,
             describe: 'Fetch SignalDB mutations from GenomeNexus'
         })
-        .option('fetch-cancer-hotspots', {
-            alias: 'c',
-            type: 'boolean',
-            default: true,
-            describe: 'Fetch SignalDB hotspot mutations from GenomeNexus'
-        })
         .option('fetch-annotations', {
             alias: 'a',
             type: 'boolean',
             default: true,
             describe: 'Annotate SignalDB mutations with GenomeNexus'
+        })
+        .option('fetch-cancer-hotspots', {
+            alias: 'c',
+            type: 'boolean',
+            default: false,
+            describe: 'Fetch SignalDB hotspot mutations from GenomeNexus'
         })
         .option('gene-list', {
             alias: 'g',

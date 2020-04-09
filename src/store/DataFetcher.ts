@@ -1,9 +1,7 @@
 import _ from 'lodash';
 import {
-    AggregatedHotspots,
     DefaultMutationMapperDataFetcher,
-    getMyVariantInfoAnnotationsFromIndexedVariantAnnotations,
-    indexAnnotationsByGenomicLocation
+    getMyVariantInfoAnnotationsFromIndexedVariantAnnotations
 } from "react-mutation-mapper";
 
 import {
@@ -19,12 +17,13 @@ export class DataFetcher extends DefaultMutationMapperDataFetcher {
     ): Promise<{ [genomicLocation: string]: VariantAnnotation }> {
         let indexedVariantAnnotations = {};
 
-        if (mutations.length > 0 && mutations[0].hugoGeneSymbol) {
-            const gene = mutations[0].hugoGeneSymbol;
-            const response = await fetch(`/data/variantAnnotation/${gene.toLowerCase()}.json`);
-            const variantAnnotations = await response.json();
+        const mutation = mutations.find(m => !_.isEmpty(m.hugoGeneSymbol));
 
-            indexedVariantAnnotations = indexAnnotationsByGenomicLocation(variantAnnotations);
+        if (mutation) {
+            const gene = mutation.hugoGeneSymbol!;
+            // TODO cache last few genes?
+            const response = await fetch(`/data/variantAnnotation/${gene.toLowerCase()}.json`);
+            indexedVariantAnnotations = await response.json();
         }
 
         return indexedVariantAnnotations;
@@ -43,19 +42,5 @@ export class DataFetcher extends DefaultMutationMapperDataFetcher {
         }
 
         return indexedMyVariantAnnotations;
-    }
-
-    public async fetchAggregatedHotspotsData(
-        mutations: Array<Partial<IMutation>>
-    ): Promise<AggregatedHotspots[]> {
-        if (mutations.length > 0 && mutations[0].hugoGeneSymbol) {
-            const gene = mutations[0].hugoGeneSymbol;
-            const response = await fetch(`/data/hotspot/${gene.toLowerCase()}.json`);
-
-            return await response.json();
-        }
-        else {
-            return [];
-        }
     }
 }

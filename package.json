@@ -17,6 +17,7 @@
     "autobind-decorator": "^2.4.0",
     "bootstrap": "^4.3.1",
     "cbioportal-frontend-commons": "^0.2.4",
+    "cbioportal-utils": "^0.1.0",
     "classnames": "^2.2.6",
     "csvtojson": "^2.0.10",
     "font-awesome": "^4.7.0",
