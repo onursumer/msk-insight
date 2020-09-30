@@ -26,9 +26,10 @@ class Main extends React.Component<{}>
             />
         );
 
-        const HomePage = () => (
+        const HomePage = (routerProps: any) => (
             <Home
                 frequencyStore={this.frequencyStore}
+                history={routerProps.history}
             />
         );
 

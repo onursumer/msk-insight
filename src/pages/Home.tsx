@@ -5,13 +5,19 @@ import {
     Col, Row
 } from 'react-bootstrap';
 
+import { action, observable } from 'mobx';
+import HomePageSearchBox from "../components/HomePageSearchBox";
 import PenetranceFilterPanel from "../components/PenetranceFilterPanel";
 import GeneFrequencyStore, {isFrequencyDataPending} from "../store/GeneFrequencyStore";
+import { EXAMPLE_DATA_GRCH37 } from '../util/Constants';
+import ValidatorNotification, { ErrorType } from '../util/validator/ValidatorNotification';
+import { isVariantValid } from '../util/validator/VariantValidator';
 
 import "./Home.css";
 
 interface IHomeProps {
     frequencyStore?: GeneFrequencyStore
+    history: any
 }
 
 @observer
@@ -39,6 +45,15 @@ class Home extends React.Component<IHomeProps>
         );
     }
 
+    @observable
+    protected inputText: string | undefined;
+
+    @observable
+    protected alert: boolean = false;
+
+    @observable
+    protected alertType: ErrorType = ErrorType.INVALID;
+    
     public render()
     {
         return !this.isLoading() ? (
@@ -61,8 +76,14 @@ class Home extends React.Component<IHomeProps>
                     <PenetranceFilterPanel geneFrequencyStore={this.props.frequencyStore} />
                 </Row>
                 <Row className="mb-5">
-                    <Col md={10} className="mx-auto d-flex align-items-center">
-                        <input className="m-auto" type="text" placeholder="Dummy Search..."/>
+                    <Col md={6}
+                        className={'mx-auto'}>
+                        <HomePageSearchBox
+                            onChange={this.onTextChange}
+                            onSearch={this.onSearch}
+                            height={44}
+                            exampleData={EXAMPLE_DATA_GRCH37}
+                        />
                     </Col>
                 </Row>
                 <Row className="mb-5">
@@ -70,12 +91,41 @@ class Home extends React.Component<IHomeProps>
                         {this.blurb}
                     </Col>
                 </Row>
+                <ValidatorNotification
+                    showAlert={this.alert}
+                    type={this.alertType}
+                    onClose={this.onClose}
+                />
             </div>
         ): null;
     }
 
     private isLoading(): boolean {
         return isFrequencyDataPending(this.props.frequencyStore);
+    }
+
+    @action.bound
+    private onSearch() {
+        // TODO update validator and notification to support gene and region
+        if (isVariantValid(`${this.inputText}`).isValid) {
+            this.alert = false;
+            this.props.history.push(`/variant/${this.inputText}`);
+            return;
+        } else {
+            this.alertType = ErrorType.INVALID;
+        }
+        this.alert = true;
+        return;
+    }
+
+    @action.bound
+    private onTextChange(input: string) {
+        this.inputText = input.trim();
+    }
+
+    @action.bound
+    private onClose() {
+        this.alert = false;
     }
 }
 
