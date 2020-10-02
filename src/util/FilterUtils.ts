@@ -6,7 +6,8 @@ import {IGeneFrequencySummary, ITumorTypeFrequencySummary} from "../model/GeneFr
 import {IExtendedMutation, IMutation, ITumorTypeDecomposition} from "../model/Mutation";
 import {PenetranceLevel} from "../model/Penetrance";
 
-export const HUGO_SYMBOL_FILTER_ID = "_signalHugoSymbolFilter_";
+export const HUGO_SYMBOL_SEARCH_FILTER_ID = "_signalHugoSymbolSearchFilter_";
+export const HUGO_SYMBOL_DROPDOWN_FILTER_ID = "_signalHugoSymbolDropdownFilter_";
 export const CANCER_TYPE_FILTER_ID = "_signalCancerTypeFilter_";
 export const MUTATION_STATUS_FILTER_ID = "_signalMutationStatusFilter_";
 export const PROTEIN_IMPACT_TYPE_FILTER_ID = "_signalProteinImpactTypeFilter_";
@@ -125,16 +126,6 @@ export function findMutationStatusFilter(dataFilters: DataFilter[])
 export function findMutationTypeFilter(dataFilters: DataFilter[])
 {
     return dataFilters.find(f => f.id === PROTEIN_IMPACT_TYPE_FILTER_ID);
-}
-
-export function findHugoSymbolFilter(dataFilters: DataFilter[])
-{
-    return dataFilters.find(f => f.id === HUGO_SYMBOL_FILTER_ID);
-}
-
-export function findPenetranceFilter(dataFilters: DataFilter[])
-{
-    return dataFilters.find(f => f.id === PENETRANCE_FILTER_ID);
 }
 
 export function getDefaultMutationStatusFilterValues() {

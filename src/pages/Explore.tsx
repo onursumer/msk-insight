@@ -1,21 +1,13 @@
-import _ from 'lodash';
-import { action, computed, observable } from 'mobx';
 import { observer } from 'mobx-react';
 import * as React from 'react';
 import {Row} from 'react-bootstrap';
-import {CancerTypeFilter, DataFilterType} from "react-mutation-mapper";
 
 import GeneLevelSummary from "../components/GeneLevelSummary";
 import LandscapeFilterPanel from "../components/LandscapeFilterPanel";
 import PenetranceFilterPanel from "../components/PenetranceFilterPanel";
 import {PenetranceLevel} from "../model/Penetrance";
 import GeneFrequencyStore, {isFrequencyDataPending} from "../store/GeneFrequencyStore";
-import {
-    CANCER_TYPE_FILTER_ID,
-    PENETRANCE_FILTER_ID,
-    PENETRANCE_FILTER_TYPE,
-    PenetranceFilter
-} from "../util/FilterUtils";
+import GeneFrequencyFilterHelper from "../util/GeneFrequencyFilterHelper";
 
 interface IExploreProps {
     frequencyStore?: GeneFrequencyStore;
@@ -25,43 +17,15 @@ interface IExploreProps {
 @observer
 class Explore extends React.Component<IExploreProps>
 {
-    @observable
-    public selectedPenetranceLevels: PenetranceLevel[] | undefined;
-
-    @computed
-    public get penetranceFilter(): PenetranceFilter | undefined
-    {
-        return this.selectedPenetranceLevels ? {
-            id: PENETRANCE_FILTER_ID,
-            type: PENETRANCE_FILTER_TYPE,
-            values: this.selectedPenetranceLevels
-        }: undefined;
-    }
-
-    @observable
-    public selectedCancerTypes: string[] | undefined;
-
-    @computed
-    public get cancerTypeFilter(): CancerTypeFilter | undefined
-    {
-        return this.selectedCancerTypes ? {
-            id: CANCER_TYPE_FILTER_ID,
-            type: DataFilterType.CANCER_TYPE,
-            values: this.selectedCancerTypes
-        }: undefined;
-    }
+    private readonly filterHelper: GeneFrequencyFilterHelper;
 
     constructor(props: IExploreProps) {
         super(props);
 
-        if (this.props.penetrance) {
-            this.selectedPenetranceLevels = [this.props.penetrance];
-        }
-
-        if (this.props.frequencyStore) {
-            this.props.frequencyStore.updateGeneFrequencySummaryDataFilters(PENETRANCE_FILTER_ID, this.penetranceFilter);
-            this.props.frequencyStore.updateTumorTypeFrequencySummaryDataFilters(DataFilterType.CANCER_TYPE, this.cancerTypeFilter);
-        }
+        this.filterHelper = new GeneFrequencyFilterHelper(
+            this.props.frequencyStore,
+            this.props.penetrance ? [this.props.penetrance]: undefined
+        );
     }
 
     public render()
@@ -72,23 +36,30 @@ class Explore extends React.Component<IExploreProps>
                     <>
                         <Row className="mb-2">
                             <PenetranceFilterPanel
-                                selectedPenetranceLevels={this.selectedPenetranceLevels}
+                                selectedPenetranceLevels={this.filterHelper.selectedPenetranceLevels}
                                 geneFrequencyStore={this.props.frequencyStore}
-                                onSelect={this.handlePenetranceSelect}
+                                onSelect={this.filterHelper.handlePenetranceSelect}
                                 multiSelect={true}
                             />
                         </Row>
                         <Row className="mb-2">
                             <LandscapeFilterPanel
-                                cancerTypeFilter={this.cancerTypeFilter}
                                 geneFrequencyStore={this.props.frequencyStore}
-                                onCancerTypeSelect={this.handleCancerTypeSelect}
+                                onResetFilters={this.filterHelper.handleFilterReset}
+                                isFiltered={this.filterHelper.isFiltered}
+                                cancerTypeFilter={this.filterHelper.cancerTypeFilter}
+                                cancerTypesOptions={this.filterHelper.cancerTypesOptions}
+                                onCancerTypeSelect={this.filterHelper.handleCancerTypeSelect}
+                                hugoSymbolFilter={this.filterHelper.hugoSymbolDropdownFilter}
+                                hugoSymbolOptions={this.filterHelper.hugoSymbolOptions}
+                                onHugoSymbolSelect={this.filterHelper.handleHugoSymbolSelect}
                             />
                         </Row>
                     </>
                 }
                 <GeneLevelSummary
                     frequencyStore={this.props.frequencyStore}
+                    filterHelper={this.filterHelper}
                 />
             </div>
         );
@@ -96,32 +67,6 @@ class Explore extends React.Component<IExploreProps>
 
     private isLoading(): boolean {
         return isFrequencyDataPending(this.props.frequencyStore);
-    }
-
-    @action.bound
-    private handlePenetranceSelect(penetrance: PenetranceLevel)
-    {
-        let selectedPenetranceLevels = this.selectedPenetranceLevels || [];
-
-        selectedPenetranceLevels = selectedPenetranceLevels.includes(penetrance) ?
-            _.without(selectedPenetranceLevels, penetrance): [...selectedPenetranceLevels, penetrance];
-
-        this.selectedPenetranceLevels = selectedPenetranceLevels.length > 0 ?
-            selectedPenetranceLevels: undefined;
-
-        if (this.props.frequencyStore) {
-            this.props.frequencyStore.updateGeneFrequencySummaryDataFilters(PENETRANCE_FILTER_ID, this.penetranceFilter);
-        }
-    }
-
-    @action.bound
-    private handleCancerTypeSelect(selectedCancerTypeIds: string[], allValuesSelected: boolean)
-    {
-        this.selectedCancerTypes = allValuesSelected ? undefined: selectedCancerTypeIds;
-
-        if (this.props.frequencyStore) {
-            this.props.frequencyStore.updateTumorTypeFrequencySummaryDataFilters(CANCER_TYPE_FILTER_ID, this.cancerTypeFilter);
-        }
     }
 }
 

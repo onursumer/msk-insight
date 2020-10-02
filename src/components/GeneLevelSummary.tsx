@@ -1,4 +1,4 @@
-import {action, computed} from "mobx";
+import {computed} from "mobx";
 import {observer} from "mobx-react";
 import * as React from 'react';
 import {
@@ -6,12 +6,13 @@ import {
 } from 'react-bootstrap';
 
 import GeneFrequencyStore from "../store/GeneFrequencyStore";
-import {HUGO_SYMBOL_FILTER_ID, HUGO_SYMBOL_FILTER_TYPE} from "../util/FilterUtils";
+import GeneFrequencyFilterHelper from "../util/GeneFrequencyFilterHelper";
 import GeneFrequencyTable from "./GeneFrequencyTable";
 import LandscapePlot from "./LandscapePlot";
 
 interface IGeneLevelSummaryProps {
     frequencyStore?: GeneFrequencyStore;
+    filterHelper?: GeneFrequencyFilterHelper;
 }
 
 @observer
@@ -20,6 +21,11 @@ class GeneLevelSummary extends React.Component<IGeneLevelSummaryProps>
     @computed
     private get frequencyStore() {
         return this.props.frequencyStore || new GeneFrequencyStore();
+    }
+
+    @computed
+    private get filterHelper() {
+        return this.props.filterHelper || new GeneFrequencyFilterHelper(this.frequencyStore);
     }
 
     private get loadingIndicator() {
@@ -46,7 +52,7 @@ class GeneLevelSummary extends React.Component<IGeneLevelSummaryProps>
                             <Col className="m-auto">
                                 <GeneFrequencyTable
                                     store={this.frequencyStore}
-                                    onSearch={this.handleHugoSymbolSearch}
+                                    onSearch={this.filterHelper.handleHugoSymbolSearch}
                                 />
                             </Col>
                         </Row>
@@ -59,17 +65,6 @@ class GeneLevelSummary extends React.Component<IGeneLevelSummaryProps>
     private isLoading(): boolean {
         return this.frequencyStore.frequencySummaryDataStatus === "pending" ||
             this.frequencyStore.tumorTypeFrequenciesDataStatus === "pending";
-    }
-
-    @action.bound
-    private handleHugoSymbolSearch(searchText: string) {
-        const dataFilter = searchText ? {
-            id: HUGO_SYMBOL_FILTER_ID,
-            type: HUGO_SYMBOL_FILTER_TYPE,
-            values: [searchText]
-        }: undefined;
-
-        this.frequencyStore.updateGeneFrequencySummaryDataFilters(HUGO_SYMBOL_FILTER_ID, dataFilter);
     }
 }
 
