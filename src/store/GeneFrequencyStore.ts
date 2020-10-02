@@ -72,11 +72,15 @@ class GeneFrequencyStore
     }
 
     @computed
+    public get knownTumorTypeFrequencySummaryData() {
+        return this.tumorTypeFrequencySummaryData.filter(d => isKnownTumorType(d.tumorType));
+    }
+
+    @computed
     public get filteredTumorTypeFrequencySummaryData()
     {
-        return this.tumorTypeFrequencySummaryData
-            // always filter out unknown
-            .filter(d => isKnownTumorType(d.tumorType))
+        // always filter out unknown
+        return this.knownTumorTypeFrequencySummaryData
             .filter(s =>
                 // should satisfy all filters, otherwise filter out
                 !this.tumorTypeFrequencySummaryDataFilters
