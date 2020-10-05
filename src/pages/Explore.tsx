@@ -42,7 +42,7 @@ class Explore extends React.Component<IExploreProps>
                                 multiSelect={true}
                             />
                         </Row>
-                        <Row className="mb-2">
+                        <Row className="mb-2" style={{fontSize: "85%"}}>
                             <LandscapeFilterPanel
                                 geneFrequencyStore={this.props.frequencyStore}
                                 onResetFilters={this.filterHelper.handleFilterReset}
