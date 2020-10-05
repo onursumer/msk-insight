@@ -91,7 +91,7 @@ class LandscapePlot extends React.Component<ILandscapePlotProps>
             colors: ["darkbrown", "brown", "orange", "#fdff8d"],
             title: "% Biallelic",
             width: 10,
-            height: 200,
+            height: 100,
             min: 0,
             max: 100
         };
@@ -122,13 +122,14 @@ class LandscapePlot extends React.Component<ILandscapePlotProps>
 
     @computed
     public get plotHeight(): number {
-        return (this.genesWithSignificantPathogenicGermlineRatio.length * 10) + 400;
+        return (this.genesWithSignificantPathogenicGermlineRatio.length * 12) + 250;
     }
 
     public render() {
         return (
             <ScatterPlot
                 width={1200}
+                axisLabelTiltAngle={this.plotHeight < 400 ? 75: undefined}
                 height={this.plotHeight}
                 theme={generateTheme()}
                 gradientLegendProps={this.gradientLegendProps}
@@ -195,7 +196,7 @@ class LandscapePlot extends React.Component<ILandscapePlotProps>
         return (
             <>
                 <div>Hugo Symbol: {datum.datum.hugoSymbol}</div>
-                <div>Tumor Type: {datum.datum.tumorType}</div>
+                <div>Tumor Type: {datum.datum.tumorType} ({datum.datum.sampleCount})</div>
                 <div>% Pathogenic Germline: <strong>{pathogenicGermline}</strong></div>
                 <div>% Biallelic: <strong>{percentBiallelic}</strong></div>
             </>
