@@ -12,6 +12,7 @@ import {loaderWithText} from "../util/StatusHelper";
 interface IGeneProps
 {
     hugoSymbol: string;
+    cancerTypes?: string[];
 }
 
 @observer
@@ -53,6 +54,7 @@ class Gene extends React.Component<IGeneProps>
                             hugoSymbol={this.hugoSymbol}
                             data={this.signalMutations}
                             ensemblGene={this.geneStore.ensemblGeneData}
+                            cancerTypes={this.props.cancerTypes}
                         />
                 }
             </div>

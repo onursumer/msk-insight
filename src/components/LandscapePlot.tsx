@@ -4,6 +4,7 @@ import _ from "lodash";
 import {computed} from "mobx";
 import {observer} from "mobx-react";
 import * as React from "react";
+import { Link } from 'react-router-dom';
 
 import {ITumorTypeFrequencySummary} from "../model/GeneFrequencySummary";
 import GeneFrequencyStore from "../store/GeneFrequencyStore";
@@ -193,10 +194,16 @@ class LandscapePlot extends React.Component<ILandscapePlotProps>
         const percentBiallelic = percentBiallelicFreq !== undefined ?
             (percentBiallelicFreq * 100).toFixed(1): "N/A";
 
+        const {
+            hugoSymbol,
+            tumorType,
+            sampleCount
+        } = datum.datum;
+
         return (
             <>
-                <div>Hugo Symbol: {datum.datum.hugoSymbol}</div>
-                <div>Tumor Type: {datum.datum.tumorType} ({datum.datum.sampleCount})</div>
+                <div>Hugo Symbol: <Link to={`/gene/${hugoSymbol}`}>{hugoSymbol}</Link></div>
+                <div>Tumor Type: <Link to={`/gene/${hugoSymbol}?cancerType=${tumorType}`}>{tumorType}</Link> ({sampleCount})</div>
                 <div>% Pathogenic Germline: <strong>{pathogenicGermline}</strong></div>
                 <div>% Biallelic: <strong>{percentBiallelic}</strong></div>
             </>

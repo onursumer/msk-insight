@@ -8,6 +8,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import GeneFrequencyStore from "../store/GeneFrequencyStore";
 import {getPenetranceLevel} from "../util/PenetranceUtils";
+import {getQueryParamAsArray, SearchParam} from "../util/RouterUtils";
 import About from "./About";
 import Download from "./Download";
 import Explore from "./Explore";
@@ -23,6 +24,7 @@ class Main extends React.Component<{}>
         const GenePage = (props: any) => (
             <Gene
                 hugoSymbol={props.match.params.hugoSymbol}
+                cancerTypes={getQueryParamAsArray(props.location, SearchParam.CANCER_TYPE)}
             />
         );
 
