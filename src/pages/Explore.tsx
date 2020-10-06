@@ -11,7 +11,9 @@ import GeneFrequencyFilterHelper from "../util/GeneFrequencyFilterHelper";
 
 interface IExploreProps {
     frequencyStore?: GeneFrequencyStore;
-    penetrance?: PenetranceLevel;
+    penetranceLevels?: PenetranceLevel[];
+    hugoSymbols?: string[];
+    cancerTypes?: string[];
 }
 
 @observer
@@ -24,7 +26,9 @@ class Explore extends React.Component<IExploreProps>
 
         this.filterHelper = new GeneFrequencyFilterHelper(
             this.props.frequencyStore,
-            this.props.penetrance ? [this.props.penetrance]: undefined
+            this.props.penetranceLevels,
+            this.props.cancerTypes,
+            this.props.hugoSymbols
         );
     }
 

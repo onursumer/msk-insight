@@ -40,7 +40,7 @@ const PenetranceButtonCol = (props: IPenetranceColProps) => {
                 }
                 onClick={props.onClick ? (() => props.onClick!(props.penetrance)): undefined}
                 // do not set href if there is a click handler available
-                href={props.onClick ? undefined: `/explore/${props.penetrance.toLowerCase()}`}
+                href={props.onClick ? undefined: `/explore?penetrance=${props.penetrance.toLowerCase()}`}
             />
         </Col>
     );

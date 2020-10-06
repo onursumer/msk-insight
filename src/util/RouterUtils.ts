@@ -2,7 +2,9 @@ import _ from 'lodash';
 import {parse} from 'query-string';
 
 export enum SearchParam {
-    CANCER_TYPE = 'cancerType'
+    CANCER_TYPE = 'cancerType',
+    PENETRANCE = 'penetrance',
+    HUGO_SYMBOL = 'gene'
 }
 
 export function getQueryParam(

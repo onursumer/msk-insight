@@ -1,4 +1,13 @@
+import _ from 'lodash';
+
 import {PenetranceLevel} from "../model/Penetrance";
+
+export function getPenetranceLevels(penetranceLevels?: string[]): PenetranceLevel[] | undefined
+{
+    const levels = _.compact(penetranceLevels?.map(getPenetranceLevel));
+
+    return levels.length > 0 ? levels: undefined;
+}
 
 export function getPenetranceLevel(penetrance?: string): PenetranceLevel | undefined
 {
