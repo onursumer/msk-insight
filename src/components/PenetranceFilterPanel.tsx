@@ -63,8 +63,9 @@ function getPenetranceProps(
                 s
             )
         ).length: undefined,
-        variantCount: -1,
-        patientCount: -1
+        // TODO calculate actual counts & enable if needed
+        // variantCount: -1,
+        // patientCount: -1
     };
 }
 
