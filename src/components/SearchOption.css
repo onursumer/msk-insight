@@ -1,0 +1,9 @@
+.search-option-subTitle {
+  color: #666;
+  font-size: 0.9em;
+}
+
+.search-option-match {
+  line-height: 1.5rem;
+  white-space: normal;
+}
