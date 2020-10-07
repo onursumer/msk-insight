@@ -9,6 +9,7 @@ import {ColumnSortDirection, defaultSortMethod} from "react-mutation-mapper";
 import {IGeneFrequencySummary} from "../model/GeneFrequencySummary";
 import GeneFrequencyStore from "../store/GeneFrequencyStore";
 import {biallelicAccessor, germlineAccessor, somaticAccessor} from "../util/ColumnHelper";
+import {containsCancerType, findCancerTypeFilter} from "../util/FilterUtils";
 import {ColumnId, HEADER_COMPONENT} from "./ColumnHeaderHelper";
 import {renderPenetrance, renderPercentage} from "./ColumnRenderHelper";
 import Gene from "./Gene";
@@ -23,6 +24,7 @@ interface IFrequencyTableProps
 {
     store: GeneFrequencyStore;
     onSearch?: (text: string) => void;
+    onGeneFrequencyTableRef?: (ref: GeneFrequencyTableComponent) => void;
 }
 
 function renderHugoSymbol(cellProps: any)
@@ -173,7 +175,16 @@ class GeneFrequencyTable extends React.Component<IFrequencyTableProps>
                 <GeneTumorTypeFrequencyDecomposition
                     hugoSymbol={row.original.hugoSymbol}
                     penetrance={row.original.penetrance}
-                    dataPromise={Promise.resolve(data)}
+                    dataPromise={
+                        Promise.resolve(
+                            data.filter(d =>
+                                containsCancerType(
+                                    findCancerTypeFilter(this.props.store.tumorTypeFrequencySummaryDataFilters),
+                                    d.tumorType
+                                )
+                            )
+                        )
+                    }
                 />
             </div>
         ): null;
@@ -191,6 +202,10 @@ class GeneFrequencyTable extends React.Component<IFrequencyTableProps>
     @autobind
     private handleTableRef(ref: GeneFrequencyTableComponent) {
         this.tableComponentRef = ref;
+
+        if (this.props.onGeneFrequencyTableRef) {
+            this.props.onGeneFrequencyTableRef(ref);
+        }
     }
 }
 

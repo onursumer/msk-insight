@@ -32,6 +32,7 @@ class GeneFrequencyFilterHelper
 
     constructor(
         private geneFrequencyStore?: GeneFrequencyStore,
+        private defaultFilterHandler?: () => void,
         selectedPenetranceLevels?: PenetranceLevel[],
         selectedCancerTypes?: string[],
         selectedHugoSymbols?: string[],
@@ -127,6 +128,10 @@ class GeneFrequencyFilterHelper
         if (this.geneFrequencyStore) {
             this.geneFrequencyStore.updateGeneFrequencySummaryDataFilters(PENETRANCE_FILTER_ID, this.penetranceFilter);
         }
+
+        if (this.defaultFilterHandler) {
+            this.defaultFilterHandler();
+        }
     }
 
     @action.bound
@@ -136,6 +141,10 @@ class GeneFrequencyFilterHelper
 
         if (this.geneFrequencyStore) {
             this.geneFrequencyStore.updateTumorTypeFrequencySummaryDataFilters(CANCER_TYPE_FILTER_ID, this.cancerTypeFilter);
+        }
+
+        if (this.defaultFilterHandler) {
+            this.defaultFilterHandler();
         }
     }
 
@@ -147,6 +156,10 @@ class GeneFrequencyFilterHelper
         if (this.geneFrequencyStore) {
             this.geneFrequencyStore.updateGeneFrequencySummaryDataFilters(HUGO_SYMBOL_DROPDOWN_FILTER_ID, this.hugoSymbolDropdownFilter);
         }
+
+        if (this.defaultFilterHandler) {
+            this.defaultFilterHandler();
+        }
     }
 
     @action.bound
@@ -155,6 +168,10 @@ class GeneFrequencyFilterHelper
 
         if (this.geneFrequencyStore) {
             this.geneFrequencyStore.updateGeneFrequencySummaryDataFilters(HUGO_SYMBOL_SEARCH_FILTER_ID, this.hugoSymbolSearchFilter);
+        }
+
+        if (this.defaultFilterHandler) {
+            this.defaultFilterHandler();
         }
     }
 
@@ -167,6 +184,10 @@ class GeneFrequencyFilterHelper
         this.hugoSymbolSearchText = undefined;
 
         this.updateFilters();
+
+        if (this.defaultFilterHandler) {
+            this.defaultFilterHandler();
+        }
     }
 
     @action.bound

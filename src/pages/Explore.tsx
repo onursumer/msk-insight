@@ -1,7 +1,10 @@
+import autobind from 'autobind-decorator';
+import { action } from 'mobx';
 import { observer } from 'mobx-react';
 import * as React from 'react';
 import {Row} from 'react-bootstrap';
 
+import GeneFrequencyTableComponent from "../components/GeneFrequencyTableComponent";
 import GeneLevelSummary from "../components/GeneLevelSummary";
 import LandscapeFilterPanel from "../components/LandscapeFilterPanel";
 import PenetranceFilterPanel from "../components/PenetranceFilterPanel";
@@ -21,11 +24,14 @@ class Explore extends React.Component<IExploreProps>
 {
     private readonly filterHelper: GeneFrequencyFilterHelper;
 
+    private geneFrequencyTableComponent: GeneFrequencyTableComponent;
+
     constructor(props: IExploreProps) {
         super(props);
 
         this.filterHelper = new GeneFrequencyFilterHelper(
             this.props.frequencyStore,
+            this.defaultFilterHandler,
             this.props.penetranceLevels,
             this.props.cancerTypes,
             this.props.hugoSymbols
@@ -64,6 +70,7 @@ class Explore extends React.Component<IExploreProps>
                 <GeneLevelSummary
                     frequencyStore={this.props.frequencyStore}
                     filterHelper={this.filterHelper}
+                    onGeneFrequencyTableRef={this.handleTableRef}
                 />
             </div>
         );
@@ -71,6 +78,17 @@ class Explore extends React.Component<IExploreProps>
 
     private isLoading(): boolean {
         return isFrequencyDataPending(this.props.frequencyStore);
+    }
+
+    @action.bound
+    private defaultFilterHandler() {
+        this.geneFrequencyTableComponent.collapseSubComponent();
+        // TODO also clear the search box text if possible
+    }
+
+    @autobind
+    private handleTableRef(ref: GeneFrequencyTableComponent) {
+        this.geneFrequencyTableComponent = ref;
     }
 }
 

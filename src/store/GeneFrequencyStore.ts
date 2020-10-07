@@ -55,9 +55,18 @@ class GeneFrequencyStore
     public tumorTypeFrequencySummaryData: ITumorTypeFrequencySummary[] = [];
 
     @computed
+    public get sampleCountByTumorType(): {[tumorType: string]: number}
+    {
+        return _.mapValues(
+            _.groupBy(this.tumorTypeFrequencySummaryData, (s: ITumorTypeFrequencySummary) => s.tumorType),
+            (d: ITumorTypeFrequencySummary[]) => Math.max(...d.map(s => s.sampleCount))
+        );
+    }
+
+    @computed
     public get tumorTypeFrequencyDataGroupedByGene(): {[hugoSymbol: string]: ITumorTypeFrequencySummary[]}
     {
-        return _.groupBy(this.tumorTypeFrequencySummaryData, "hugoSymbol");
+        return _.groupBy(this.tumorTypeFrequencySummaryData, d => d.hugoSymbol);
     }
 
     @computed

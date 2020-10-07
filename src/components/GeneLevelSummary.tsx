@@ -8,11 +8,13 @@ import {
 import GeneFrequencyStore from "../store/GeneFrequencyStore";
 import GeneFrequencyFilterHelper from "../util/GeneFrequencyFilterHelper";
 import GeneFrequencyTable from "./GeneFrequencyTable";
+import GeneFrequencyTableComponent from "./GeneFrequencyTableComponent";
 import LandscapePlot from "./LandscapePlot";
 
 interface IGeneLevelSummaryProps {
     frequencyStore?: GeneFrequencyStore;
     filterHelper?: GeneFrequencyFilterHelper;
+    onGeneFrequencyTableRef?: (ref: GeneFrequencyTableComponent) => void;
 }
 
 @observer
@@ -53,6 +55,7 @@ class GeneLevelSummary extends React.Component<IGeneLevelSummaryProps>
                                 <GeneFrequencyTable
                                     store={this.frequencyStore}
                                     onSearch={this.filterHelper.handleHugoSymbolSearch}
+                                    onGeneFrequencyTableRef={this.props.onGeneFrequencyTableRef}
                                 />
                             </Col>
                         </Row>

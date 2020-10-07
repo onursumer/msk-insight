@@ -22,19 +22,29 @@ interface ILandscapePlotProps {
     frequencyStore: GeneFrequencyStore;
 }
 
-function tumorTypeDataValue(d: ITumorTypeFrequencySummary): string {
+function tumorTypeDataValue(
+    d: ITumorTypeFrequencySummary,
+    sampleCountByTumorType?: {[tumorType: string]: number}
+): string {
     const tumorType = d.tumorType
+        .replace("Cancers", "")
         .replace("Cancer", "")
         .replace("Tumors", "")
         .replace("Tumor", "")
         .trim();
 
-    return `${tumorType} (${d.sampleCount})`;
+    const sampleCount = sampleCountByTumorType ?
+        sampleCountByTumorType[d.tumorType]: d.sampleCount;
+
+    return `${tumorType} (${sampleCount})`;
 }
 
-function tumorFrequencyDatumToScatterPlotDatum(d: ITumorTypeFrequencySummary): IScatterPlotDatum {
+function tumorFrequencyDatumToScatterPlotDatum(
+    d: ITumorTypeFrequencySummary,
+    sampleCountByTumorType?: {[tumorType: string]: number}
+): IScatterPlotDatum {
     return {
-        x: tumorTypeDataValue(d),
+        x: tumorTypeDataValue(d, sampleCountByTumorType),
         y: d.hugoSymbol,
         datum: d
     };
@@ -53,24 +63,20 @@ class LandscapePlot extends React.Component<ILandscapePlotProps>
     @computed
     public get scatterPlotData(): IScatterPlotDatum[]
     {
-        return this.props.frequencyStore.filteredTumorTypeFrequencySummaryData.map(tumorFrequencyDatumToScatterPlotDatum);
+        return this.props.frequencyStore.filteredTumorTypeFrequencySummaryData.map(
+            d => tumorFrequencyDatumToScatterPlotDatum(d, this.props.frequencyStore.sampleCountByTumorType)
+        );
     }
 
     @computed
     public get genesWithSignificantPathogenicGermlineRatio()
     {
-        // TODO we may not need this anymore
-        // if the data is unfiltered use a higher threshold
-        // const pathogenicGermlineThreshold =
-        //     this.props.frequencyStore.filteredGeneFrequencySummaryData.length ===
-        //     this.props.frequencyStore.geneFrequencySummaryData.length ? 0.0005: 0;
-
         return this.props.frequencyStore.filteredGeneFrequencySummaryData.filter(d => {
             const pathogenicGermline = findPathogenicGermlineFrequency(d);
             const percentBiallelic = findPercentBiallelic(d);
 
             return (
-                pathogenicGermline && pathogenicGermline.frequency > 0 &&
+                pathogenicGermline && pathogenicGermline.frequency > 0 ||
                 percentBiallelic && percentBiallelic.frequency > 0
             );
         }).sort((a, b) => {
@@ -118,7 +124,7 @@ class LandscapePlot extends React.Component<ILandscapePlotProps>
     {
         return this.props.frequencyStore.filteredTumorTypeFrequencySummaryData
             .filter(d => this.genesWithSignificantPathogenicGermlineRatio.includes(d.hugoSymbol))
-            .map(tumorFrequencyDatumToScatterPlotDatum);
+            .map(d => tumorFrequencyDatumToScatterPlotDatum(d, this.props.frequencyStore.sampleCountByTumorType));
     }
 
     @computed
