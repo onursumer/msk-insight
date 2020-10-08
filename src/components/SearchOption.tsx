@@ -27,7 +27,8 @@ const GeneSearchOption: React.FunctionComponent<{
             <div>
                 <Highlighter
                     searchWords={[props.search]}
-                    textToHighlight={`${props.data.gene.hugoSymbol} (Entrez Gene: ${props.data.gene.entrezGeneId})`}
+                    // textToHighlight={`${props.data.hugoSymbol} (Entrez Gene: ${props.data.entrezGeneId})`}
+                    textToHighlight={props.data.hugoSymbol}
                 />
             </div>
         </>
@@ -42,7 +43,7 @@ const AlterationSearchOption: React.FunctionComponent<{
         <>
             <div className={'d-flex align-items-center'}>
                 <Highlighter
-                    textToHighlight={props.data.gene.hugoSymbol}
+                    textToHighlight={props.data.hugoSymbol}
                     searchWords={[props.search]}
                 />{' '}
                 /
@@ -51,9 +52,9 @@ const AlterationSearchOption: React.FunctionComponent<{
                     searchWords={[props.search]}
                 />
             </div>
-            {props.data.annotation ? (
+            {props.data.description ? (
                 <div className="search-option-subTitle">
-                    <span>{props.data.annotation}</span>
+                    <span>{props.data.description}</span>
                 </div>
             ) : null}
         </>
@@ -72,9 +73,9 @@ const RegionSearchOption: React.FunctionComponent<{
                     textToHighlight={`${props.data.region}`}
                 />
             </div>
-            {props.data.annotation ? (
+            {props.data.description ? (
                 <div className="search-option-subTitle">
-                    <span>{props.data.annotation}</span>
+                    <span>{props.data.description}</span>
                 </div>
             ) : null}
         </>
@@ -93,9 +94,9 @@ const VariantSearchOption: React.FunctionComponent<{
                     textToHighlight={`${props.data.variant}`}
                 />
             </div>
-            {props.data.annotation ? (
+            {props.data.description ? (
                 <div className="search-option-subTitle">
-                    <span>{props.data.annotation}</span>
+                    <span>{props.data.description}</span>
                 </div>
             ) : null}
         </>
