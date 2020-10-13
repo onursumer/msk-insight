@@ -6,7 +6,7 @@ import { components } from 'react-select';
 import AsyncSelect from 'react-select/async';
 
 import {ISignalSearch} from "../model/SignalSearch";
-import {generateLink} from "../util/SearchUtils";
+import {generateLink, searchMutationsByKeyword} from "../util/SearchUtils";
 import {SearchOption, SearchOptionType} from "./SearchOption";
 
 interface ISearchBoxProps {
@@ -37,20 +37,10 @@ export default class SearchBox extends React.Component<ISearchBoxProps, {}>
     }, 500);
 
     @action.bound
-    public async getOptions(keyword: string) {
+    public getOptions(keyword: string) {
         this.keyword = keyword;
 
-        // TODO mock data, replace with the actual endpoint
-        return Promise.resolve([
-            {
-                queryType: SearchOptionType.ALTERATION,
-                hugoSymbol: "BRCA2",
-                alteration: "N3124I",
-                region: "13:32968940-32968940",
-                variant: "13:g.32968940A>T",
-                annotation: "TODO: additional/optional information here"
-            },
-        ]);
+        return searchMutationsByKeyword(keyword);
     }
 
     public render()

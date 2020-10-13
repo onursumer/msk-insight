@@ -31,6 +31,11 @@ const GeneSearchOption: React.FunctionComponent<{
                     textToHighlight={props.data.hugoSymbol}
                 />
             </div>
+            {props.data.description ? (
+                <div className="search-option-subTitle">
+                    <span>{props.data.description}</span>
+                </div>
+            ) : null}
         </>
     );
 };
@@ -73,6 +78,11 @@ const RegionSearchOption: React.FunctionComponent<{
                     textToHighlight={`${props.data.region}`}
                 />
             </div>
+            {props.data.variant ? (
+                <div className="search-option-subTitle">
+                    <span>{props.data.variant}</span>
+                </div>
+            ) : null}
             {props.data.description ? (
                 <div className="search-option-subTitle">
                     <span>{props.data.description}</span>
@@ -94,6 +104,11 @@ const VariantSearchOption: React.FunctionComponent<{
                     textToHighlight={`${props.data.variant}`}
                 />
             </div>
+            {props.data.region ? (
+                <div className="search-option-subTitle">
+                    <span>{props.data.region}</span>
+                </div>
+            ) : null}
             {props.data.description ? (
                 <div className="search-option-subTitle">
                     <span>{props.data.description}</span>
