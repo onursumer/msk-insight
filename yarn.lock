@@ -1632,7 +1632,7 @@ babel-register@^6.26.0:
     mkdirp "^0.5.1"
     source-map-support "^0.4.15"
 
-babel-runtime@6.x, babel-runtime@6.x.x, babel-runtime@^6.18.0, babel-runtime@^6.2.0, babel-runtime@^6.22.0, babel-runtime@^6.26.0, babel-runtime@^6.9.2:
+babel-runtime@6.x, babel-runtime@6.x.x, babel-runtime@^6.11.6, babel-runtime@^6.18.0, babel-runtime@^6.2.0, babel-runtime@^6.22.0, babel-runtime@^6.26.0, babel-runtime@^6.9.2:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   integrity sha1-llxwWGaOgrVde/4E/yM3vItWR/4=
@@ -2151,6 +2151,32 @@ cbioportal-frontend-commons@^0.3.0:
     typescript "3.8.3"
     url "^0.11.0"
 
+cbioportal-frontend-commons@^0.3.10, cbioportal-frontend-commons@^0.3.9:
+  version "0.3.10"
+  resolved "https://registry.yarnpkg.com/cbioportal-frontend-commons/-/cbioportal-frontend-commons-0.3.10.tgz#26426df55fc3883b6d5a6d2a01c2a2d07d57562d"
+  integrity sha512-D2++kY7KFYA00Sco8/KaYATZRAC/qfPUUAevuL2AxVCKdaFKZZyNJ+i/YTtsgVfhtFWqkJtzPDZILHL7UqxGZA==
+  dependencies:
+    autobind-decorator "^2.1.0"
+    cbioportal-utils "^0.2.8"
+    classnames "^2.2.5"
+    jquery "^3.2.1"
+    lodash "^4.17.11"
+    measure-text "0.0.4"
+    mobxpromise "github:cbioportal/mobxpromise#v1.0.2"
+    object-sizeof "^1.2.0"
+    oncokb-ts-api-client "^1.1.2"
+    rc-tooltip "3.7.3"
+    react-file-download "^0.3.2"
+    react-overlays "0.7.4"
+    react-select "^3.0.4"
+    save-svg-as-png "^1.4.6"
+    seamless-immutable "^7.0.1"
+    superagent "^3.8.3"
+    svg2pdf.js "^1.3.3"
+    typescript "3.8.3"
+    url "^0.11.0"
+    victory "30.0.0"
+
 cbioportal-frontend-commons@^0.3.4:
   version "0.3.4"
   resolved "https://registry.yarnpkg.com/cbioportal-frontend-commons/-/cbioportal-frontend-commons-0.3.4.tgz#d7e36ddbe04fb269f54d17d26033f8f6efa9bbd4"
@@ -2196,6 +2222,17 @@ cbioportal-utils@^0.2.3:
     genome-nexus-ts-api-client "^1.1.5"
     lodash "^4.17.11"
     oncokb-ts-api-client "^1.1.0"
+    superagent "^3.8.3"
+    typescript "3.8.3"
+
+cbioportal-utils@^0.2.7, cbioportal-utils@^0.2.8:
+  version "0.2.8"
+  resolved "https://registry.yarnpkg.com/cbioportal-utils/-/cbioportal-utils-0.2.8.tgz#953c0db50c22b816185e90b901fc038efe2bb6e7"
+  integrity sha512-8ATjoPIvla2pqu8TJcziUvRhBvAhaUI8dGkEdocqKjOPTIGmppERHoGkU/w/o+g5TgDPWXrmQo6KfQBwQVKlPA==
+  dependencies:
+    genome-nexus-ts-api-client "^1.1.7"
+    lodash "^4.17.11"
+    oncokb-ts-api-client "^1.1.2"
     superagent "^3.8.3"
     typescript "3.8.3"
 
@@ -3320,7 +3357,7 @@ dom-converter@^0.2:
   dependencies:
     utila "~0.4"
 
-dom-helpers@^3.2.1, dom-helpers@^3.4.0:
+dom-helpers@^3.2.0, dom-helpers@^3.2.1, dom-helpers@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/dom-helpers/-/dom-helpers-3.4.0.tgz#e9b369700f959f62ecde5a6babde4bccd9169af8"
   integrity sha512-LnuPJ+dwqKDIyotW1VzmOZ5TONUN7CwkCR5hrgawTUbkBGYdeoNLZo6nNfGkCrjtE1nXXaj7iMMpDa8/d9WoIA==
@@ -4279,6 +4316,14 @@ genome-nexus-ts-api-client@^1.1.5:
     superagent "^3.8.3"
     typescript "3.8.3"
 
+genome-nexus-ts-api-client@^1.1.7:
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/genome-nexus-ts-api-client/-/genome-nexus-ts-api-client-1.1.7.tgz#990817af3a060351e02c742aa310437e11850ee8"
+  integrity sha512-SoFs8QxLHv+Y/d/GW68G8Ktz0sJ+djKLH6OlhyDZAtIjFjBK5QKBuHYdVAuqpjckzoZqzv42LSMctztMI3LjrQ==
+  dependencies:
+    superagent "^3.8.3"
+    typescript "3.8.3"
+
 get-caller-file@^1.0.1:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/get-caller-file/-/get-caller-file-1.0.3.tgz#f978fa4c90d1dfe7ff2d6beda2a515e713bdcf4a"
@@ -4883,7 +4928,7 @@ interpret@^1.0.0:
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.2.0.tgz#d5061a6224be58e8083985f5014d844359576296"
   integrity sha512-mT34yGKMNceBQUoVn7iCDKDntA7SC6gycMAWzGx1z/CMCTV7b2AAtXlo3nRyHZ1FelRkQbQjprHSYGwzLtkVbw==
 
-invariant@^2.2.2, invariant@^2.2.4:
+invariant@^2.1.0, invariant@^2.2.1, invariant@^2.2.2, invariant@^2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
   integrity sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==
@@ -5946,7 +5991,7 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
-keycode@^2.2.0:
+keycode@^2.1.2, keycode@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/keycode/-/keycode-2.2.0.tgz#3d0af56dc7b8b8e5cba8d0a97f107204eec22b04"
   integrity sha1-PQr1bce4uOXLqNCpfxByBO7CKwQ=
@@ -6068,6 +6113,11 @@ loader-utils@^1.0.2, loader-utils@^1.1.0:
     big.js "^5.2.2"
     emojis-list "^2.0.0"
     json5 "^1.0.1"
+
+loaders.css@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/loaders.css/-/loaders.css-0.1.2.tgz#3a9fb43726c73334a38142af9d0629019b658743"
+  integrity sha1-Op+0NybHMzSjgUKvnQYpAZtlh0M=
 
 locate-path@^2.0.0:
   version "2.0.0"
@@ -6961,6 +7011,14 @@ oncokb-ts-api-client@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/oncokb-ts-api-client/-/oncokb-ts-api-client-1.1.0.tgz#95f8cc0b23cfbe12693b3b3b87404d98eb5e582e"
   integrity sha512-ZXIoIAC7Bh0Y6/W+zzkg616H3wQHIRSjqHXbV/e9NCNHYPiFFjSsmR3S3H9XVtWO9G33H8W6pYY6kKoYGr/5bw==
+  dependencies:
+    superagent "^3.8.3"
+    typescript "3.8.3"
+
+oncokb-ts-api-client@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/oncokb-ts-api-client/-/oncokb-ts-api-client-1.1.2.tgz#5cd3950d2bbbec036f6aca6239d23a4dc6eab8ec"
+  integrity sha512-dHOO1gIlJCq59A4QqwNtd1fJfOtgZLxKENcV2hgwPHk6OUwCkUq5AkuFG5bdM/nf/8z2spnXIuDj8iQe86VjpA==
   dependencies:
     superagent "^3.8.3"
     typescript "3.8.3"
@@ -8008,6 +8066,22 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-bootstrap@^0.31.5:
+  version "0.31.5"
+  resolved "https://registry.yarnpkg.com/react-bootstrap/-/react-bootstrap-0.31.5.tgz#57040fa8b1274e1e074803c21a1b895fdabea05a"
+  integrity sha512-xgDihgX4QvYHmHzL87faDBMDnGfYyqcrqV0TEbWY+JizePOG1vfb8M3xJN+6MJ3kUYqDtQSZ7v/Q6Y5YDrkMdA==
+  dependencies:
+    babel-runtime "^6.11.6"
+    classnames "^2.2.5"
+    dom-helpers "^3.2.0"
+    invariant "^2.2.1"
+    keycode "^2.1.2"
+    prop-types "^15.5.10"
+    prop-types-extra "^1.0.1"
+    react-overlays "^0.7.4"
+    uncontrollable "^4.1.0"
+    warning "^3.0.0"
+
 react-bootstrap@^1.0.0-beta.6:
   version "1.0.0-beta.9"
   resolved "https://registry.yarnpkg.com/react-bootstrap/-/react-bootstrap-1.0.0-beta.9.tgz#3d9e429fd3d7a81db241aa824646c73e99a8566c"
@@ -8029,7 +8103,7 @@ react-bootstrap@^1.0.0-beta.6:
     uncontrollable "^6.1.0"
     warning "^4.0.3"
 
-react-collapse@^4.0.3:
+react-collapse@4.0.3, react-collapse@^4.0.3:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/react-collapse/-/react-collapse-4.0.3.tgz#b96de959ed0092a43534630b599a4753dd76d543"
   integrity sha512-OO4NhtEqFtz+1ma31J1B7+ezdRnzHCZiTGSSd/Pxoks9hxrZYhzFEddeYt05A/1477xTtdrwo7xEa2FLJyWGCQ==
@@ -8167,7 +8241,32 @@ react-mutation-mapper@^0.6.0:
     superagent "^3.8.3"
     typescript "3.8.3"
 
-react-overlays@0.7.4:
+react-mutation-mapper@^0.6.10:
+  version "0.6.11"
+  resolved "https://registry.yarnpkg.com/react-mutation-mapper/-/react-mutation-mapper-0.6.11.tgz#510fcca516144dd7846ebf48b3af505ced08615c"
+  integrity sha512-Fv4lmsNB4J8Ymy+8xnBBi5aCJqzCiYiu2f8e1+f6W55h8TIBpFcdk2YnQRWrxe/L2hw+L8IpteRY4v/44ukbTQ==
+  dependencies:
+    autobind-decorator "^2.1.0"
+    cbioportal-frontend-commons "^0.3.10"
+    cbioportal-utils "^0.2.8"
+    classnames "^2.2.5"
+    genome-nexus-ts-api-client "^1.1.7"
+    jquery "^3.2.1"
+    lodash "^4.17.11"
+    mobxpromise "github:cbioportal/mobxpromise#v1.0.2"
+    oncokb-styles "~0.1.2"
+    oncokb-ts-api-client "^1.1.2"
+    react-collapse "^4.0.3"
+    react-if "^2.1.0"
+    react-motion "^0.5.2"
+    react-rangeslider "^2.2.0"
+    react-select "^3.0.4"
+    react-table "^6.10.0"
+    seamless-immutable "^7.1.4"
+    superagent "^3.8.3"
+    typescript "3.8.3"
+
+react-overlays@0.7.4, react-overlays@^0.7.4:
   version "0.7.4"
   resolved "https://registry.yarnpkg.com/react-overlays/-/react-overlays-0.7.4.tgz#ef2ec652c3444ab8aa014262b18f662068e56d5c"
   integrity sha512-7vsooMx3siLAuEfTs8FYeP/lAORWWFXTO8PON3KgX0Htq1Oa+po6ioSjGyO0/GO5CVSMNhpWt6V2opeexHgBuQ==
@@ -8319,6 +8418,16 @@ react-select@^3.1.0:
     react-input-autosize "^2.2.2"
     react-transition-group "^4.3.0"
 
+react-spinkit@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/react-spinkit/-/react-spinkit-3.0.0.tgz#31fdaf4e18177766c57d1b1f3330290f8492a85a"
+  integrity sha1-Mf2vThgXd2bFfRsfMzApD4SSqFo=
+  dependencies:
+    classnames "^2.2.3"
+    loaders.css "^0.1.2"
+    object-assign "^4.1.0"
+    prop-types "^15.5.8"
+
 react-table@^6.10.0:
   version "6.10.0"
   resolved "https://registry.yarnpkg.com/react-table/-/react-table-6.10.0.tgz#20444b19d8ca3c1a08e7544e5c3a93e4ba56690e"
@@ -8355,6 +8464,36 @@ react-transition-group@^4.3.0:
     dom-helpers "^5.0.1"
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
+
+react-variant-view@0.1.0-beta.0:
+  version "0.1.0-beta.0"
+  resolved "https://registry.yarnpkg.com/react-variant-view/-/react-variant-view-0.1.0-beta.0.tgz#64cbee2ed6b16e8c522d25048908aa61b04c84e7"
+  integrity sha512-q4OLLQCiNcL7KPTYSljCnlEx8EMPUb1EHCzWSN8erSFK0Ame+TZErmR79y/hy5CPDm82lpqo2v2G626rDx5Z9A==
+  dependencies:
+    autobind-decorator "^2.1.0"
+    bootstrap "^4.3.1"
+    cbioportal-frontend-commons "^0.3.9"
+    cbioportal-utils "^0.2.7"
+    classnames "^2.2.5"
+    font-awesome "^4.7.0"
+    genome-nexus-ts-api-client "^1.1.7"
+    jquery "^3.2.1"
+    lodash "^4.17.11"
+    mobxpromise "github:cbioportal/mobxpromise#v1.0.2"
+    oncokb-styles "~0.1.2"
+    oncokb-ts-api-client "^1.1.2"
+    react-bootstrap "^0.31.5"
+    react-collapse "4.0.3"
+    react-if "^2.1.0"
+    react-motion "^0.5.2"
+    react-mutation-mapper "^0.6.10"
+    react-rangeslider "^2.2.0"
+    react-select "^3.0.4"
+    react-spinkit "^3.0.0"
+    react-table "^6.10.0"
+    seamless-immutable "^7.1.4"
+    superagent "^3.8.3"
+    typescript "3.8.3"
 
 react@^16.8.6:
   version "16.8.6"
@@ -9930,6 +10069,13 @@ uglifyjs-webpack-plugin@^0.4.6:
     source-map "^0.5.6"
     uglify-js "^2.8.29"
     webpack-sources "^1.0.1"
+
+uncontrollable@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/uncontrollable/-/uncontrollable-4.1.0.tgz#e0358291252e1865222d90939b19f2f49f81c1a9"
+  integrity sha1-4DWCkSUuGGUiLZCTmxny9J+Bwak=
+  dependencies:
+    invariant "^2.1.0"
 
 uncontrollable@^6.0.0, uncontrollable@^6.1.0:
   version "6.2.3"

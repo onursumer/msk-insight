@@ -14,6 +14,7 @@ import Download from "./Download";
 import Explore from "./Explore";
 import Gene from "./Gene";
 import Home from "./Home";
+import Variant from "./Variant";
 
 class Main extends React.Component<{}>
 {
@@ -34,6 +35,12 @@ class Main extends React.Component<{}>
                 history={routerProps.history}
             />
         );
+
+        const VariantPage = (props: any) => (
+            <Variant
+                variant={props.match.params.variant}
+            />
+        );        
 
         const ExplorePage = (props: any) => (
             <Explore
@@ -60,6 +67,7 @@ class Main extends React.Component<{}>
                             <Route exact={true} path="/" component={HomePage}/>
                             <Route exact={true} path="/explore" component={ExplorePage}/>
                             <Route exact={true} path="/gene/:hugoSymbol" component={GenePage} />
+                            <Route exact={true} path="/variant/:variant" component={VariantPage} />
                             <Route exact={true} path="/about" component={About}/>
                             <Route exact={true} path="/download" component={Download}/>
                         </Switch>

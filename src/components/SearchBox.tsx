@@ -53,6 +53,18 @@ export default class SearchBox extends React.Component<ISearchBoxProps, {}>
                 variant: "13:g.32968940A>T",
                 annotation: "TODO: additional/optional information here"
             },
+            {
+                queryType: SearchOptionType.VARIANT,
+                link: "/variant/13:g.32968940A>T", // TODO generate this on the frontend?
+                gene: {
+                    hugoSymbol: "BRCA2",
+                    entrezGeneId: 675
+                },
+                alteration: "N3124I",
+                region: "13:32968940-32968940",
+                variant: "13:g.32968940A>T",
+                annotation: "TODO: additional/optional information here"
+            },
         ]);
     }
 

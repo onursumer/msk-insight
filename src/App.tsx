@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'cbioportal-frontend-commons/dist/styles.css';
 import 'font-awesome/css/font-awesome.css';
 import 'react-mutation-mapper/dist/styles.css';
+import 'react-variant-view/dist/styles.css';
 
 class App extends React.Component {
   public render() {
