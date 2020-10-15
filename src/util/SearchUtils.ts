@@ -25,7 +25,7 @@ export function searchMutationsByKeyword(
 {
     return new Promise<ISignalSearch[]>((resolve, reject) => {
         // TODO temp url, use the genome nexus API client
-        fetch(`http://localhost:38080/signal/search/${keyword}?limit=${limit}`)
+        fetch(`https://beta.genomenexus.org/signal/search/${keyword}?limit=${limit}`)
             .then(response => resolve(response.json()))
             .catch(err => reject(err));
     });
